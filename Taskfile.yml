@@ -1,0 +1,15 @@
+version: '3'
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+  default:
+    cmds:
+      - echo "{{.GREETING}}"
+    silent: true
+
+  dev:
+    cmds:
+      - npm run dev
+    silent: true
