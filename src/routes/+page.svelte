@@ -1,33 +1,48 @@
 <script lang="ts">
-	import Modal from "$lib/components/modal/modal.svelte"
-	import H1 from "$lib/elements/h1.svelte"
+	import Article from "$lib/components/article/article.svelte"
+
+	import { H1, H2, H3, P } from "$lib/elements"
+
 	import Filedrop from "$lib/components/filedrop/filedrop.svelte"
+	import ThemeToggle from "$lib/theme/theme-toggle.svelte"
+
+	import Modal from "$lib/components/modal/modal.svelte"
 </script>
 
-<article>
+<Article>
 	<H1>Welcome to Thomas' Site Starter</H1>
-	<p>
+	<P>
 		This is my personal site starter template built with SvelteKit, Tailwind CSS, and TypeScript.
-	</p>
+	</P>
 
-	<h2>Features</h2>
+	<H2>Features</H2>
 
-	<h3>Tailwind CSS</h3>
+	<H3>Tailwind CSS</H3>
 
-	<h3>Phosphor Icons</h3>
+	<H3>Phosphor Icons</H3>
 
-	<h2>Components</h2>
+	<H3>Font Stack</H3>
 
-	<h3>Filedrop</h3>
+	<P>Inter Variable, JetBrains Mono, and</P>
 
-	<p>The Filedrop component allows a user to drag and drop files.</p>
+	<H3>Light/Dark Theme</H3>
+
+	<div class="flex items-center justify-center">
+		<ThemeToggle />
+	</div>
+
+	<H2>Components</H2>
+
+	<H3>Filedrop</H3>
+
+	<P>The Filedrop component allows a user to drag and drop files.</P>
 
 	<div class="flex w-full items-center justify-center">
 		<div class="m-8 aspect-square h-65">
 			<Filedrop />
 		</div>
 	</div>
-</article>
+</Article>
 
 <Modal>
 	<h1>Modal Example</h1>

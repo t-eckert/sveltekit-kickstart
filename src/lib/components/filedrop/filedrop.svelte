@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { File } from "phosphor-svelte"
 </script>
 
 <div
@@ -7,7 +8,8 @@
 	<div
 		class="flex h-full w-full items-center justify-center rounded border border-dotted border-gray-200 transition-all group-hover:bg-gray-50 dark:group-hover:bg-gray-800"
 	>
-		<div>
+		<div class="flex flex-row items-center gap-1">
+			<File />
 			<span class="text-sm font-medium select-none">Drag and drop files here</span>
 		</div>
 	</div>

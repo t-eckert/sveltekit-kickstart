@@ -3,6 +3,7 @@
 @theme {
   --font-sans: "Inter Variable", sans-serif;
   --font-mono: "JetBrains Mono Variable", monospace;
+  --font-serif: "Libre Caslon Text", serif;
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
