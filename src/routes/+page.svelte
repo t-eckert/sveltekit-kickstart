@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Article from "$lib/components/article/article.svelte"
 
-	import { H1, H2, H3, P } from "$lib/elements"
+	import { H1, H2, H3, P, A } from "$lib/elements"
 
 	import Filedrop from "$lib/components/filedrop/filedrop.svelte"
 	import ThemeToggle from "$lib/theme/theme-toggle.svelte"
@@ -22,9 +22,15 @@
 
 		<H3>Phosphor Icons</H3>
 
+		<P>Phosphor Icons are used throughout the site for consistent and modern iconography.</P>
+
+		<div class="grid-cols-3 gap-2">
+
+		</div>
+
 		<H3>Font Stack</H3>
 
-		<P>Inter Variable, JetBrains Mono, and</P>
+		<P>Inter Variable, JetBrains Mono, and Caslon Libre.</P>
 
 		<div class="grid grid-cols-3 my-4">
 			<div class="font-semibold border-b border-neutral-300 py-2">Typeface</div>
@@ -50,6 +56,12 @@
 
 		<H2>Components</H2>
 
+		<H3>Article</H3>
+
+		<H3>Button</H3>
+
+		<H3>Error</H3>
+
 		<H3>Filedrop</H3>
 
 		<P>The Filedrop component allows a user to drag and drop files.</P>
@@ -59,6 +71,15 @@
 				<Filedrop />
 			</div>
 		</div>
+
+		<H3>Form</H3>
+
+		<H3>Head</H3>
+
+		<H3>Modal</H3>
+
+		<H3>Panel</H3>
+
 	</Article>
 </div>
 

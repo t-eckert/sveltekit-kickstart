@@ -1,5 +1,10 @@
 <script lang="ts">
+	import { page } from "$app/stores"
 	import Error from "$lib/components/error/error.svelte"
 </script>
 
-<Error />
+{#if $page.error}
+	<div class="flex h-[80vh] w-full items-center justify-center">
+		<Error {...$page} />
+	</div>
+{/if}

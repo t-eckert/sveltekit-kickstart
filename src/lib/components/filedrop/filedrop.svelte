@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { File } from "phosphor-svelte"
+	import Button from "$lib/components/button/button.svelte"
 </script>
 
 <div
@@ -14,7 +15,7 @@
 			</div>
 			<span class="text-sm font-medium select-none text-neutral-600">Drag and drop files here</span>
 			<span class="text-sm font-medium select-none text-neutral-600">or</span>
-			<button class="mt-1 text-sm font-medium bg-neutral-800 rounded border border-neutral-800 px-2 py-1 text-white">Browse local files</button>
+			<Button><span class="text-sm">Browse local files</span></Button>
 		</div>
 	</div>
 </div>

@@ -1,8 +1,5 @@
 // Export all element components
 export { default as A } from './a.svelte';
-export { default as Button } from './button.svelte';
-export { default as Div } from './div.svelte';
-export { default as Form } from './form.svelte';
 export { default as H1 } from './h1.svelte';
 export { default as H2 } from './h2.svelte';
 export { default as H3 } from './h3.svelte';
@@ -19,11 +16,4 @@ export { default as Pre } from './pre.svelte';
 export { default as Select } from './select.svelte';
 export { default as Span } from './span.svelte';
 export { default as Strong } from './strong.svelte';
-export { default as Table } from './table.svelte';
-export { default as Tbody } from './tbody.svelte';
-export { default as Td } from './td.svelte';
-export { default as Textarea } from './textarea.svelte';
-export { default as Th } from './th.svelte';
-export { default as Thead } from './thead.svelte';
-export { default as Tr } from './tr.svelte';
 export { default as Ul } from './ul.svelte';
