@@ -5,8 +5,12 @@
 
 	import Filedrop from "$lib/components/filedrop/filedrop.svelte"
 	import ThemeToggle from "$lib/theme/theme-toggle.svelte"
+	import Indicator from "$lib/components/indicator/indicator.svelte"
+
+	import {Balloon, HouseLine, PushPin, Sidebar,  Star, Tent} from "phosphor-svelte"
 
 	import Modal from "$lib/components/modal/modal.svelte"
+	import Json from "$lib/utils/json.svelte"
 </script>
 
 <div class="flex justify-center mt-12">
@@ -24,8 +28,15 @@
 
 		<P>Phosphor Icons are used throughout the site for consistent and modern iconography.</P>
 
-		<div class="grid-cols-3 gap-2">
-
+		<div class="w-full flex items-center justify-center my-8">
+			<div class="grid grid-cols-3 gap-4">
+				<Balloon class="h-6 w-6" />
+				<HouseLine class="h-6 w-6" />
+				<PushPin class="h-6 w-6" />
+				<Sidebar class="h-6 w-6" />
+				<Star class="h-6 w-6" />
+				<Tent class="h-6 w-6" />
+			</div>
 		</div>
 
 		<H3>Font Stack</H3>
@@ -76,13 +87,33 @@
 
 		<H3>Head</H3>
 
+		<H3>Indicator</H3>
+
+		<div>
+			<Indicator />
+		</div>
+
 		<H3>Modal</H3>
+
+		<Modal>
+			<h1>Modal Example</h1>
+		</Modal>
+
 
 		<H3>Panel</H3>
 
+		<H2>Utilities</H2>
+
+		<H3>JSON Display</H3>
+
+			<Json props={{
+			"key1": "value1",
+			"key2": "value2",
+			"key3": {
+				"nestedKey1": "nestedValue1",
+				"nestedKey2": "nestedValue2"
+			}
+				  }} />
 	</Article>
 </div>
 
-<Modal>
-	<h1>Modal Example</h1>
-</Modal>

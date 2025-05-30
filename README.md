@@ -2,6 +2,12 @@
 
 This is a starter SvelteKit set up that includes all of the tooling and configuration that I like to use when building websites. It's very specifically tuned to my needs. If you would like to make something like it your own, fork this!
 
+## Features
+
+### Tailwind CSS 4 and Class Variance Authority
+
+Already configured for using Tailwind out of the box with `dark:` set up for dark theming. Includes the Prettier config to consistently order Tailwind classes. Uses Class Variance Authority to manage complex variants (e.g. different button styling)
+
 ## Things to add
 
 - [ ] Tailwind 4
@@ -35,4 +41,5 @@ This is a starter SvelteKit set up that includes all of the tooling and configur
 - [ ] 
 - [ ] 
 - [ ] 
+
 
