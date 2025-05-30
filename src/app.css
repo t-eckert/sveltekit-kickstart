@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 
 @theme {
-  --font-sans: "Manrope Variable", sans-serif;
+  --font-sans: "Inter Variable", sans-serif;
   --font-mono: "JetBrains Mono Variable", monospace;
 }
 
