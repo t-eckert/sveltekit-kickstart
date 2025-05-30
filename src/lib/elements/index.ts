@@ -1,6 +1,5 @@
 // Export all element components
 export { default as A } from './a.svelte';
-export { default as Article } from './article.svelte';
 export { default as Button } from './button.svelte';
 export { default as Div } from './div.svelte';
 export { default as Form } from './form.svelte';

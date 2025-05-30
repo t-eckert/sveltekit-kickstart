@@ -1,5 +1,8 @@
 <script lang="ts">
 	import "@fontsource/libre-caslon-text"
+	import "@fontsource-variable/inter"
+	import "@fontsource-variable/jetbrains-mono"
+
 	import "../app.css"
 	import config from "$lib/config"
 	import Head from "$lib/components/head/head.svelte"

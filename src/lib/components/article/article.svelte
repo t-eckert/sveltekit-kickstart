@@ -2,6 +2,6 @@
 	let { children } = $props()
 </script>
 
-<article>
+<article class="w-full max-w-2xl flex flex-col items-start gap-2">
 	{@render children()}
 </article>

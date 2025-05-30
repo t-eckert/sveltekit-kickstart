@@ -47,6 +47,8 @@
     "vitest": "^2.0.4"
   },
   "dependencies": {
+    "@fontsource-variable/inter": "^5.2.5",
+    "@fontsource-variable/jetbrains-mono": "^5.2.5",
     "@fontsource/libre-caslon-text": "^5.2.5",
     "@libsql/client": "^0.9.0",
     "@node-rs/argon2": "^1.1.0",
