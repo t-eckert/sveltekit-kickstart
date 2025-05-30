@@ -2,10 +2,21 @@ import { setContext, getContext } from "svelte"
 import { type Theme } from "./Theme"
 
 class ThemeStore {
-	theme: Theme = $state("light")
+	theme: Theme = $state("dark")
+
+	constructor() {
+		//// Initialize the theme from localStorage or default to "light"
+		//const storedTheme = localStorage.getItem("theme") as Theme | null
+		//if (storedTheme) {
+		//	this.theme = storedTheme
+		//} else {
+		//	localStorage.setItem("theme", this.theme)
+		//}
+	}
 
 	toggle() {
 		this.theme = this.theme === "light" ? "dark" : "light"
+		localStorage.setItem("theme", this.theme)
 	}
 }
 
