@@ -1,5 +1,7 @@
 <script lang="ts">
+	import Codeblock from "$lib/components/codeblock/codeblock.svelte"
+
 	let props = $props()
 </script>
 
-<pre><code class="text-sm leading-snug">{JSON.stringify(props, null, 2)}</code></pre>
+<Codeblock lang="json" code={JSON.stringify(props, null, 2)} />

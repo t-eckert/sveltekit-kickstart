@@ -14,7 +14,7 @@
 	import Json from "$lib/utils/json.svelte"
 </script>
 
-<div class="mt-12 flex justify-center">
+<div class="my-12 flex justify-center">
 	<Article>
 		<H1>Welcome to Thomas' Site Starter</H1>
 		<P>
