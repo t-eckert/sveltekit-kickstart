@@ -7,13 +7,13 @@
 	import ThemeToggle from "$lib/theme/theme-toggle.svelte"
 	import Indicator from "$lib/components/indicator/indicator.svelte"
 
-	import {Balloon, HouseLine, PushPin, Sidebar,  Star, Tent} from "phosphor-svelte"
+	import { Balloon, HouseLine, PushPin, Sidebar, Star, Tent } from "phosphor-svelte"
 
 	import Modal from "$lib/components/modal/modal.svelte"
 	import Json from "$lib/utils/json.svelte"
 </script>
 
-<div class="flex justify-center mt-12">
+<div class="mt-12 flex justify-center">
 	<Article>
 		<H1>Welcome to Thomas' Site Starter</H1>
 		<P>
@@ -28,7 +28,7 @@
 
 		<P>Phosphor Icons are used throughout the site for consistent and modern iconography.</P>
 
-		<div class="w-full flex items-center justify-center my-8">
+		<div class="my-8 flex w-full items-center justify-center">
 			<div class="grid grid-cols-3 gap-4">
 				<Balloon class="h-6 w-6" />
 				<HouseLine class="h-6 w-6" />
@@ -43,25 +43,32 @@
 
 		<P>Inter Variable, JetBrains Mono, and Caslon Libre.</P>
 
-		<div class="grid grid-cols-3 my-4">
-			<div class="font-semibold border-b border-neutral-300 py-2">Typeface</div>
-			<div class="font-semibold col-span-2 border-b border-neutral-300 py-2">Sample</div>
+		<div class="my-4 grid grid-cols-3">
+			<div class="border-b border-neutral-300 py-2 font-semibold">Typeface</div>
+			<div class="col-span-2 border-b border-neutral-300 py-2 font-semibold">Sample</div>
 
-			<div class="font-normal border-b border-neutral-300 py-2">Inter</div>
-			<div class="font-normal col-span-2 border-b border-neutral-300 py-2">lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</div>
+			<div class="border-b border-neutral-300 py-2 font-normal">Inter</div>
+			<div class="col-span-2 border-b border-neutral-300 py-2 font-normal">
+				lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+			</div>
 
-			<div class="font-mono border-b border-neutral-300 py-2">JetBrains Mono</div>
-			<div class="font-mono col-span-2 border-b border-neutral-300 py-2">lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</div>
+			<div class="border-b border-neutral-300 py-2 font-mono">JetBrains Mono</div>
+			<div class="col-span-2 border-b border-neutral-300 py-2 font-mono">
+				lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+			</div>
 
-			<div class="font-serif border-b border-neutral-300 py-2">Caslon</div>
-			<div class="font-serif col-span-2 border-b border-neutral-300 py-2">lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</div>
+			<div class="border-b border-neutral-300 py-2 font-serif">Caslon</div>
+			<div class="col-span-2 border-b border-neutral-300 py-2 font-serif">
+				lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+			</div>
 		</div>
 
 		<H3>Light/Dark Theme</H3>
 
-		<P>The site supports light and dark themes, styled using Tailwind <code>dark:</code> classes.</P>
+		<P>The site supports light and dark themes, styled using Tailwind <code>dark:</code> classes.</P
+		>
 
-		<div class="w-full flex items-center justify-center my-8">
+		<div class="my-8 flex w-full items-center justify-center">
 			<ThemeToggle />
 		</div>
 
@@ -89,8 +96,13 @@
 
 		<H3>Indicator</H3>
 
-		<div>
-			<Indicator />
+		<div class="flex w-full flex-col items-start justify-center gap-2">
+			<Indicator color="green" message="Connected" />
+			<Indicator color="red" message="Failed to send" />
+			<Indicator color="yellow" message="Awaiting response" />
+			<Indicator color="blue" message="New message" pulse={false} />
+			<Indicator color="purple" message="Purple is active" />
+			<Indicator color="gray" message="System offline" pulse={false} />
 		</div>
 
 		<H3>Modal</H3>
@@ -99,21 +111,21 @@
 			<h1>Modal Example</h1>
 		</Modal>
 
-
 		<H3>Panel</H3>
 
 		<H2>Utilities</H2>
 
 		<H3>JSON Display</H3>
 
-			<Json props={{
-			"key1": "value1",
-			"key2": "value2",
-			"key3": {
-				"nestedKey1": "nestedValue1",
-				"nestedKey2": "nestedValue2"
-			}
-				  }} />
+		<Json
+			props={{
+				key1: "value1",
+				key2: "value2",
+				key3: {
+					nestedKey1: "nestedValue1",
+					nestedKey2: "nestedValue2"
+				}
+			}}
+		/>
 	</Article>
 </div>
-

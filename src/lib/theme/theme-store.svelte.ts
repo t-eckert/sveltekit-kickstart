@@ -5,13 +5,16 @@ class ThemeStore {
 	theme: Theme = $state("light")
 
 	constructor() {
-		//// Initialize the theme from localStorage or default to "light"
-		//const storedTheme = localStorage.getItem("theme") as Theme | null
-		//if (storedTheme) {
-		//	this.theme = storedTheme
-		//} else {
-		//	localStorage.setItem("theme", this.theme)
-		//}
+
+		if (typeof window === "undefined") return // Avoid running in SSR context
+
+		// Initialize the theme from localStorage or default to "light"
+		const storedTheme = localStorage.getItem("theme") as Theme | null
+		if (storedTheme) {
+			this.theme = storedTheme
+		} else {
+			localStorage.setItem("theme", this.theme)
+		}
 	}
 
 	toggle() {
