@@ -7,7 +7,6 @@ export { default as H4 } from './h4.svelte';
 export { default as H5 } from './h5.svelte';
 export { default as H6 } from './h6.svelte';
 export { default as Img } from './img.svelte';
-export { default as Input } from './input.svelte';
 export { default as Label } from './label.svelte';
 export { default as Li } from './li.svelte';
 export { default as Ol } from './ol.svelte';

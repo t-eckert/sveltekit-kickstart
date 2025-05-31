@@ -6,6 +6,7 @@
 	import Filedrop from "$lib/components/filedrop/filedrop.svelte"
 	import ThemeToggle from "$lib/theme/theme-toggle.svelte"
 	import Indicator from "$lib/components/indicator/indicator.svelte"
+	import Input from "$lib/components/input/input.svelte"
 
 	import { Balloon, HouseLine, PushPin, Sidebar, Star, Tent } from "phosphor-svelte"
 
@@ -103,6 +104,12 @@
 			<Indicator color="blue" message="New message" pulse={false} />
 			<Indicator color="purple" message="Purple is active" />
 			<Indicator color="gray" message="System offline" pulse={false} />
+		</div>
+
+		<H3>Input</H3>
+
+		<div class="flex w-full items-center justify-center">
+			<Input name="Name" placeholder="Enter your full name" />
 		</div>
 
 		<H3>Modal</H3>

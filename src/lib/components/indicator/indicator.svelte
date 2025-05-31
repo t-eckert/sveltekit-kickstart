@@ -33,6 +33,6 @@
 <div class="flex flex-row items-center gap-1.5">
 	<span class={indicatorStyle({ color, pulse })}></span>
 	{#if message}
-		<span class="text-sm font-medium">{message}</span>
+		<span class="text-sm font-medium select-none">{message}</span>
 	{/if}
 </div>
