@@ -1,7 +1,6 @@
 <script lang="ts">
 	import type { Snippet } from "svelte"
-	import { cva } from "cva"
-	import buttonStyle from "./button-style.ts"
+	import buttonStyle from "./button-style"
 
 	type Role = "primary" | "secondary" | "tertiary"
 	type Tone = "neutral" | "positive" | "negative"

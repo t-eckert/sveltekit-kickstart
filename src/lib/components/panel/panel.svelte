@@ -10,9 +10,7 @@
 	const { actions, bar, body }: Props = $props()
 </script>
 
-<div
-	class="rounded bg-white shadow  dark:bg-neutral-950"
->
+<div class="rounded bg-white shadow dark:bg-neutral-950">
 	{@render bar()}
 	{@render body()}
 	{@render actions()}

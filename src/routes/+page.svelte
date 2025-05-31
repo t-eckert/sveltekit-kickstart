@@ -8,15 +8,19 @@
 	import Indicator from "$lib/components/indicator/indicator.svelte"
 	import Input from "$lib/components/input/input.svelte"
 
-	import { Balloon, HouseLine, PushPin, Sidebar, Star, Tent } from "phosphor-svelte"
+	import { Balloon, HouseLine, PushPin, Sidebar, Star, Tent, ArrowUp } from "phosphor-svelte"
 
 	import Modal from "$lib/components/modal/modal.svelte"
 	import Json from "$lib/utils/json.svelte"
+	import Error from "$lib/components/error/error.svelte"
+	import Button from "$lib/components/button/button.svelte"
+	import Card from "$lib/components/card/card.svelte"
 </script>
 
 <div class="my-12 flex justify-center">
 	<Article>
 		<H1>Welcome to Thomas' Site Starter</H1>
+
 		<P>
 			This is my personal site starter template built with SvelteKit, Tailwind CSS, and TypeScript.
 		</P>
@@ -77,9 +81,83 @@
 
 		<H3>Article</H3>
 
+		<P>The Article component is used to wrap text content and provide consistent styling.</P>
+
 		<H3>Button</H3>
 
+		<div class="flex w-full items-center justify-center">
+			<div class="grid grid-cols-3 justify-items-center gap-2">
+				<Button role="primary"><span class="text-sm font-medium">Primary</span></Button>
+				<Button role="secondary"><span class="text-sm font-medium">Secondary</span></Button>
+				<Button role="tertiary"><span class="text-sm font-medium">Tertiary</span></Button>
+
+				<Button role="primary" tone="positive"
+					><span class="text-sm font-medium">Primary</span></Button
+				>
+				<Button role="secondary" tone="positive"
+					><span class="text-sm font-medium">Secondary</span></Button
+				>
+				<Button role="tertiary" tone="positive"
+					><span class="text-sm font-medium">Tertiary</span></Button
+				>
+
+				<Button role="primary" tone="negative"
+					><span class="text-sm font-medium">Primary</span></Button
+				>
+				<Button role="secondary" tone="negative"
+					><span class="text-sm font-medium">Secondary</span></Button
+				>
+				<Button role="tertiary" tone="negative"
+					><span class="text-sm font-medium">Tertiary</span></Button
+				>
+
+				<Button role="primary" shape="circle"><span><ArrowUp class="h-5 w-5" /></span></Button>
+				<Button role="secondary" shape="circle"><span><ArrowUp class="h-5 w-5" /></span></Button>
+				<Button role="tertiary" shape="circle"><span><ArrowUp class="h-5 w-5" /></span></Button>
+
+				<Button role="primary" shape="circle" tone="positive"
+					><span><ArrowUp class="h-5 w-5" /></span></Button
+				>
+				<Button role="secondary" shape="circle" tone="positive"
+					><span><ArrowUp class="h-5 w-5" /></span></Button
+				>
+				<Button role="tertiary" shape="circle" tone="positive"
+					><span><ArrowUp class="h-5 w-5" /></span></Button
+				>
+
+				<Button role="primary" shape="circle" tone="negative"
+					><span><ArrowUp class="h-5 w-5" /></span></Button
+				>
+				<Button role="secondary" shape="circle" tone="negative"
+					><span><ArrowUp class="h-5 w-5" /></span></Button
+				>
+				<Button role="tertiary" shape="circle" tone="negative"
+					><span><ArrowUp class="h-5 w-5" /></span></Button
+				>
+			</div>
+		</div>
+
+		<H3>Card</H3>
+
+		<div class="flex w-full items-center justify-center">
+			<div class="w-full max-w-md">
+				<Card>
+					<div class="flex flex-col gap-1">
+						<H1>Card Example</H1>
+						<P>
+							This is a Card component. It can be used to display content in a visually appealing
+							way.
+						</P>
+					</div>
+				</Card>
+			</div>
+		</div>
+
 		<H3>Error</H3>
+
+		<div class="flex w-full items-center justify-center">
+			<Error status={404} />
+		</div>
 
 		<H3>Filedrop</H3>
 

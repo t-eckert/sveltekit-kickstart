@@ -21,7 +21,7 @@ const buttonStyle = cva(
 			},
 			shape: {
 				rectangle: "rounded-sm px-2 py-1",
-				circle: "rounded-full aspect-square p-2.5"
+				circle: "rounded-full aspect-square p-1.5"
 			}
 		},
 		compoundVariants: [
