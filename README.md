@@ -8,6 +8,8 @@ This is a starter SvelteKit set up that includes all of the tooling and configur
 
 Already configured for using Tailwind out of the box with `dark:` set up for dark theming. Includes the Prettier config to consistently order Tailwind classes. Uses Class Variance Authority to manage complex variants (e.g. different button styling)
 
+### Bits UI
+
 ## Things to add
 
 - [ ] Tailwind 4

@@ -54,6 +54,7 @@
     "@node-rs/argon2": "^1.1.0",
     "@oslojs/crypto": "^1.0.1",
     "@oslojs/encoding": "^1.1.0",
+    "bits-ui": "^2.4.0",
     "cva": "npm:class-variance-authority@^0.7.1",
     "drizzle-orm": "^0.33.0",
     "phosphor-svelte": "^3.0.1",

@@ -15,6 +15,13 @@
 	import Error from "$lib/components/error/error.svelte"
 	import Button from "$lib/components/button/button.svelte"
 	import Card from "$lib/components/card/card.svelte"
+	import Accordion from "$lib/components/accordion/accordion.svelte"
+	import AspectRatio from "$lib/components/aspect-ratio/aspect-ratio.svelte"
+	import Avatar from "$lib/components/avatar/avatar.svelte"
+	import Calendar from "$lib/components/calendar/calendar.svelte"
+	import Checkbox from "$lib/components/checkbox/checkbox.svelte"
+	import ComboBox from "$lib/components/combobox/combobox.svelte"
+	import Badge from "$lib/components/badge/badge.svelte"
 </script>
 
 <div class="my-12 flex justify-center">
@@ -79,9 +86,39 @@
 
 		<H2>Components</H2>
 
+		<H3>Accordion</H3>
+
+		<P>The Accordion component allows users to expand and collapse sections of content.</P>
+
+		<Accordion />
+
 		<H3>Article</H3>
 
 		<P>The Article component is used to wrap text content and provide consistent styling.</P>
+
+		<H3>Aspect Ratio</H3>
+
+		<AspectRatio />
+
+		<H3>Avatar</H3>
+
+		<Avatar />
+
+		<H3>Badge</H3>
+
+		<div class="flex w-full items-center justify-center">
+			<div class="grid grid-cols-3 justify-items-center gap-2">
+				<Badge color="neutral" text="Neutral" />
+				<Badge color="red" text="Red" />
+				<Badge color="orange" text="Orange" />
+				<Badge color="yellow" text="Yellow" />
+				<Badge color="green" text="Green" />
+				<Badge color="blue" text="Blue" />
+				<Badge color="indigo" text="Indigo" />
+				<Badge color="purple" text="Purple" />
+				<Badge color="pink" text="Pink" />
+			</div>
+		</div>
 
 		<H3>Button</H3>
 
@@ -137,6 +174,10 @@
 			</div>
 		</div>
 
+		<H3>Calendar</H3>
+
+		<Calendar />
+
 		<H3>Card</H3>
 
 		<div class="flex w-full items-center justify-center">
@@ -152,6 +193,14 @@
 				</Card>
 			</div>
 		</div>
+
+		<H3>Checkbox</H3>
+
+		<Checkbox />
+
+		<H3>Combobox</H3>
+
+		<ComboBox />
 
 		<H3>Error</H3>
 
@@ -192,9 +241,7 @@
 
 		<H3>Modal</H3>
 
-		<Modal>
-			<h1>Modal Example</h1>
-		</Modal>
+		<Modal></Modal>
 
 		<H3>Panel</H3>
 

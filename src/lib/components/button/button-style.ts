@@ -39,7 +39,7 @@ const buttonStyle = cva(
 			{
 				role: "primary",
 				tone: "positive",
-				class: ["bg-emerald-600", "text-emerald-50", "hover:bg-emerald-700"]
+				class: ["bg-green-600", "text-green-50", "hover:bg-green-700"]
 			},
 			{
 				role: "primary",
@@ -55,10 +55,10 @@ const buttonStyle = cva(
 				role: "secondary",
 				tone: "positive",
 				class: [
-					"bg-emerald-200",
-					"text-emerald-800",
-					"hover:text-emerald-900",
-					"hover:bg-emerald-300"
+					"bg-green-200",
+					"text-green-800",
+					"hover:text-green-900",
+					"hover:bg-green-300"
 				]
 			},
 			{
