@@ -5,6 +5,7 @@ vars:
 
 tasks:
   default:
+    desc: "Lists all available tasks"
     cmds:
       - task --list-all
     silent: true

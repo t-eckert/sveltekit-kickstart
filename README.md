@@ -1,6 +1,14 @@
-# Thomas' Site Starter
+# SvelteKit Kick Start
 
 This is a starter SvelteKit set up that includes all of the tooling and configuration that I like to use when building websites. It's very specifically tuned to my needs. If you would like to make something like it your own, fork this!
+
+> This is a work in progress. I am still developing some of the items that are listed below.
+
+## Why
+
+I have built several SvelteKit sites. I love the framework and I can work very quickly in it, but I found myself rewriting a lot of the same functionality with each new site. This starter kit allows me to solve all the repetitive and difficult problems once and build from there.
+
+I've also formatted this project for AI-based development with Claude. This includes a CLAUDE.md file; tools for creating new API routes, componenents, pages, and stores; and descriptions of components to help Claude use them effectively.
 
 ## Features
 
@@ -8,40 +16,49 @@ This is a starter SvelteKit set up that includes all of the tooling and configur
 
 Already configured for using Tailwind out of the box with `dark:` set up for dark theming. Includes the Prettier config to consistently order Tailwind classes. Uses Class Variance Authority to manage complex variants (e.g. different button styling)
 
+### Styled Elements
+
+### Taskfile
+
+### Vitest
+
+### Open Graph Config and OG Image Generator
+
 ### Bits UI
 
-## Things to add
+Many of the components in this starter kit make use of [Bits UI](https://www.bits-ui.com/). It is a spectacular system for developing more complex components.
 
-- [ ] Tailwind 4
-- [ ] Utilities
-- [ ] SQLite DB for "server local DB"
-- [ ] Containerfile for deployment
-- [ ] Templates
-- [ ] Phosphor Icons
-- [ ] Sqlite + Drizzle
-- [ ] Key Value
-- [ ] Admin auth
-- [ ] API keys (for kv)
-- [ ] Error Component
-- [ ] Caddy for local dev
-- [ ] env example
-- [ ] page and component template
-- [ ] File upload
-- [ ] Object Store
-- [ ] Font stack
-- [ ] Elements
-- [ ] Modal
-- [ ] Storybook
-- [ ] Testing
-- [ ] Toast
-- [ ] Audit Log
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
+### Clerk Auth
 
+### User and Admin pages
+
+### Caddy
+
+### Uploader to S3 Compatible Object Stores
+
+### Libsql (SQLite) Configuration for Edge DBs using Drizzle
+
+The kit comes pre-configured for using Drizzle with SQLite with the Libsql 
+
+### Key-Value Store 
+
+Using the Libsql edge DB, this key-value store provides a great way to s
+
+### Audit Log
+
+### Containerization
+
+### A Considered Font Stack
+
+### Templates 
+
+### Storybook Configuration
+
+### Toast
+
+Built using [Svelte French Toast](https://svelte-french-toast.com/).
+
+### Light/Dark Theming
+
+## Components
 
