@@ -20,6 +20,8 @@ Already configured for using Tailwind out of the box with `dark:` set up for dar
 
 ### Taskfile
 
+### Phosphor Icons
+
 ### Vitest
 
 ### Open Graph Config and OG Image Generator
@@ -56,9 +58,15 @@ Using the Libsql edge DB, this key-value store provides a great way to s
 
 ### Toast
 
-Built using [Svelte French Toast](https://svelte-french-toast.com/).
+Built using [Svelte Sonner](https://github.com/wobsoriano/svelte-sonner)
 
 ### Light/Dark Theming
 
 ## Components
+
+## Things to check out
+
+- https://svelteflow.dev/
+- https://github.com/beyonk-group/svelte-mapbox
+- https://threlte.xyz/
 
