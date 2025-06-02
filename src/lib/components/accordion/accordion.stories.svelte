@@ -1,11 +1,11 @@
 <script module>
 	import { defineMeta } from "@storybook/addon-svelte-csf"
-	import Elements from "./__story.svelte"
+	import Accordion from "./__story.svelte"
 
 	const { Story } = defineMeta({
-		title: "Elements",
+		title: "Components/Accordion",
 		tags: ["autodocs"],
-		component: Elements,
+		component: Accordion,
 		parameters: {
 			docs: {
 				description: {
@@ -17,4 +17,4 @@
 	})
 </script>
 
-<Story name="Elements" />
+<Story name="Accordion" />

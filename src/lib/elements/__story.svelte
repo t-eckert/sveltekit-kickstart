@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { A, H1, H2, H3, H4, H5, H6, Img, Li, Ol, P, Pre, Select, Span, Strong, Ul } from "./index"
+	import { A, H1, H2, H3, H4, H5, H6, Img, Li, Ol, P, Pre, Span, Strong, Ul } from "./index"
 </script>
 
 <div class="mx-auto max-w-4xl space-y-8 p-6">
