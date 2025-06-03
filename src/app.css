@@ -3,6 +3,9 @@
 @import '@fontsource/libre-caslon-text';
 @import 'tailwindcss';
 
+@source "./**/*.{html,js,svelte,ts}";
+@source "../stories/**/*.{html,js,svelte,ts}";
+
 @theme {
   --font-sans: "Inter Variable", sans-serif;
   --font-mono: "JetBrains Mono Variable", monospace;
