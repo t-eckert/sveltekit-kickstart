@@ -1,12 +1,18 @@
+import * as EmailValidator from 'email-validator';
+
 export type Validator = (value: string | number) => [boolean, string?];
 
 export const alwaysValid: Validator = () => [true];
 
 export const isEmail: Validator = (value) => {
-	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-	if (typeof value !== 'string' || !emailRegex.test(value)) {
-		return [false, 'Invalid email address'];
+	if (value == null || value === '') {
+		return [true];
 	}
+
+	if (typeof value !== 'string' || !EmailValidator.validate(value)) {
+		return [false, 'Must be a valid email address'];
+	}
+
 	return [true];
 }
 

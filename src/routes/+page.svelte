@@ -20,7 +20,6 @@
 	import Avatar from "$lib/components/avatar/avatar.svelte"
 	import Calendar from "$lib/components/calendar/calendar.svelte"
 	import Checkbox from "$lib/components/checkbox/checkbox.svelte"
-	import ComboBox from "$lib/components/combobox/combobox.svelte"
 	import Badge from "$lib/components/badge/badge.svelte"
 </script>
 
@@ -90,7 +89,7 @@
 
 		<P>The Accordion component allows users to expand and collapse sections of content.</P>
 
-		<Accordion />
+		<Accordion items={[{ value: "1", title: "I have a secret.", content: "Hi" }]} />
 
 		<H3>Article</H3>
 
@@ -197,10 +196,6 @@
 		<H3>Checkbox</H3>
 
 		<Checkbox />
-
-		<H3>Combobox</H3>
-
-		<ComboBox />
 
 		<H3>Error</H3>
 
