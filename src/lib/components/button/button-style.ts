@@ -1,7 +1,7 @@
 import { cva } from "cva";
 
 const buttonStyle = cva(
-	"select-none group flex flex-row gap-1 items-center justify-center transition-all disabled:cursor-not-allowed",
+	"select-none cursor-pointer group flex flex-row gap-1 items-center justify-center transition-all disabled:cursor-not-allowed",
 	{
 		variants: {
 			role: {
@@ -20,7 +20,7 @@ const buttonStyle = cva(
 				negative: ""
 			},
 			shape: {
-				rectangle: "rounded-sm px-2 py-1",
+				rectangle: "rounded-md px-2 py-1",
 				circle: "rounded-full aspect-square p-1.5"
 			}
 		},
@@ -29,11 +29,17 @@ const buttonStyle = cva(
 				role: "primary",
 				tone: "neutral",
 				class: [
-					"bg-stone-800",
-					"text-stone-50",
-					"dark:bg-zinc-800",
-					"dark:text-zinc-300",
-					"hover:bg-stone-950"
+					"bg-neutral-800",
+					"text-neutral-50",
+					"border",
+					"border-neutral-600",
+					"outline",
+					"outline-neutral-700",
+					"active:outline-blue-500",
+					"focus:outline-blue-500",
+					"dark:bg-neutral-800",
+					"dark:text-neutral-300",
+					"hover:bg-neutral-950"
 				]
 			},
 			{
