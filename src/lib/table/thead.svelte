@@ -4,8 +4,8 @@
 	let {children}: {children?: Snippet} = $props()
 </script>
 
-<table class="w-full border-collapse">
+<thead class="border-b border-b-neutral-400">
 	{#if children}
 		{@render children()}
 	{/if}
-</table>
+</thead>

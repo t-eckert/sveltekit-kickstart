@@ -23,9 +23,11 @@
 	import Badge from "$lib/components/badge/badge.svelte"
 	import Image from "$lib/components/image/image.svelte"
 	import Window from "$lib/components/window/window.svelte"
+
 </script>
 
 <div class="my-12 flex justify-center">
+
 	<Article>
 		<H1>Welcome to Thomas' Site Starter</H1>
 
