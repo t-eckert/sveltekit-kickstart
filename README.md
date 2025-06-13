@@ -64,6 +64,10 @@ Built using [Svelte Sonner](https://github.com/wobsoriano/svelte-sonner)
 
 ## Components
 
+## Opinions
+
+- I only use `+page.server.ts` because I often just want my page load code to run on the server anyway.
+
 ## Things to check out
 
 - https://svelteflow.dev/

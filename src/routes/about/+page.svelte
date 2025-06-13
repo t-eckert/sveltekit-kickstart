@@ -1,7 +1,8 @@
 <script lang="ts">
+	import type { PageProps } from "./$types"
 	import Json from "$lib/utils/json.svelte"
 
-	let props = $props()
+	let props: PageProps = $props()
 </script>
 
 <Json {props} />
