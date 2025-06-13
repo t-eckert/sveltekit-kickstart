@@ -1,8 +1,9 @@
 import { setContext, getContext } from "svelte"
-import { type Theme } from "./Theme"
+
+export type Theme = "dark" | "light" | "system"
 
 class ThemeStore {
-	theme: Theme = $state("light")
+	theme: Theme = $state("system")
 
 	constructor() {
 		if (typeof window === "undefined") return // Avoid running in SSR context
