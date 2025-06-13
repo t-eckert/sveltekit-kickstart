@@ -10,7 +10,7 @@
 		onCheckedChange?: (checked: boolean) => void
 	}
 
-	let { 
+	let {
 		id = "switch",
 		name = "switch",
 		label = "Toggle",

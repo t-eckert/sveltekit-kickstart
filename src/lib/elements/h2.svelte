@@ -1,13 +1,13 @@
 <script lang="ts">
-  import { type Snippet } from 'svelte';
+	import { type Snippet } from "svelte"
 
-  type Props = {
-    children: Snippet
-  };
+	type Props = {
+		children: Snippet
+	}
 
-  const { children }: Props = $props();
+	const { children }: Props = $props()
 </script>
 
 <h2 class="text-2xl font-semibold tracking-tight text-neutral-900 dark:text-white">
-  {@render children()}
+	{@render children()}
 </h2>

@@ -1,19 +1,19 @@
-@import '@fontsource-variable/inter';
-@import '@fontsource-variable/jetbrains-mono';
-@import '@fontsource/libre-caslon-text';
-@import 'tailwindcss';
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/jetbrains-mono";
+@import "@fontsource/libre-caslon-text";
+@import "tailwindcss";
 
 @source "./**/*.{html,js,svelte,ts}";
 @source "../stories/**/*.{html,js,svelte,ts}";
 
 @theme {
-  --font-sans: "Inter Variable", sans-serif;
-  --font-mono: "JetBrains Mono Variable", monospace;
-  --font-serif: "Libre Caslon Text", serif;
+	--font-sans: "Inter Variable", sans-serif;
+	--font-mono: "JetBrains Mono Variable", monospace;
+	--font-serif: "Libre Caslon Text", serif;
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 .aspect-card {
-  aspect-ratio: 2.5 / 3.5;
+	aspect-ratio: 2.5 / 3.5;
 }

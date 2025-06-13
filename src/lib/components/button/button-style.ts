@@ -1,4 +1,4 @@
-import { cva } from "cva";
+import { cva } from "cva"
 
 const buttonStyle = cva(
 	"select-none cursor-pointer group flex flex-row gap-1 items-center justify-center transition-all disabled:cursor-not-allowed",
@@ -60,12 +60,7 @@ const buttonStyle = cva(
 			{
 				role: "secondary",
 				tone: "positive",
-				class: [
-					"bg-green-200",
-					"text-green-800",
-					"hover:text-green-900",
-					"hover:bg-green-300"
-				]
+				class: ["bg-green-200", "text-green-800", "hover:text-green-900", "hover:bg-green-300"]
 			},
 			{
 				role: "secondary",

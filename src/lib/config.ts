@@ -5,9 +5,9 @@ export interface Config {
 }
 
 const config: Config = {
-	title: 'Site Starter',
-	description: 'A starter template for building web applications with SvelteKit and TypeScript.',
-	url: 'https://site-starter.com'
+	title: "Site Starter",
+	description: "A starter template for building web applications with SvelteKit and TypeScript.",
+	url: "https://site-starter.com"
 }
 
 export default config

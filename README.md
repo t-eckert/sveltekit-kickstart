@@ -40,9 +40,9 @@ Many of the components in this starter kit make use of [Bits UI](https://www.bit
 
 ### Libsql (SQLite) Configuration for Edge DBs using Drizzle
 
-The kit comes pre-configured for using Drizzle with SQLite with the Libsql 
+The kit comes pre-configured for using Drizzle with SQLite with the Libsql
 
-### Key-Value Store 
+### Key-Value Store
 
 Using the Libsql edge DB, this key-value store provides a great way to s
 
@@ -52,7 +52,7 @@ Using the Libsql edge DB, this key-value store provides a great way to s
 
 ### A Considered Font Stack
 
-### Templates 
+### Templates
 
 ### Storybook Configuration
 
@@ -69,4 +69,3 @@ Built using [Svelte Sonner](https://github.com/wobsoriano/svelte-sonner)
 - https://svelteflow.dev/
 - https://github.com/beyonk-group/svelte-mapbox
 - https://threlte.xyz/
-

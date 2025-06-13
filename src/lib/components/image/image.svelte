@@ -4,7 +4,7 @@
 		alt: string
 	}
 
-	let {src, alt} = $props()
+	let { src, alt } = $props()
 </script>
 
 <img {src} {alt} class="rounded" />

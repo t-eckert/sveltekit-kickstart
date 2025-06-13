@@ -10,7 +10,7 @@
 		width?: string
 	}
 
-	let { 
+	let {
 		value = 50,
 		max = 100,
 		label = "Progress",
@@ -37,7 +37,9 @@
 		class="bg-dark-10 shadow-mini-inset relative h-[15px] w-full overflow-hidden rounded-full"
 	>
 		<div
-			class="bg-foreground shadow-mini-inset h-full w-full flex-1 rounded-full {animated ? 'transition-all duration-1000 ease-in-out' : ''}"
+			class="bg-foreground shadow-mini-inset h-full w-full flex-1 rounded-full {animated
+				? 'transition-all duration-1000 ease-in-out'
+				: ''}"
 			style={`transform: translateX(-${100 - percentage}%)`}
 		></div>
 	</Progress.Root>

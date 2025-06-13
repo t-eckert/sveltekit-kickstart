@@ -1,3 +1,3 @@
 <script lang="ts">
-	let props = $props();
+	let props = $props()
 </script>

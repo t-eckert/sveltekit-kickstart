@@ -49,4 +49,3 @@
 	name="Disabled"
 	args={{ role: "primary", tone: "neutral", disabled: true, label: "Disabled" }}
 />
-

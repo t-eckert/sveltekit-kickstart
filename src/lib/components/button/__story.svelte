@@ -29,4 +29,3 @@
 <Button {role} {tone} {shape} {href} {onclick} {disabled} {name} {value}>
 	{#snippet children()}<span class="text-sm font-medium">{label}</span>{/snippet}
 </Button>
-

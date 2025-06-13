@@ -6,8 +6,7 @@
 		title: "Table",
 		tags: ["autodocs"],
 		component: Table,
-		argTypes: {
-		},
+		argTypes: {},
 		parameters: {
 			docs: {
 				description: {

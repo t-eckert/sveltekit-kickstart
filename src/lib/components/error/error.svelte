@@ -17,7 +17,7 @@
 	{#snippet bar()}<PanelBar title="Error" tone="negative" />{/snippet}
 	{#snippet body()}
 		<PanelBody>
-			<div class="flex min-w-80 select-none flex-col items-start">
+			<div class="flex min-w-80 flex-col items-start select-none">
 				<div class="font-mono text-6xl">{status}</div>
 				<div>
 					{error?.message}

@@ -8,7 +8,16 @@
 	import Indicator from "$lib/components/indicator/indicator.svelte"
 	import Input from "$lib/components/input/input.svelte"
 
-	import { Balloon, HouseLine, PushPin, Sidebar, Star, Tent, ArrowUp, Binoculars } from "phosphor-svelte"
+	import {
+		Balloon,
+		HouseLine,
+		PushPin,
+		Sidebar,
+		Star,
+		Tent,
+		ArrowUp,
+		Binoculars
+	} from "phosphor-svelte"
 
 	import Modal from "$lib/components/modal/modal.svelte"
 	import Json from "$lib/utils/json.svelte"
@@ -23,11 +32,9 @@
 	import Badge from "$lib/components/badge/badge.svelte"
 	import Image from "$lib/components/image/image.svelte"
 	import Window from "$lib/components/window/window.svelte"
-
 </script>
 
 <div class="my-12 flex justify-center">
-
 	<Article>
 		<H1>Welcome to Thomas' Site Starter</H1>
 
@@ -187,7 +194,10 @@
 			<div class="w-full max-w-xs">
 				<Card level={1}>
 					<div class="flex flex-col gap-2">
-						<Image src="https://images.unsplash.com/photo-1734607947797-2a61b996fd5d?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Mountains"/>
+						<Image
+							src="https://images.unsplash.com/photo-1734607947797-2a61b996fd5d?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+							alt="Mountains"
+						/>
 						<H1>Card Example</H1>
 						<P>
 							This is a Card component. It can be used to display content in a visually appealing
@@ -248,12 +258,21 @@
 		<H3>Window</H3>
 
 		<Window background="bg-gradient-tr from-amber-100 via-cyan-100 to-purple-100">
-			<div class="w-full flex flex-col h-full">
-				<div class="w-full px-4 flex flex-row items-center gap-2 border-b border-b-neutral-200"><Binoculars class="w-4 h-4 text-neutral-700"/><input type="text" placeholder="Type something..." class="py-2 focus:outline-none flex-1" /></div>
-				<div class="p-3 flex flex-1 flex-row gap-3 items-start">
+			<div class="flex h-full w-full flex-col">
+				<div class="flex w-full flex-row items-center gap-2 border-b border-b-neutral-200 px-4">
+					<Binoculars class="h-4 w-4 text-neutral-700" /><input
+						type="text"
+						placeholder="Type something..."
+						class="flex-1 py-2 focus:outline-none"
+					/>
+				</div>
+				<div class="flex flex-1 flex-row items-start gap-3 p-3">
 					<div class="flex flex-col gap-3">
-						<div class="w-full h-full max-w-xl">
-							<Image src="https://images.unsplash.com/photo-1698472505070-6d3b90afb530?q=80&w=2535&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Blue Whale" />
+						<div class="h-full w-full max-w-xl">
+							<Image
+								src="https://images.unsplash.com/photo-1698472505070-6d3b90afb530?q=80&w=2535&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+								alt="Blue Whale"
+							/>
 						</div>
 					</div>
 					<div class="max-w-md">

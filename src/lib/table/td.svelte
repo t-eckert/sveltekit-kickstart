@@ -1,5 +1,5 @@
 <script lang="ts">
-	import {cva} from "cva"
+	import { cva } from "cva"
 
 	type Alignment = "left" | "center" | "right" | "justify" | "start" | "end"
 
@@ -8,8 +8,7 @@
 		alignment?: Alignment
 	}
 
-	let {children, alignment = "left"}: Props = $props()
-
+	let { children, alignment = "left" }: Props = $props()
 
 	const tdStyle = cva("px-0.5 py-0.5 text-sm", {
 		variants: {
@@ -28,7 +27,7 @@
 	})
 </script>
 
-<td class={tdStyle({alignment})}>
+<td class={tdStyle({ alignment })}>
 	{#if children}
 		{@render children()}
 	{/if}

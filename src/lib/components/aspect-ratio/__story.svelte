@@ -30,11 +30,11 @@
 </script>
 
 <div class="w-full max-w-4xl space-y-8">
-	<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+	<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
 		{#each examples as example}
 			<div class="space-y-2">
 				<h3 class="text-sm font-medium text-neutral-700">{example.title}</h3>
-				<AspectRatio 
+				<AspectRatio
 					ratio={example.ratio}
 					src={example.src}
 					alt={example.alt}

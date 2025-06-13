@@ -13,7 +13,7 @@
 			title: "Fallback Only",
 			src: undefined,
 			alt: "Jane Smith",
-			fallback: "JS", 
+			fallback: "JS",
 			size: "md" as const
 		},
 		{
@@ -34,7 +34,7 @@
 </script>
 
 <div class="w-full max-w-2xl space-y-8">
-	<div class="grid grid-cols-2 md:grid-cols-4 gap-6 items-center">
+	<div class="grid grid-cols-2 items-center gap-6 md:grid-cols-4">
 		{#each examples as example}
 			<div class="flex flex-col items-center space-y-2">
 				<Avatar

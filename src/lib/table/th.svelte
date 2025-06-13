@@ -1,6 +1,6 @@
 <script lang="ts">
-	import {type Snippet} from "svelte"
-	import {cva} from "cva"
+	import { type Snippet } from "svelte"
+	import { cva } from "cva"
 
 	type Alignment = "left" | "center" | "right" | "justify" | "start" | "end"
 
@@ -9,8 +9,7 @@
 		alignment?: Alignment
 	}
 
-	let {children, alignment = "left"}: Props = $props()
-
+	let { children, alignment = "left" }: Props = $props()
 
 	const thStyle = cva("px-0.5 py-0.5 text-sm font-medium text-neutral-800", {
 		variants: {
@@ -29,7 +28,7 @@
 	})
 </script>
 
-<th class={thStyle({alignment})}>
+<th class={thStyle({ alignment })}>
 	{#if children}
 		{@render children()}
 	{/if}

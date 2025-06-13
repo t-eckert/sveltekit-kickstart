@@ -5,7 +5,6 @@ class ThemeStore {
 	theme: Theme = $state("light")
 
 	constructor() {
-
 		if (typeof window === "undefined") return // Avoid running in SSR context
 
 		// Initialize the theme from localStorage or default to "light"

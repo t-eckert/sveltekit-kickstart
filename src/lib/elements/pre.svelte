@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { type Snippet } from 'svelte';
+	import { type Snippet } from "svelte"
 
-  type Props = {
-    children: Snippet
-  };
+	type Props = {
+		children: Snippet
+	}
 
-  const { children }: Props = $props();
+	const { children }: Props = $props()
 </script>
 
 <pre class="">
