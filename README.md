@@ -4,6 +4,15 @@ This is a starter SvelteKit set up that includes all of the tooling and configur
 
 > This is a work in progress. I am still developing some of the items that are listed below.
 
+## Quickstart
+
+```shell
+npx degit t-eckert/sveltekit-kickstart {project-name}
+```
+
+This will copy down the repository without the Git history.
+
+
 ## Why
 
 I have built several SvelteKit sites. I love the framework and I can work very quickly in it, but I found myself rewriting a lot of the same functionality with each new site. This starter kit allows me to solve all the repetitive and difficult problems once and build from there.
