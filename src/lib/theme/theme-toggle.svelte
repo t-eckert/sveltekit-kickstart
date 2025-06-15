@@ -1,6 +1,7 @@
 <script lang="ts">
-	import { Sun, Moon } from "phosphor-svelte"
+	import { Sun, Moon, Monitor } from "phosphor-svelte"
 	import { getThemeStore } from "./theme-store.svelte"
+	import { enhance } from "$app/forms"
 	import Button from "$lib/components/button/button.svelte"
 	import type { SubmitFunction } from "@sveltejs/kit"
 
@@ -18,15 +19,15 @@
 <form method="POST" use:enhance={submitUpdateTheme}>
 	{#if store.theme === "dark"}
 		<Button shape="square" role="tertiary" formAction="/?/setTheme&theme=light">
-			<Sun />
+			<Moon />
 		</Button>
 	{:else if store.theme === "light"}
 		<Button shape="square" role="tertiary" formAction="/?/setTheme&theme=dark">
-			<Moon />
+			<Sun />
 		</Button>
 	{:else if store.theme === "system"}
 		<Button shape="square" role="tertiary" formAction="/?/setTheme&theme=light">
-			<Sun />
+			<Monitor />
 		</Button>
 	{/if}
 </form>

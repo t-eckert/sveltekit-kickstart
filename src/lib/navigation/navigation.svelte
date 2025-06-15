@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Button from "$lib/components/button/button.svelte"
 	import routes from "./routes"
 </script>
 
@@ -6,9 +7,9 @@
 	<ul>
 		{#each routes as route}
 			<li>
-				<a href={route.path} class="text-sm font-medium text-neutral-700 hover:text-neutral-900">
-					{route.name}
-				</a>
+				<Button href={route.path} role="tertiary"
+					><span class="text-sm font-medium">{route.name}</span></Button
+				>
 			</li>
 		{/each}
 	</ul>

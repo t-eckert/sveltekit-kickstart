@@ -1,1 +1,7 @@
-<a href="/" class="text-sm font-medium text-neutral-700 hover:text-neutral-900">Home</a>
+<script lang="ts">
+	import Button from "$lib/components/button/button.svelte"
+</script>
+
+<Button href="/" role="tertiary"
+	><span class="text-sm font-medium">SvelteKit Kickstart</span></Button
+>
