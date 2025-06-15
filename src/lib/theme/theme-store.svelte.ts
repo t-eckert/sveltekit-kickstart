@@ -14,11 +14,11 @@ class ThemeStore {
 
 		// Return early if not in a browser environment.
 		if (typeof document === "undefined") {
-			return;
+			return
 		}
 
 		// Update the document's data-theme attribute.
-		document.documentElement.setAttribute("data-theme", newTheme);
+		document.documentElement.setAttribute("data-theme", newTheme)
 	}
 }
 

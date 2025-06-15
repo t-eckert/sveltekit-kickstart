@@ -12,7 +12,6 @@ npx degit t-eckert/sveltekit-kickstart {project-name}
 
 This will copy down the repository without the Git history.
 
-
 ## Why
 
 I have built several SvelteKit sites. I love the framework and I can work very quickly in it, but I found myself rewriting a lot of the same functionality with each new site. This starter kit allows me to solve all the repetitive and difficult problems once and build from there.

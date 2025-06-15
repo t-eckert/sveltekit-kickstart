@@ -9,7 +9,7 @@ export const load: PageServerLoad = async ({ params, locals, fetch, route, reque
 	console.log("Cookies:", cookies.getAll())
 
 	return {
-		message: "Data loaded successfully",
+		message: "Data loaded successfully"
 	}
 }
 

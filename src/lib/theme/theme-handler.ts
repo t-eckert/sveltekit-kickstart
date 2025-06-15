@@ -23,7 +23,7 @@ const handleTheme: Handle = async ({ event, resolve }) => {
 
 	return await resolve(event, {
 		transformPageChunk: ({ html }) => {
-			return html.replace("data-theme=\"system\"", `data-theme="${theme}"`)
+			return html.replace('data-theme="system"', `data-theme="${theme}"`)
 		}
 	})
 }
