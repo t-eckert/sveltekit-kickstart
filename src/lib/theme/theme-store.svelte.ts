@@ -8,6 +8,18 @@ class ThemeStore {
 	constructor(theme: Theme = "system") {
 		this.theme = theme
 	}
+
+	setTheme(newTheme: Theme) {
+		this.theme = newTheme
+
+		// Return early if not in a browser environment.
+		if (typeof document === "undefined") {
+			return;
+		}
+
+		// Update the document's data-theme attribute.
+		document.documentElement.setAttribute("data-theme", newTheme);
+	}
 }
 
 const THEME_KEY = Symbol("theme")

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Sun, Moon, Monitor } from "phosphor-svelte"
-	import { getThemeStore } from "./theme-store.svelte"
+	import { getThemeStore, type Theme } from "./theme-store.svelte"
 	import { enhance } from "$app/forms"
 	import Button from "$lib/components/button/button.svelte"
 	import type { SubmitFunction } from "@sveltejs/kit"
@@ -11,7 +11,7 @@
 		const theme = action.searchParams.get("theme")
 
 		if (theme) {
-			document.documentElement.setAttribute("data-theme", theme)
+			store.setTheme(theme as Theme)
 		}
 	}
 </script>
