@@ -1,9 +1,15 @@
 <script lang="ts">
-	import { initThemeStore } from "./theme-store.svelte"
+	import { initThemeStore, type Theme } from "./theme-store.svelte"
+	import { type Snippet } from "svelte"
 
-	let { children } = $props()
+	interface Props {
+		childen: Snippet
+		theme: Theme
+	}
 
-	let store = initThemeStore()
+	let { children, theme }: Props = $props()
+
+	let store = initThemeStore(theme)
 </script>
 
 <div class={store.theme}>

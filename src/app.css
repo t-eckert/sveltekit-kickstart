@@ -12,7 +12,7 @@
 	--font-serif: "Libre Caslon Text", serif;
 }
 
-@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 .aspect-card {
 	aspect-ratio: 2.5 / 3.5;

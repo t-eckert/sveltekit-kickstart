@@ -36,7 +36,7 @@
 
 <div class="my-12 flex justify-center">
 	<Article>
-		<H1>Welcome to Thomas' Site Starter</H1>
+		<H1>Welcome to Thomas' SvelteKit Kickstart</H1>
 
 		<P>
 			This is my personal site starter template built with SvelteKit, Tailwind CSS, and TypeScript.

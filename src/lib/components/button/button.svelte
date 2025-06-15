@@ -4,7 +4,7 @@
 
 	type Role = "primary" | "secondary" | "tertiary"
 	type Tone = "neutral" | "positive" | "negative"
-	type Shape = "rectangle" | "circle"
+	type Shape = "rectangle" | "circle" | "square"
 
 	interface Props {
 		children: Snippet
@@ -16,6 +16,7 @@
 		disabled?: boolean
 		name?: string
 		value?: string | number | string[] | null | undefined
+		formAction?: string
 	}
 
 	const {
@@ -27,7 +28,8 @@
 		disabled = false,
 		name,
 		value,
-		children
+		children,
+		formAction = ""
 	}: Props = $props()
 </script>
 
@@ -36,7 +38,14 @@
 		{@render children()}
 	</a>
 {:else}
-	<button class={buttonStyle({ role, tone, shape })} {onclick} {disabled} {name} {value}>
+	<button
+		class={buttonStyle({ role, tone, shape })}
+		{onclick}
+		{disabled}
+		{name}
+		{value}
+		{formAction}
+	>
 		{@render children()}
 	</button>
 {/if}

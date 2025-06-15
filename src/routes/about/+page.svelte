@@ -6,10 +6,8 @@
 	let props: PageProps = $props()
 </script>
 
-<main>
-	<div class="mt-12">
-		<CenterColumn>
-			<Json {props} />
-		</CenterColumn>
-	</div>
-</main>
+<div class="mt-12">
+	<CenterColumn>
+		<Json {props} />
+	</CenterColumn>
+</div>

@@ -2,6 +2,7 @@
 	import "@fontsource/libre-caslon-text"
 	import "@fontsource-variable/inter"
 	import "@fontsource-variable/jetbrains-mono"
+	import { type LayoutProps } from "./$types"
 
 	import "../app.css"
 	import config from "$lib/config"
@@ -9,8 +10,9 @@
 	import ThemeProvider from "$lib/theme/theme-provider.svelte"
 	import Header from "./header.svelte"
 	import Footer from "./footer.svelte"
+	import Json from "$lib/utils/json.svelte"
 
-	let { children } = $props()
+	let { children, data }: LayoutProps = $props()
 </script>
 
 <Head
@@ -20,8 +22,8 @@
 	favicon="/favicon.ico"
 />
 
-<ThemeProvider>
-	<div class="bg-white text-neutral-900 transition-all dark:bg-neutral-950 dark:text-neutral-200">
+<ThemeProvider theme={data.root.theme}>
+	<div class="bg-white text-neutral-900 transition-all dark:bg-neutral-950 dark:text-neutral-100">
 		<div class="min-h-screen">
 			<Header />
 			<main class="mx-auto w-full max-w-7xl px-4">
