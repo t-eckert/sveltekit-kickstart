@@ -1,6 +1,6 @@
 <script module>
 	import { defineMeta } from "@storybook/addon-svelte-csf"
-	import Badge from "./__story.svelte"
+	import Badge from "./badge.svelte"
 
 	const { Story } = defineMeta({
 		title: "Components/Badge",
@@ -17,4 +17,4 @@
 	})
 </script>
 
-<Story name="Badge" />
+<Story name="Badge" args={{text: "Badge Text"}} />
