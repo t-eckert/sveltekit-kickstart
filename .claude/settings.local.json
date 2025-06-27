@@ -1,17 +1,20 @@
 {
-	"permissions": {
-		"allow": [
-			"Bash(npm run storybook:*)",
-			"Bash(timeout 10s npm run storybook)",
-			"Bash(true)",
-			"Bash(mv:*)",
-			"Bash(rm:*)",
-			"Bash(pkill:*)",
-			"Bash(mkdir:*)",
-			"Bash(find:*)",
-			"Bash(ls:*)"
-		],
-		"deny": []
-	},
-	"enableAllProjectMcpServers": false
+  "permissions": {
+    "allow": [
+      "Bash(npm run storybook:*)",
+      "Bash(timeout 10s npm run storybook)",
+      "Bash(true)",
+      "Bash(mv:*)",
+      "Bash(rm:*)",
+      "Bash(pkill:*)",
+      "Bash(mkdir:*)",
+      "Bash(find:*)",
+      "Bash(ls:*)",
+      "Bash(npm run test:unit:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ],
+    "deny": []
+  },
+  "enableAllProjectMcpServers": false
 }

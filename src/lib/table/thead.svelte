@@ -4,7 +4,7 @@
 	let { children }: { children?: Snippet } = $props()
 </script>
 
-<thead class="border-b border-b-neutral-400">
+<thead class="border-b border-b-neutral-800">
 	{#if children}
 		{@render children()}
 	{/if}

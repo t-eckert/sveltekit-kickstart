@@ -42,7 +42,7 @@
 			<Td>Software Engineer</Td>
 			<Td><Email addr="john.doe@email.com" /></Td>
 			<Td>Admin</Td>
-			<Td align="right"><Money value={32} /></Td>
+			<Td align="right"><Money value={12} /></Td>
 			<Td><Button href="#" role="tertiary">Pay</Button></Td>
 		</Tr>
 		<Tr>

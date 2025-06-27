@@ -17,3 +17,12 @@
 .aspect-card {
 	aspect-ratio: 2.5 / 3.5;
 }
+
+html {
+	font-feature-settings: "liga" 1, "calt" 1, "frac" 1, "case" 1, "zero" 1, "cv10" 1, "cv08" 1;
+	font-variation-settings: normal;
+}
+
+table {
+	font-feature-settings: "tnum" 1, "lnum" 1;
+}

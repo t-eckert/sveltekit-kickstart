@@ -3,7 +3,7 @@
 	import { type Snippet } from "svelte"
 
 	interface Props {
-		childen: Snippet
+		children: Snippet
 		theme: Theme
 	}
 
@@ -12,6 +12,7 @@
 	let store = initThemeStore(theme)
 </script>
 
-<div class={store.theme}>
+<div>Theme provider</div>
+<div>
 	{@render children()}
 </div>

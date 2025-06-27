@@ -6,14 +6,14 @@
 
 	interface Props {
 		children?: Snippet
-		alignment?: Alignment
+		align?: Alignment
 	}
 
-	let { children, alignment = "left" }: Props = $props()
+	let { children, align = "left" }: Props = $props()
 
 	const thStyle = cva("px-0.5 py-0.5 text-sm font-medium text-neutral-800", {
 		variants: {
-			alignment: {
+			align: {
 				left: "text-left",
 				center: "text-center",
 				right: "text-right",
@@ -23,12 +23,12 @@
 			}
 		},
 		defaultVariants: {
-			alignment: "left"
+			align: "left"
 		}
 	})
 </script>
 
-<th class={thStyle({ alignment })}>
+<th class={thStyle({ align })}>
 	{#if children}
 		{@render children()}
 	{/if}

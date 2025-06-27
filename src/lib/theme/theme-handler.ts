@@ -3,9 +3,7 @@ import type { Theme } from "./theme-store.svelte"
 
 const handleTheme: Handle = async ({ event, resolve }) => {
 	const themeInUrl = event.url.searchParams.get("theme")
-	console.log("Theme in URL:", themeInUrl)
 	const themeInCookies = event.cookies.get("theme")
-	console.log("Theme in Cookies:", themeInCookies)
 
 	let theme
 	if (themeInUrl) {
@@ -16,7 +14,6 @@ const handleTheme: Handle = async ({ event, resolve }) => {
 		// Default to "system" if no theme is set
 		theme = "system"
 	}
-	console.log("Using theme:", theme)
 
 	event.cookies.set("theme", theme, { path: "/", maxAge: 60 * 60 * 24 * 365 })
 	event.locals.theme = theme as Theme

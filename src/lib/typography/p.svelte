@@ -8,6 +8,6 @@
 	const { children }: Props = $props()
 </script>
 
-<p class="">
+<p class="w-full max-w-2xl">
 	{@render children()}
 </p>

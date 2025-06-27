@@ -1,18 +1,19 @@
 <script lang="ts">
 	import { cva } from "cva"
+	import type { Snippet } from "svelte"
 
 	type Alignment = "left" | "center" | "right" | "justify" | "start" | "end"
 
 	interface Props {
 		children?: Snippet
-		alignment?: Alignment
+		align?: Alignment
 	}
 
-	let { children, alignment = "left" }: Props = $props()
+	let { children, align = "left" }: Props = $props()
 
 	const tdStyle = cva("px-0.5 py-0.5 text-sm", {
 		variants: {
-			alignment: {
+			align: {
 				left: "text-left",
 				center: "text-center",
 				right: "text-right",
@@ -22,12 +23,12 @@
 			}
 		},
 		defaultVariants: {
-			alignment: "left"
+			align: "left"
 		}
 	})
 </script>
 
-<td class={tdStyle({ alignment })}>
+<td class={tdStyle({ align })}>
 	{#if children}
 		{@render children()}
 	{/if}

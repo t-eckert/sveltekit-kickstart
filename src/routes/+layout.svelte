@@ -21,14 +21,12 @@
 	favicon="/favicon.ico"
 />
 
-<ThemeProvider theme={data.root.theme}>
-	<div class="bg-white text-neutral-900 transition-all dark:bg-neutral-950 dark:text-neutral-100">
-		<div class="min-h-screen">
-			<Header />
-			<main class="mx-auto w-full max-w-7xl px-4">
-				{@render children()}
-			</main>
-		</div>
-		<Footer />
+<div class="bg-white text-neutral-900 transition-all dark:bg-neutral-950 dark:text-neutral-100">
+	<div class="min-h-screen">
+		<Header />
+		<main class="mx-auto w-full max-w-7xl px-4">
+			{@render children()}
+		</main>
 	</div>
-</ThemeProvider>
+	<Footer />
+</div>
