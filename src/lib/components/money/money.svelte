@@ -2,9 +2,10 @@
 	interface Props {
 		value: number
 		currency?: string
+		class?: string
 	}
 
-	const { value, currency = "USD" }: Props = $props()
+	const { value, currency = "USD", class: className }: Props = $props()
 
 	const formatMoney = (amount: number, currency: string): string => {
 		return new Intl.NumberFormat("en-US", {
@@ -14,6 +15,6 @@
 	}
 </script>
 
-<span>
+<span class={className}>
 	{formatMoney(value, currency)}
 </span>
