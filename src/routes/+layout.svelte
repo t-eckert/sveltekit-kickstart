@@ -10,7 +10,6 @@
 	import ThemeProvider from "$lib/theme/theme-provider.svelte"
 	import Header from "./header.svelte"
 	import Footer from "./footer.svelte"
-	import Json from "$lib/utils/json.svelte"
 
 	let { children, data }: LayoutProps = $props()
 </script>
