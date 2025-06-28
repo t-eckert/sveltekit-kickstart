@@ -364,7 +364,9 @@
 
 <div class="grid grid-cols-11 gap-y-1">
 	{#each data as item}
-		<h2 class="col-span-11 text-lg font-semibold text-neutral-800">{item.name}</h2>
+		<h2 class="col-span-11 text-lg font-semibold text-neutral-800 dark:text-neutral-100">
+			{item.name}
+		</h2>
 		{#each item.colors as color}
 			{@render ColorBlock(color)}
 		{/each}

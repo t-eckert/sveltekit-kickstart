@@ -14,17 +14,17 @@
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
-.aspect-card {
-	aspect-ratio: 2.5 / 3.5;
-}
-
 body {
 	font-feature-settings: "liga" 1, "calt" 1, "frac" 1, "case" 1, "zero" 1;
 	font-variation-settings: normal;
 	font-optical-sizing: auto;
-	@apply bg-white text-neutral-900 transition-all dark:bg-neutral-950 dark:text-neutral-100;
+	@apply bg-white text-neutral-900 transition-all dark:bg-neutral-900 dark:text-neutral-100;
 }
 
 table {
 	font-feature-settings: "tnum" 1, "lnum" 1;
+}
+
+.aspect-card {
+	aspect-ratio: 2.5 / 3.5;
 }

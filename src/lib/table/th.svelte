@@ -11,7 +11,7 @@
 
 	let { children, align = "left" }: Props = $props()
 
-	const thStyle = cva("px-0.5 py-0.5 text-sm font-medium text-neutral-800", {
+	const thStyle = cva("px-0.5 py-0.5 text-sm font-medium text-neutral-800 dark:text-neutral-100", {
 		variants: {
 			align: {
 				left: "text-left",
