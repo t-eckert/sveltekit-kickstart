@@ -20,9 +20,9 @@
 
 body {
 	font-feature-settings: "liga" 1, "calt" 1, "frac" 1, "case" 1, "zero" 1;
-	;
 	font-variation-settings: normal;
 	font-optical-sizing: auto;
+	@apply bg-white text-neutral-900 transition-all dark:bg-neutral-950 dark:text-neutral-100;
 }
 
 table {

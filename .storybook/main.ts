@@ -2,14 +2,13 @@ import type { StorybookConfig } from "@storybook/sveltekit"
 
 const config: StorybookConfig = {
 	stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|ts|svelte)"],
-	addons: ["@storybook/addon-svelte-csf"],
+	addons: ["@storybook/addon-svelte-csf", "@storybook/addon-themes"],
 	framework: {
 		name: "@storybook/sveltekit",
 		options: {}
 	},
 	typescript: {
 		check: false,
-		reactDocgen: false
 	},
 	viteFinal: async (config) => {
 		config.optimizeDeps = config.optimizeDeps || {}
