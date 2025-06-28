@@ -1,39 +1,47 @@
 <script lang="ts">
 	import { Avatar } from "bits-ui"
+	import { cva } from "cva"
+	import { fade } from "svelte/transition"
+	import initials from "$lib/utils/initials"
 
 	interface Props {
+		displayName: string
 		src?: string
-		alt?: string
-		fallback?: string
-		size?: "sm" | "md" | "lg"
+		size?: "sm" | "md" | "lg" | "display"
 		delayMs?: number
 	}
 
-	let {
-		src = "https://images.unsplash.com/photo-1747077560968-aa04de91d6f4?q=80&w=2487&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-		alt = "@huntabyte",
-		fallback = "HB",
-		size = "md",
-		delayMs = 200
-	}: Props = $props()
+	let { src, displayName, size = "md", delayMs = 0 }: Props = $props()
 
-	const sizeClasses = {
-		sm: "h-8 w-8 text-sm",
-		md: "h-12 w-12 text-[17px]",
-		lg: "h-16 w-16 text-xl"
-	}
+	let alt = `Avatar for ${displayName}`
+
+	const rootStyle = cva(
+		"flex items-center justify-center transition-all overflow-hidden rounded-full",
+		{
+			variants: {
+				size: {
+					sm: "h-8 w-8 text-sm",
+					md: "h-12 w-12 text-[17px]",
+					lg: "h-16 w-16 text-xl",
+					display: "h-96 w-96 text-3xl"
+				}
+			},
+			defaultVariants: {
+				size: "md"
+			}
+		}
+	)
+
+	const fallbackStyle = cva([
+		"flex h-full w-full items-center justify-center rounded-full font-medium text-neutral-800 dark:text-neutral-200",
+		"bg-gradient-to-t from-neutral-200 to-neutral-100 shadow-inner shadow-neutral-200",
+		"dark:from-neutral-800 dark:to-neutral-700 dark:shadow-inner dark:shadow-neutral-800"
+	])
 </script>
 
-<Avatar.Root
-	{delayMs}
-	class="data-[status=loaded]:border-foreground bg-muted text-muted-foreground {sizeClasses[
-		size
-	]} rounded-full border font-medium uppercase data-[status=loading]:border-transparent"
->
-	<div
-		class="flex h-full w-full items-center justify-center overflow-hidden rounded-full border-2 border-transparent"
-	>
-		<Avatar.Image {src} {alt} />
-		<Avatar.Fallback class="border-muted border">{fallback}</Avatar.Fallback>
-	</div>
+<Avatar.Root class={rootStyle({ size })} {delayMs}>
+	<Avatar.Image {src} {alt} class="h-full w-full object-cover" />
+	<Avatar.Fallback class={fallbackStyle()}>
+		{size == "display" ? displayName : initials(displayName)}
+	</Avatar.Fallback>
 </Avatar.Root>
