@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.45.3",
+    "@storybook/addon-a11y": "^9.0.14",
     "@storybook/addon-svelte-csf": "^5.0.4",
     "@storybook/addon-themes": "^9.0.14",
     "@storybook/sveltekit": "^9.0.14",
