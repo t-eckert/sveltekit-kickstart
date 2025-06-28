@@ -18,3 +18,5 @@
 </script>
 
 <Story name="Badge" args={{text: "Badge Text"}} />
+
+<Story name="Long Text Badge" args={{text: "This is a very long badge text that will be truncated and show a tooltip on hover"}} />

@@ -50,6 +50,6 @@
 	)
 </script>
 
-<span class={badgeStyle({ color })}>
+<span class={badgeStyle({ color })} title={text.length > 20 ? text : undefined}>
 	{abridgedText}
 </span>
