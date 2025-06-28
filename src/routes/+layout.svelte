@@ -1,6 +1,5 @@
 <script lang="ts">
 	import "@fontsource/libre-caslon-text"
-	import "@fontsource-variable/inter"
 	import "@fontsource-variable/jetbrains-mono"
 	import { type LayoutProps } from "./$types"
 
