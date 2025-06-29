@@ -1,22 +1,20 @@
 <script module>
 	import { defineMeta } from "@storybook/addon-svelte-csf"
-	import Dashboard from "./dashboard.svelte"
+	import ShoppingPage from "./shopping-page.svelte"
 
 	const { Story } = defineMeta({
-		title: "Layouts/Dashboard",
+		title: "Examples/Shopping Page",
 		tags: ["autodocs"],
-		component: Dashboard,
-		argTypes: {
-			message: { control: "text" }
-		},
+		component: ShoppingPage,
 		parameters: {
 			docs: {
 				description: {
 					component: ""
 				}
-			}
+			},
+			layout: "fullscreen"
 		}
 	})
 </script>
 
-<Story name="Dashboard" />
+<Story name="Shopping Page" />

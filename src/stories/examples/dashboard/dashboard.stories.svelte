@@ -1,11 +1,14 @@
 <script module>
 	import { defineMeta } from "@storybook/addon-svelte-csf"
-	import ShoppingPage from "./shopping-page.svelte"
+	import Dashboard from "./dashboard.svelte"
 
 	const { Story } = defineMeta({
-		title: "Layouts/Shopping Page",
+		title: "Examples/Dashboard",
 		tags: ["autodocs"],
-		component: ShoppingPage,
+		component: Dashboard,
+		argTypes: {
+			message: { control: "text" }
+		},
 		parameters: {
 			docs: {
 				description: {
@@ -16,4 +19,4 @@
 	})
 </script>
 
-<Story name="Shopping Page" />
+<Story name="Dashboard" />
