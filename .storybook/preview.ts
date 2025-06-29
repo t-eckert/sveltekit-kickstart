@@ -11,17 +11,17 @@ const preview: Preview = {
 				date: /Date$/i
 			}
 		},
-		backgrounds: { disable: true },
+		backgrounds: { disable: true }
 	},
 	decorators: [
 		withThemeByDataAttribute<SvelteRenderer>({
 			themes: {
-				light: 'light',
-				dark: 'dark',
+				light: "light",
+				dark: "dark"
 			},
-			defaultTheme: 'light',
-			attributeName: 'data-theme',
-		}),
+			defaultTheme: "light",
+			attributeName: "data-theme"
+		})
 	]
 }
 

@@ -8,7 +8,7 @@ const config: StorybookConfig = {
 		options: {}
 	},
 	typescript: {
-		check: false,
+		check: false
 	},
 	viteFinal: async (config) => {
 		config.optimizeDeps = config.optimizeDeps || {}
