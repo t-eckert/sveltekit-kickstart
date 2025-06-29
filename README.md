@@ -20,17 +20,71 @@ I've also formatted this project for AI-based development with Claude. This incl
 
 ## Features
 
+### Pre-built Components
+
+Using [Bits UI](https://www.bits-ui.com/) as a foundation, this project offers 
+
+- [Accordion](./src/lib/components/accordion/accordion.svelte)
+- [Article]
+- Avatar
+- Avatar Group
+- Badge
+- Breadcrumb
+- Button
+- Card
+- Carousel
+- Checkbox
+- Codeblock
+- Dropdown Menu
+- Email
+- Empty State
+- Error
+- Filedrop
+- Head
+- Image
+- Indicator
+- Input
+- Link Preview
+- Menubar
+- Meter
+- Modal
+- Money
+- Navigation Menu
+- Pagination
+- Panel
+- Popover
+- Progress Bar
+- Radio Group
+- Range Calculator
+- Relative Date
+- Scroll Area
+- Select
+- Sidebar
+- Slider
+- Switch
+- Tabs
+- Time Field
+- Time Range Field
+- Toggle
+- Toggle Group
+- Toolbar
+- Tooltip
+- Window
+
+
 ### Tailwind CSS 4 and Class Variance Authority
 
 Already configured for using Tailwind out of the box with `dark:` set up for dark theming. Includes the Prettier config to consistently order Tailwind classes. Uses Class Variance Authority to manage complex variants (e.g. different button styling)
-
-### Styled Elements
 
 ### Taskfile
 
 ### Phosphor Icons
 
-### Vitest
+An icon library using [Phosphor Icons](https://phosphoricons.com/).
+
+### Testing
+
+Configured unit testing with Vitest.
 
 ### Open Graph Config and OG Image Generator
 
@@ -69,8 +123,6 @@ Using the Libsql edge DB, this key-value store provides a great way to s
 Built using [Svelte Sonner](https://github.com/wobsoriano/svelte-sonner)
 
 ### Light/Dark Theming
-
-## Components
 
 ## Opinions
 

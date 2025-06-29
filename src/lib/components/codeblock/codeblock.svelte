@@ -18,7 +18,7 @@
 
 <div class="relative w-full rounded bg-neutral-900 p-1 outline-1 outline-neutral-800">
 	<div class="absolute top-1 right-1 z-10">
-		<Button role="primary" {onclick}><Clipboard /></Button>
+		<Button role="primary" shape="square" {onclick}><Clipboard /></Button>
 	</div>
 	<div class="rounded text-sm">
 		{@html html}

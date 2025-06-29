@@ -9,6 +9,11 @@ const routes: Route[] = [
 		name: "About",
 		path: "/about",
 		level: 1
+	},
+	{
+		name: "Sign In",
+		path: "/auth/sign-in",
+		level: 1
 	}
 ]
 

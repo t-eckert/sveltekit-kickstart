@@ -4,7 +4,7 @@
 </script>
 
 <nav>
-	<ul>
+	<ul class="flex flex-row items-center">
 		{#each routes as route}
 			<li>
 				<Button href={route.path} role="tertiary"
