@@ -1,39 +1,56 @@
 <script lang="ts">
-	import { Pagination } from "bits-ui"
 	import CaretLeft from "phosphor-svelte/lib/CaretLeft"
 	import CaretRight from "phosphor-svelte/lib/CaretRight"
+	import Button from "$lib/components/button/button.svelte"
+	import { fly } from "svelte/transition"
+
+	interface Props {
+		currentPage: number
+		pageLink: (page: number) => string
+		totalPages: number
+	}
+
+	let { currentPage, pageLink, totalPages }: Props = $props()
+
+	let pages = Array.from({ length: totalPages }, (_, i) => i + 1)
 </script>
 
-<Pagination.Root count={100} perPage={10}>
-	{#snippet children({ pages, range })}
-		<div class="my-8 flex items-center">
-			<Pagination.PrevButton
-				class="hover:bg-dark-10 disabled:text-muted-foreground mr-[25px] inline-flex size-10 items-center justify-center rounded-[9px] bg-transparent active:scale-[0.98] disabled:cursor-not-allowed hover:disabled:bg-transparent"
-			>
-				<CaretLeft class="size-6" />
-			</Pagination.PrevButton>
-			<div class="flex items-center gap-2.5">
-				{#each pages as page (page.key)}
-					{#if page.type === "ellipsis"}
-						<div class="text-foreground-alt text-[15px] font-medium select-none">...</div>
-					{:else}
-						<Pagination.Page
-							{page}
-							class="hover:bg-dark-10 data-selected:bg-foreground data-selected:text-background inline-flex size-10 items-center justify-center rounded-[9px] bg-transparent text-[15px] font-medium select-none active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50 hover:disabled:bg-transparent"
-						>
-							{page.value}
-						</Pagination.Page>
-					{/if}
-				{/each}
-			</div>
-			<Pagination.NextButton
-				class="hover:bg-dark-10 disabled:text-muted-foreground ml-[29px] inline-flex size-10 items-center justify-center rounded-[9px] bg-transparent active:scale-[0.98] disabled:cursor-not-allowed hover:disabled:bg-transparent"
-			>
-				<CaretRight class="size-6" />
-			</Pagination.NextButton>
+<ul class="flex w-full items-center transition-all">
+	<div class="flex w-full flex-row">
+		<div class="flex flex-1 flex-row justify-end">
+			{#if currentPage !== 1}
+				<li transition:fly={{ y: 20 }}>
+					<Button shape="square" href={pageLink(currentPage - 1)} role="tertiary">
+						<CaretLeft class="size-4.5" />
+					</Button>
+				</li>
+			{/if}
 		</div>
-		<p class="text-muted-foreground text-center text-[13px]">
-			Showing {range.start} - {range.end}
-		</p>
-	{/snippet}
-</Pagination.Root>
+
+		<div class="flex flex-row gap-1">
+			{#each pages as pageNumber}
+				<li>
+					<Button
+						shape="square"
+						href={pageLink(1)}
+						role={currentPage === pageNumber ? "secondary" : "tertiary"}
+					>
+						<span class="flex aspect-square size-4.5 items-center justify-center text-sm"
+							>{pageNumber}</span
+						>
+					</Button>
+				</li>
+			{/each}
+		</div>
+
+		<div class="flex flex-1 flex-row justify-start">
+			{#if currentPage !== totalPages}
+				<li transition:fly={{ y: 20 }}>
+					<Button shape="square" href={pageLink(currentPage + 1)} role="tertiary">
+						<CaretRight class="size-4.5" />
+					</Button>
+				</li>
+			{/if}
+		</div>
+	</div>
+</ul>

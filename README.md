@@ -81,3 +81,7 @@ Built using [Svelte Sonner](https://github.com/wobsoriano/svelte-sonner)
 - https://svelteflow.dev/
 - https://github.com/beyonk-group/svelte-mapbox
 - https://threlte.xyz/
+
+## Helpful Links
+
+- [Icons](https://phosphoricons.com/): Full, searchable listing of icons in the icons library.
