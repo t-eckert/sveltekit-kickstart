@@ -10,3 +10,11 @@
 		argTypes: {}
 	})
 </script>
+
+<Story
+	name="Error"
+	args={{
+		status: 404,
+		message: "Not Found"
+	}}
+/>

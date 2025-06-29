@@ -7,30 +7,34 @@
 
 	interface Props {
 		status: number
-		error: Error | null
+		message: string
 	}
 
-	const { status, error }: Props = $props()
+	const { status, message }: Props = $props()
 </script>
 
-<Panel>
-	{#snippet bar()}<PanelBar title="Error" tone="negative" />{/snippet}
-	{#snippet body()}
-		<PanelBody>
-			<div class="flex min-w-80 flex-col items-start select-none">
-				<div class="font-mono text-6xl">{status}</div>
-				<div>
-					{error?.message}
+<div class="w-full max-w-xs">
+	<Panel>
+		{#snippet bar()}<PanelBar title="Error" tone="negative" />{/snippet}
+		{#snippet body()}
+			<PanelBody>
+				<div class="flex min-w-80 flex-col items-start gap-1">
+					<div class="text-6xl font-semibold">{status}</div>
+					<div>
+						{message}
+					</div>
 				</div>
-			</div>
-		</PanelBody>
-	{/snippet}
-	{#snippet actions()}
-		<PanelActions>
-			<Button href="/"><span class="text-xs font-medium">Return home</span></Button>
-			<Button role="tertiary" href="/feedback">
-				<span class="text-xs font-medium"> Give feedback </span>
-			</Button>
-		</PanelActions>
-	{/snippet}
-</Panel>
+			</PanelBody>
+		{/snippet}
+		{#snippet actions()}
+			<PanelActions>
+				<Button href="/">
+					<span class="text-xs font-medium">Return home</span>
+				</Button>
+				<Button role="tertiary" href="/feedback">
+					<span class="text-xs font-medium">Give feedback</span>
+				</Button>
+			</PanelActions>
+		{/snippet}
+	</Panel>
+</div>
