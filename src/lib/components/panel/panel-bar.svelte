@@ -10,12 +10,13 @@
 
 	let { title, tone = "neutral" }: Props = $props()
 
-	const bar = cva("w-full px-3 py-0.5 rounded-t-sm border-b", {
+	const bar = cva("w-full px-3 py-0.5 rounded-t border border-collapse", {
 		variants: {
 			tone: {
-				neutral: "bg-neutral-50 text-stone-800 dark:text-zinc-200 border-b-stone-100",
+				neutral: "text-neutral-800 dark:text-zinc-200 border-b-stone-100",
 				positive: "bg-emerald-200 border-b-emerald-300",
-				negative: "bg-red-50 text-red-600 dark:bg-red-600 dark:text-red-200 border-b-red-100"
+				negative:
+					"bg-rose-100 text-rose-600 shadow-inner shadow-rose-50 dark:bg-rose-600 dark:text-rose-200 border-rose-100"
 			}
 		}
 	})
