@@ -16,4 +16,4 @@
 	})
 </script>
 
-<Story name="Email" args={{addr: "Dina.Rochino@gmail.com"}} />
+<Story name="Email" args={{ addr: "Dina.Rochino@gmail.com" }} />
