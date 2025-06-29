@@ -9,6 +9,7 @@
 	import ThemeProvider from "$lib/theme/theme-provider.svelte"
 	import Header from "./header.svelte"
 	import Footer from "./footer.svelte"
+	import SkipToContent from "$lib/utils/components/skip-to-content.svelte"
 
 	let { children, data }: LayoutProps = $props()
 </script>
@@ -21,8 +22,9 @@
 />
 
 <div class="min-h-screen">
+	<SkipToContent />
 	<Header />
-	<main class="mx-auto w-full max-w-7xl px-4">
+	<main class="mx-auto w-full max-w-7xl px-4" id="main-content">
 		{@render children()}
 	</main>
 </div>
