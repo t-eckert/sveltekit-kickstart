@@ -78,12 +78,12 @@
 				<div class="font-semibold">Headings</div>
 				<div class="text-neutral-500">Inter Sans Serif</div>
 			</div>
-			<H1 fontStyle="sans">Heading 1</H1>
-			<H2 fontStyle="sans">Heading 2</H2>
-			<H3 fontStyle="sans">Heading 3</H3>
-			<H4 fontStyle="sans">Heading 4</H4>
-			<H5 fontStyle="sans">Heading 5</H5>
-			<H6 fontStyle="sans">Heading 6</H6>
+			<H1 text="Heading 1" fontStyle="sans" />
+			<H2 text="Heading 2" fontStyle="sans" />
+			<H3 text="Heading 3" fontStyle="sans" />
+			<H4 text="Heading 4" fontStyle="sans" />
+			<H5 text="Heading 5" fontStyle="sans" />
+			<H6 text="Heading 6" fontStyle="sans" />
 		</div>
 
 		<div
@@ -93,12 +93,12 @@
 				<div class="font-semibold">Headings</div>
 				<div class="text-neutral-500">Caslon Libre Serif</div>
 			</div>
-			<H1 fontStyle="serif">Heading 1</H1>
-			<H2 fontStyle="serif">Heading 2</H2>
-			<H3 fontStyle="serif">Heading 3</H3>
-			<H4 fontStyle="serif">Heading 4</H4>
-			<H5 fontStyle="serif">Heading 5</H5>
-			<H6 fontStyle="serif">Heading 6</H6>
+			<H1 text="Heading 1" fontStyle="serif" />
+			<H2 text="Heading 2" fontStyle="serif" />
+			<H3 text="Heading 3" fontStyle="serif" />
+			<H4 text="Heading 4" fontStyle="serif" />
+			<H5 text="Heading 5" fontStyle="serif" />
+			<H6 text="Heading 6" fontStyle="serif" />
 		</div>
 
 		<div
@@ -108,12 +108,12 @@
 				<div class="font-semibold">Headings</div>
 				<div class="text-neutral-500">Jetbrains Mono</div>
 			</div>
-			<H1 fontStyle="mono">Heading 1</H1>
-			<H2 fontStyle="mono">Heading 2</H2>
-			<H3 fontStyle="mono">Heading 3</H3>
-			<H4 fontStyle="mono">Heading 4</H4>
-			<H5 fontStyle="mono">Heading 5</H5>
-			<H6 fontStyle="mono">Heading 6</H6>
+			<H1 text="Heading 1" fontStyle="mono" />
+			<H2 text="Heading 2" fontStyle="mono" />
+			<H3 text="Heading 3" fontStyle="mono" />
+			<H4 text="Heading 4" fontStyle="mono" />
+			<H5 text="Heading 5" fontStyle="mono" />
+			<H6 text="Heading 6" fontStyle="mono" />
 		</div>
 	</div>
 

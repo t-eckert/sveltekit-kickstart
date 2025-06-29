@@ -44,11 +44,11 @@
 			This is my personal site starter template built with SvelteKit, Tailwind CSS, and TypeScript.
 		</P>
 
-		<H2>Features</H2>
+		<H2 text="Features" />
 
-		<H3>Tailwind CSS</H3>
+		<H3 text="Tailwind CSS" />
 
-		<H3>Phosphor Icons</H3>
+		<H3 text="Phosphor Icons" />
 
 		<P>Phosphor Icons are used throughout the site for consistent and modern iconography.</P>
 
@@ -63,7 +63,7 @@
 			</div>
 		</div>
 
-		<H3>Font Stack</H3>
+		<H3 text="Font Stack" />
 
 		<P>Inter Variable, JetBrains Mono, and Caslon Libre.</P>
 
@@ -87,7 +87,7 @@
 			</div>
 		</div>
 
-		<H3>Light/Dark Theme</H3>
+		<H3 text="Light/Dark Theme" />
 
 		<P>The site supports light and dark themes, styled using Tailwind <code>dark:</code> classes.</P
 		>
@@ -96,27 +96,27 @@
 			<ThemeToggle />
 		</div>
 
-		<H2>Components</H2>
+		<H2 text="Components" />
 
-		<H3>Accordion</H3>
+		<H3 text="Accordion" />
 
 		<P>The Accordion component allows users to expand and collapse sections of content.</P>
 
 		<Accordion items={[{ value: "1", title: "I have a secret.", content: "Hi" }]} />
 
-		<H3>Article</H3>
+		<H3 text="Article" />
 
 		<P>The Article component is used to wrap text content and provide consistent styling.</P>
 
-		<H3>Aspect Ratio</H3>
+		<H3 text="Aspect Ratio" />
 
 		<AspectRatio />
 
-		<H3>Avatar</H3>
+		<H3 text="Avatar" />
 
 		<Avatar />
 
-		<H3>Badge</H3>
+		<H3 text="Badge" />
 
 		<div class="flex w-full items-center justify-center">
 			<div class="grid grid-cols-3 justify-items-center gap-2">
@@ -132,7 +132,7 @@
 			</div>
 		</div>
 
-		<H3>Button</H3>
+		<H3 text="Button" />
 
 		<div class="flex w-full items-center justify-center">
 			<div class="grid grid-cols-3 justify-items-center gap-2">
@@ -186,11 +186,11 @@
 			</div>
 		</div>
 
-		<H3>Calendar</H3>
+		<H3 text="Calendar" />
 
 		<Calendar />
 
-		<H3>Card</H3>
+		<H3 text="Card" />
 
 		<div class="flex w-full items-center justify-center">
 			<div class="w-full max-w-xs">
@@ -200,7 +200,7 @@
 							src="https://images.unsplash.com/photo-1734607947797-2a61b996fd5d?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 							alt="Mountains"
 						/>
-						<H1>Card Example</H1>
+						<H1 text="Card Example" />
 						<P>
 							This is a Card component. It can be used to display content in a visually appealing
 							way.
@@ -210,17 +210,17 @@
 			</div>
 		</div>
 
-		<H3>Checkbox</H3>
+		<H3 text="Checkbox" />
 
 		<Checkbox />
 
-		<H3>Error</H3>
+		<H3 text="Error" />
 
 		<div class="flex w-full items-center justify-center">
 			<Error status={404} />
 		</div>
 
-		<H3>Filedrop</H3>
+		<H3 text="Filedrop" />
 
 		<P>The Filedrop component allows a user to drag and drop files.</P>
 
@@ -230,11 +230,11 @@
 			</div>
 		</div>
 
-		<H3>Form</H3>
+		<H3 text="Form" />
 
-		<H3>Head</H3>
+		<H3 text="Head" />
 
-		<H3>Indicator</H3>
+		<H3 text="Indicator" />
 
 		<div class="flex w-full flex-col items-start justify-center gap-2">
 			<Indicator color="green" message="Connected" />
@@ -245,19 +245,19 @@
 			<Indicator color="gray" message="System offline" pulse={false} />
 		</div>
 
-		<H3>Input</H3>
+		<H3 text="Input" />
 
 		<div class="flex w-full items-center justify-center">
 			<Input name="Name" placeholder="Enter your full name" />
 		</div>
 
-		<H3>Modal</H3>
+		<H3 text="Modal" />
 
 		<Modal></Modal>
 
-		<H3>Panel</H3>
+		<H3 text="Panel" />
 
-		<H3>Window</H3>
+		<H3 text="Window" />
 
 		<Window background="bg-gradient-tr from-amber-100 via-cyan-100 to-purple-100">
 			<div class="flex h-full w-full flex-col">
@@ -278,7 +278,7 @@
 						</div>
 					</div>
 					<div class="max-w-md">
-						<H1>The Humpback Whale</H1>
+						<H1 text="The Humpback Whale" />
 						<P>
 							The humpback whale is a species of baleen whale known for its long pectoral fins and
 							complex songs. They are found in oceans worldwide and are known for their acrobatic
@@ -289,9 +289,9 @@
 			</div>
 		</Window>
 
-		<H2>Utilities</H2>
+		<H2 text="Utilities" />
 
-		<H3>JSON Display</H3>
+		<H3 text="JSON Display" />
 
 		<Json
 			props={{

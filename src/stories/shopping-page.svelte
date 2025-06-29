@@ -25,7 +25,7 @@
 				<span>Shop All Pants & Jeans</span>
 			</div>
 			<div class="flex w-full flex-row items-baseline justify-between">
-				<H1>The Easy Pant</H1>
+				<H1 text="The Easy Pant" />
 				<div>
 					<Money value={59.99} currency="USD" class="text-2xl text-neutral-700" />
 				</div>
