@@ -18,7 +18,7 @@
 			},
 			shape: {
 				control: { type: "select" },
-				options: ["rectangle", "circle"]
+				options: ["rectangle", "circle", "square", "rounded"]
 			},
 			disabled: { control: "boolean" },
 			href: { control: "text" },
