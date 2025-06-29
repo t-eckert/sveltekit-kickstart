@@ -1,13 +1,28 @@
 <script lang="ts">
 	import { type Snippet } from "svelte"
+	import { cva } from "cva"
 
 	type Props = {
 		children: Snippet
+		fontStyle?: "sans" | "serif" | "mono"
 	}
 
-	const { children }: Props = $props()
+	const { children, fontStyle = "sans" }: Props = $props()
+
+	const style = cva(["text-3xl text-neutral-900 dark:text-neutral-100"], {
+		variants: {
+			fontStyle: {
+				sans: ["font-sans", "font-bold", "tracking-normal"],
+				serif: ["font-serif", "font-bold", "tracking-tight"],
+				mono: ["font-mono", "font-bold", "tracking-tighter"]
+			}
+		},
+		defaultVariants: {
+			fontStyle: "sans"
+		}
+	})
 </script>
 
-<h1 class="text-3xl font-semibold tracking-tight text-neutral-900 dark:text-white">
+<h1 class={style({ fontStyle })}>
 	{@render children()}
 </h1>

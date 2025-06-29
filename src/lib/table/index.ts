@@ -1,7 +1,4 @@
 export { default as Table } from "./table.svelte"
-export { default as Caption } from "./caption.svelte"
-export { default as Col } from "./col.svelte"
-export { default as Colgroup } from "./colgroup.svelte"
 export { default as Tbody } from "./tbody.svelte"
 export { default as Td } from "./td.svelte"
 export { default as Tfoot } from "./tfoot.svelte"

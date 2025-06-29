@@ -4,19 +4,25 @@
 
 	type Props = {
 		children: Snippet
+		fontStyle?: "sans" | "serif" | "mono"
 	}
 
-	const { children }: Props = $props()
+	const { children, fontStyle = "sans" }: Props = $props()
 
-	const style = cva([
-		"text-9xl",
-		"font-bold",
-		"tracking-tight",
-		"text-neutral-800",
-		"dark:text-neutral-100"
-	])
+	const style = cva(["text-3xl", "sm:text-9xl", "text-neutral-800", "dark:text-neutral-100"], {
+		variants: {
+			fontStyle: {
+				sans: ["font-sans", "font-bold", "tracking-tight", "sm:leading-28"],
+				serif: ["font-serif", "font-bold", "tracking-normal"],
+				mono: ["font-mono", "font-semibold", "tracking-tighter", "sm:leading-28"]
+			}
+		},
+		defaultVariants: {
+			fontStyle: "sans"
+		}
+	})
 </script>
 
-<span class={style()}>
+<span aria-label="subtitle" class={style({ fontStyle })}>
 	{@render children()}
 </span>

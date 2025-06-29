@@ -18,11 +18,19 @@
 	})
 </script>
 
-<Story name="Basic Badge" args={{text: "Badge Text"}} />
+<Story name="Basic Badge" args={{ text: "Badge Text" }} />
 
-<Story name="Long Text Badge" args={{text: "This is a very long badge text that will be truncated and show a tooltip on hover"}} />
+<Story
+	name="Long Text Badge"
+	args={{
+		text: "This is a very long badge text that will be truncated and show a tooltip on hover"
+	}}
+/>
 
-<Story name="Custom Truncation" args={{text: "This text will be truncated at 15 characters", maxLength: 15}} />
+<Story
+	name="Custom Truncation"
+	args={{ text: "This text will be truncated at 15 characters", maxLength: 15 }}
+/>
 
 <Story name="With Icon">
 	<Badge text="Favorite">
@@ -33,11 +41,17 @@
 </Story>
 
 <Story name="Removable Badge">
-	<Badge text="Removable" removable={true} onRemove={() => alert('Badge removed!')} />
+	<Badge text="Removable" removable={true} onRemove={() => alert("Badge removed!")} />
 </Story>
 
 <Story name="All Features">
-	<Badge text="Premium User Account" color="green" removable={true} maxLength={12} onRemove={() => alert('Removed!')}>
+	<Badge
+		text="Premium User Account"
+		color="green"
+		removable={true}
+		maxLength={12}
+		onRemove={() => alert("Removed!")}
+	>
 		{#snippet icon()}
 			<CheckCircle class="h-3 w-3" />
 		{/snippet}

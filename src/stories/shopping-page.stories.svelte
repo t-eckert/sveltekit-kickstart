@@ -1,4 +1,3 @@
-
 <script module>
 	import { defineMeta } from "@storybook/addon-svelte-csf"
 	import ShoppingPage from "./shopping-page.svelte"
