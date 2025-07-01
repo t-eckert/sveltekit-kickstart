@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Snippet } from "svelte"
+	import { cn } from "$lib/utils"
 	import buttonStyle from "./button-style"
 
 	type Role = "primary" | "secondary" | "tertiary"
@@ -22,6 +23,7 @@
 		ariaDescribedBy?: string
 		ariaExpanded?: boolean
 		ariaPressed?: boolean
+		class?: string
 	}
 
 	const {
@@ -39,13 +41,14 @@
 		ariaLabel,
 		ariaDescribedBy,
 		ariaExpanded,
-		ariaPressed
+		ariaPressed,
+		class: className
 	}: Props = $props()
 </script>
 
 {#if href}
 	<a
-		class={buttonStyle({ role, tone, shape })}
+		class={cn(buttonStyle({ role, tone, shape }), className)}
 		{href}
 		aria-label={ariaLabel}
 		aria-describedby={ariaDescribedBy}
@@ -58,7 +61,7 @@
 	</a>
 {:else}
 	<button
-		class={buttonStyle({ role, tone, shape })}
+		class={cn(buttonStyle({ role, tone, shape }), className)}
 		{type}
 		{onclick}
 		{disabled}

@@ -12,6 +12,72 @@ npx degit t-eckert/sveltekit-kickstart {project-name}
 
 This will copy down the repository without the Git history.
 
+## Environment Setup
+
+### 1. Environment Variables
+
+Copy the example environment file and configure it for your needs:
+
+```shell
+cp .env.example .env
+```
+
+The only required environment variable is:
+- `DATABASE_URL`: Path to your SQLite database file (e.g., `file:local.db`)
+
+### 2. Database Setup
+
+Initialize your database with the schema:
+
+```shell
+# Install dependencies
+npm install
+
+# Generate and run database migrations
+npm run db:push
+
+# Optional: Open Drizzle Studio to view your database
+npm run db:studio
+```
+
+### 3. Development
+
+Start the development server:
+
+```shell
+npm run dev
+```
+
+### 4. Authentication Setup
+
+The application includes a complete authentication system with:
+- User registration at `/auth/register`
+- User login at `/auth/login`
+- Session management with secure cookies
+- Password hashing using Argon2
+- Audit logging for security events
+
+Create your first user by visiting `/auth/register` and then log in at `/auth/login`.
+
+### 5. Admin Features
+
+Once logged in, you can access admin features at:
+- `/admin` - Admin dashboard
+- `/admin/users` - User management
+- `/admin/audit` - Audit log viewer
+- `/admin/kv` - Key-value store management
+
+### Production Deployment
+
+For production deployments:
+
+1. Set `DATABASE_URL` to your production database (e.g., Turso LibSQL URL)
+2. Configure additional environment variables as needed
+3. Run the build command: `npm run build`
+4. Use the production server: `npm run preview`
+
+See `.env.example` for all available configuration options.
+
 ## Why
 
 I have built several SvelteKit sites. I love the framework and I can work very quickly in it, but I found myself rewriting a lot of the same functionality with each new site. This starter kit allows me to solve all the repetitive and difficult problems once and build from there.

@@ -6,6 +6,11 @@ export type Route = {
 
 const routes: Route[] = [
 	{
+		name: "Feedback",
+		path: "/feedback",
+		level: 1
+	},
+	{
 		name: "About",
 		path: "/about",
 		level: 1

@@ -1,12 +1,12 @@
 import { describe, it, expect, vi } from "vitest"
 import { render, fireEvent } from "@testing-library/svelte"
-import Button from "./button.svelte"
+import ButtonTestWrapper from "./button-test-wrapper.svelte"
 
 describe("Button Component", () => {
 	it("renders button with children content", () => {
-		const { getByRole } = render(Button, {
+		const { getByRole } = render(ButtonTestWrapper, {
 			props: {
-				children: () => "Click me"
+				text: "Click me"
 			}
 		})
 
@@ -16,9 +16,9 @@ describe("Button Component", () => {
 	})
 
 	it("applies correct default attributes", () => {
-		const { getByRole } = render(Button, {
+		const { getByRole } = render(ButtonTestWrapper, {
 			props: {
-				children: () => "Test"
+				text: "Test"
 			}
 		})
 
@@ -28,9 +28,9 @@ describe("Button Component", () => {
 	})
 
 	it("handles disabled state correctly", () => {
-		const { getByRole } = render(Button, {
+		const { getByRole } = render(ButtonTestWrapper, {
 			props: {
-				children: () => "Test",
+				text: "Test",
 				disabled: true
 			}
 		})
@@ -41,9 +41,9 @@ describe("Button Component", () => {
 
 	it("calls onclick handler when clicked", async () => {
 		const mockClick = vi.fn()
-		const { getByRole } = render(Button, {
+		const { getByRole } = render(ButtonTestWrapper, {
 			props: {
-				children: () => "Test",
+				text: "Test",
 				onclick: mockClick
 			}
 		})
@@ -54,9 +54,9 @@ describe("Button Component", () => {
 	})
 
 	it("renders as link when href is provided", () => {
-		const { getByRole } = render(Button, {
+		const { getByRole } = render(ButtonTestWrapper, {
 			props: {
-				children: () => "Link",
+				text: "Link",
 				href: "/test"
 			}
 		})
@@ -67,9 +67,9 @@ describe("Button Component", () => {
 	})
 
 	it("applies accessibility attributes correctly", () => {
-		const { getByRole } = render(Button, {
+		const { getByRole } = render(ButtonTestWrapper, {
 			props: {
-				children: () => "Test",
+				text: "Test",
 				ariaLabel: "Custom label",
 				ariaDescribedBy: "help-text",
 				ariaExpanded: true
@@ -83,9 +83,9 @@ describe("Button Component", () => {
 	})
 
 	it("supports different button types", () => {
-		const { getByRole } = render(Button, {
+		const { getByRole } = render(ButtonTestWrapper, {
 			props: {
-				children: () => "Submit",
+				text: "Submit",
 				type: "submit"
 			}
 		})
@@ -95,9 +95,9 @@ describe("Button Component", () => {
 	})
 
 	it("includes form attributes when provided", () => {
-		const { getByRole } = render(Button, {
+		const { getByRole } = render(ButtonTestWrapper, {
 			props: {
-				children: () => "Test",
+				text: "Test",
 				name: "test-button",
 				value: "test-value",
 				formaction: "/submit"

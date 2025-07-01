@@ -1,6 +1,7 @@
 import { db } from "./db"
 import { auditLog } from "./db/schema"
 import type { AuditLog } from "./db/schema"
+import { eq, and } from "drizzle-orm"
 
 export interface AuditLogEntry {
 	userId?: string
@@ -48,7 +49,7 @@ export async function getAuditLogsByUser(userId: string, limit: number = 50): Pr
 		return await db
 			.select()
 			.from(auditLog)
-			.where(auditLog.userId === userId)
+			.where(eq(auditLog.userId, userId))
 			.orderBy(auditLog.createdAt)
 			.limit(limit)
 	} catch (error) {
@@ -59,16 +60,16 @@ export async function getAuditLogsByUser(userId: string, limit: number = 50): Pr
 
 export async function getAuditLogsByResource(resource: string, resourceId?: string, limit: number = 50): Promise<AuditLog[]> {
 	try {
-		let query = db
-			.select()
-			.from(auditLog)
-			.where(auditLog.resource === resource)
-
+		const conditions = [eq(auditLog.resource, resource)]
+		
 		if (resourceId) {
-			query = query.where(auditLog.resourceId === resourceId)
+			conditions.push(eq(auditLog.resourceId, resourceId))
 		}
 
-		return await query
+		return await db
+			.select()
+			.from(auditLog)
+			.where(and(...conditions))
 			.orderBy(auditLog.createdAt)
 			.limit(limit)
 	} catch (error) {
