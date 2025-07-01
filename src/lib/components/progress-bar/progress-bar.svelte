@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Progress, useId } from "bits-ui"
+	import { cn } from "$lib/utils"
 
 	interface Props {
 		value?: number
@@ -8,6 +9,7 @@
 		showPercentage?: boolean
 		animated?: boolean
 		width?: string
+		class?: string
 	}
 
 	let {
@@ -16,14 +18,15 @@
 		label = "Progress",
 		showPercentage = true,
 		animated = false,
-		width = "100%"
+		width = "100%",
+		class: className
 	}: Props = $props()
 
 	const labelId = useId()
 	const percentage = Math.round((value / max) * 100)
 </script>
 
-<div class="flex flex-col gap-2" style="width: {width}">
+<div class={cn("flex flex-col gap-2", className)} style="width: {width}">
 	<div class="flex items-center justify-between text-sm font-medium">
 		<span id={labelId}>{label}</span>
 		{#if showPercentage}

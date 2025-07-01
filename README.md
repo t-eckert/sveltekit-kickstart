@@ -48,7 +48,15 @@ Start the development server:
 npm run dev
 ```
 
-### 4. Authentication Setup
+### 4. Customize for Your Project
+
+**Remove the Splash Component**: The home page (`/`) includes a splash component showcasing the starter kit. To build your own site:
+
+1. Edit `src/routes/+page.svelte` to remove the `<Splash />` component
+2. Optionally delete `src/lib/components/splash/` directory
+3. Build your own home page content
+
+### 5. Authentication Setup
 
 The application includes a complete authentication system with:
 - User registration at `/auth/register`
@@ -59,7 +67,7 @@ The application includes a complete authentication system with:
 
 Create your first user by visiting `/auth/register` and then log in at `/auth/login`.
 
-### 5. Admin Features
+### 6. Admin Features
 
 Once logged in, you can access admin features at:
 - `/admin` - Admin dashboard
