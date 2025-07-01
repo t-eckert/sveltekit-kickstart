@@ -9,10 +9,7 @@
 
 	let { children, theme }: Props = $props()
 
-	let store = initThemeStore(theme)
+	initThemeStore(theme)
 </script>
 
-<div>Theme provider</div>
-<div>
-	{@render children()}
-</div>
+{@render children()}

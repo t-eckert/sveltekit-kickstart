@@ -100,7 +100,7 @@ describe("Button Component", () => {
 				children: () => "Test",
 				name: "test-button",
 				value: "test-value",
-				formAction: "/submit"
+				formaction: "/submit"
 			}
 		})
 

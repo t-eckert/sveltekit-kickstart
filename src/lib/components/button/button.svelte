@@ -16,7 +16,7 @@
 		disabled?: boolean
 		name?: string
 		value?: string | number | string[] | null | undefined
-		formAction?: string
+		formaction?: string
 		type?: "button" | "submit" | "reset"
 		ariaLabel?: string
 		ariaDescribedBy?: string
@@ -34,8 +34,8 @@
 		name,
 		value,
 		children,
-		formAction = "",
-		type = "button",
+		formaction = "",
+		type,
 		ariaLabel,
 		ariaDescribedBy,
 		ariaExpanded,
@@ -64,7 +64,7 @@
 		{disabled}
 		{name}
 		{value}
-		{formAction}
+		{formaction}
 		aria-label={ariaLabel}
 		aria-describedby={ariaDescribedBy}
 		aria-expanded={ariaExpanded}

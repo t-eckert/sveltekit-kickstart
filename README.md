@@ -78,6 +78,8 @@ Already configured for using Tailwind out of the box with `dark:` set up for dar
 
 ### Taskfile
 
+Common actions 
+
 ### Phosphor Icons
 
 An icon library using [Phosphor Icons](https://phosphoricons.com/).
@@ -91,8 +93,6 @@ Configured unit testing with Vitest.
 ### Bits UI
 
 Many of the components in this starter kit make use of [Bits UI](https://www.bits-ui.com/). It is a spectacular system for developing more complex components.
-
-### Clerk Auth
 
 ### User and Admin pages
 

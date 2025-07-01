@@ -8,6 +8,8 @@
 	let store = getThemeStore()
 
 	const submitUpdateTheme: SubmitFunction = async ({ action }) => {
+		console.log("submitUpdateTheme")
+		console.dir(action)
 		const theme = action.searchParams.get("theme")
 
 		if (theme) {
@@ -18,15 +20,15 @@
 
 <form method="POST" use:enhance={submitUpdateTheme}>
 	{#if store.theme === "dark"}
-		<Button shape="square" role="tertiary" formAction="/?/setTheme&theme=light">
+		<Button shape="square" role="tertiary" formaction="/?/setTheme&theme=light">
 			<Moon />
 		</Button>
 	{:else if store.theme === "light"}
-		<Button shape="square" role="tertiary" formAction="/?/setTheme&theme=dark">
+		<Button shape="square" role="tertiary" formaction="/?/setTheme&theme=dark">
 			<Sun />
 		</Button>
 	{:else if store.theme === "system"}
-		<Button shape="square" role="tertiary" formAction="/?/setTheme&theme=light">
+		<Button shape="square" role="tertiary" formaction="/?/setTheme&theme=light">
 			<Monitor />
 		</Button>
 	{/if}
