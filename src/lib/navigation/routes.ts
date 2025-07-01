@@ -11,8 +11,13 @@ const routes: Route[] = [
 		level: 1
 	},
 	{
-		name: "Sign In",
-		path: "/auth/sign-in",
+		name: "Login",
+		path: "/auth/login",
+		level: 1
+	},
+	{
+		name: "Admin",
+		path: "/admin",
 		level: 1
 	}
 ]

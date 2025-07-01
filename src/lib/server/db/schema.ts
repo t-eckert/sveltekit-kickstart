@@ -7,6 +7,8 @@ export const user = sqliteTable("user", {
 	passwordHash: text("password_hash").notNull()
 })
 
+export type User = typeof user.$inferSelect
+
 export const session = sqliteTable("session", {
 	id: text("id").primaryKey(),
 	userId: text("user_id")
@@ -17,4 +19,11 @@ export const session = sqliteTable("session", {
 
 export type Session = typeof session.$inferSelect
 
-export type User = typeof user.$inferSelect
+export const keyValue = sqliteTable("key_value", {
+	id: integer("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
+	key: text("key").notNull().unique(),
+	value: text("value").notNull()
+})
+
+export type KeyValue = typeof keyValue.$inferSelect
+

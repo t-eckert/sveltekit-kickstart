@@ -120,8 +120,6 @@ Using the Libsql edge DB, this key-value store provides a great way to s
 
 ### Toast
 
-Built using [Svelte Sonner](https://github.com/wobsoriano/svelte-sonner)
-
 ### Light/Dark Theming
 
 ## Opinions

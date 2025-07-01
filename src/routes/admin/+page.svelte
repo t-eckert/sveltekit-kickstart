@@ -6,5 +6,4 @@
 	let props: PageProps = $props()
 </script>
 
-<Json {props} />
 <Placeholder text="Admin" />
