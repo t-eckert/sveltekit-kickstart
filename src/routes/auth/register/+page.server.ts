@@ -9,6 +9,7 @@ import { eq } from "drizzle-orm"
 import * as auth from "$lib/server/auth"
 import { db } from "$lib/server/db"
 import * as table from "$lib/server/db/schema"
+import { logAuditEvent } from "$lib/server/audit"
 
 export const load: PageServerLoad = async ({ params, locals, fetch, route, request, cookies }) => {
 	// console.log("Params:", params)
@@ -48,10 +49,40 @@ export const actions: Actions = {
 		try {
 			await db.insert(table.user).values({ id: userId, username, passwordHash })
 
+			// Log successful registration
+			await logAuditEvent({
+				userId,
+				action: "REGISTER",
+				resource: "user",
+				resourceId: userId,
+				details: { username },
+				ipAddress: event.getClientAddress(),
+				userAgent: event.request.headers.get("user-agent") || undefined
+			})
+
 			const sessionToken = auth.generateSessionToken()
 			const session = await auth.createSession(sessionToken, userId)
 			auth.setSessionTokenCookie(event, sessionToken, session.expiresAt)
+
+			// Log successful login after registration
+			await logAuditEvent({
+				userId,
+				action: "LOGIN",
+				resource: "session",
+				resourceId: session.id,
+				details: { method: "registration" },
+				ipAddress: event.getClientAddress(),
+				userAgent: event.request.headers.get("user-agent") || undefined
+			})
 		} catch (e) {
+			// Log failed registration attempt
+			await logAuditEvent({
+				action: "REGISTER_FAILED",
+				resource: "user",
+				details: { username, error: "Database error" },
+				ipAddress: event.getClientAddress(),
+				userAgent: event.request.headers.get("user-agent") || undefined
+			})
 			return fail(500, { message: "An error has occurred" })
 		}
 		return redirect(302, "/")

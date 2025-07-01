@@ -27,3 +27,17 @@ export const keyValue = sqliteTable("key_value", {
 
 export type KeyValue = typeof keyValue.$inferSelect
 
+export const auditLog = sqliteTable("audit_log", {
+	id: integer("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
+	userId: text("user_id").references(() => user.id),
+	action: text("action").notNull(),
+	resource: text("resource").notNull(),
+	resourceId: text("resource_id"),
+	details: text("details"), // JSON string for additional data
+	ipAddress: text("ip_address"),
+	userAgent: text("user_agent"),
+	createdAt: integer("created_at", { mode: "timestamp" }).notNull().$defaultFn(() => new Date())
+})
+
+export type AuditLog = typeof auditLog.$inferSelect
+

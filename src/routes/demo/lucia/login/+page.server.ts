@@ -6,6 +6,7 @@ import * as auth from "$lib/server/auth"
 import { db } from "$lib/server/db"
 import * as table from "$lib/server/db/schema"
 import type { Actions, PageServerLoad } from "./$types"
+import { logAuditEvent } from "$lib/server/audit"
 
 export const load: PageServerLoad = async (event) => {
 	if (event.locals.user) {
@@ -31,6 +32,14 @@ export const actions: Actions = {
 
 		const existingUser = results.at(0)
 		if (!existingUser) {
+			// Log failed login attempt - user not found
+			await logAuditEvent({
+				action: "LOGIN_FAILED",
+				resource: "user",
+				details: { username, reason: "user_not_found" },
+				ipAddress: event.getClientAddress(),
+				userAgent: event.request.headers.get("user-agent") || undefined
+			})
 			return fail(400, { message: "Incorrect username or password" })
 		}
 
@@ -41,12 +50,33 @@ export const actions: Actions = {
 			parallelism: 1
 		})
 		if (!validPassword) {
+			// Log failed login attempt - wrong password
+			await logAuditEvent({
+				userId: existingUser.id,
+				action: "LOGIN_FAILED",
+				resource: "user",
+				resourceId: existingUser.id,
+				details: { username, reason: "invalid_password" },
+				ipAddress: event.getClientAddress(),
+				userAgent: event.request.headers.get("user-agent") || undefined
+			})
 			return fail(400, { message: "Incorrect username or password" })
 		}
 
 		const sessionToken = auth.generateSessionToken()
 		const session = await auth.createSession(sessionToken, existingUser.id)
 		auth.setSessionTokenCookie(event, sessionToken, session.expiresAt)
+
+		// Log successful login
+		await logAuditEvent({
+			userId: existingUser.id,
+			action: "LOGIN",
+			resource: "session",
+			resourceId: session.id,
+			details: { username, method: "password" },
+			ipAddress: event.getClientAddress(),
+			userAgent: event.request.headers.get("user-agent") || undefined
+		})
 
 		return redirect(302, "/demo/lucia")
 	},
@@ -74,10 +104,40 @@ export const actions: Actions = {
 		try {
 			await db.insert(table.user).values({ id: userId, username, passwordHash })
 
+			// Log successful registration
+			await logAuditEvent({
+				userId,
+				action: "REGISTER",
+				resource: "user",
+				resourceId: userId,
+				details: { username },
+				ipAddress: event.getClientAddress(),
+				userAgent: event.request.headers.get("user-agent") || undefined
+			})
+
 			const sessionToken = auth.generateSessionToken()
 			const session = await auth.createSession(sessionToken, userId)
 			auth.setSessionTokenCookie(event, sessionToken, session.expiresAt)
+
+			// Log successful login after registration
+			await logAuditEvent({
+				userId,
+				action: "LOGIN",
+				resource: "session",
+				resourceId: session.id,
+				details: { username, method: "registration" },
+				ipAddress: event.getClientAddress(),
+				userAgent: event.request.headers.get("user-agent") || undefined
+			})
 		} catch (e) {
+			// Log failed registration attempt
+			await logAuditEvent({
+				action: "REGISTER_FAILED",
+				resource: "user",
+				details: { username, error: "Database error" },
+				ipAddress: event.getClientAddress(),
+				userAgent: event.request.headers.get("user-agent") || undefined
+			})
 			return fail(500, { message: "An error has occurred" })
 		}
 		return redirect(302, "/demo/lucia")
