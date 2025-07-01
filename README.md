@@ -72,8 +72,17 @@ Create your first user by visiting `/auth/register` and then log in at `/auth/lo
 Once logged in, you can access admin features at:
 - `/admin` - Admin dashboard
 - `/admin/users` - User management
+- `/admin/feedback` - Feedback management and analytics
 - `/admin/audit` - Audit log viewer
 - `/admin/kv` - Key-value store management
+
+### 7. User Feedback System
+
+The starter includes a complete feedback system:
+- **User Submission**: `/feedback` - Users can submit feedback with ratings and contact info
+- **Admin Management**: `/admin/feedback` - View, filter, and manage feedback submissions
+- **Analytics**: Feedback statistics including average ratings and status tracking
+- **Audit Integration**: All feedback actions are logged for security
 
 ### Production Deployment
 

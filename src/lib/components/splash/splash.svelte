@@ -49,6 +49,11 @@
 						Try Demo
 					{/snippet}
 				</Button>
+				<Button role="tertiary" href="/feedback">
+					{#snippet children()}
+						Give Feedback
+					{/snippet}
+				</Button>
 				<Button role="tertiary" href="https://github.com/t-eckert/sveltekit-kickstart">
 					{#snippet children()}
 						GitHub
