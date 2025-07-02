@@ -20,7 +20,8 @@
       "Bash(/dev/null)",
       "Bash(npm run:*)",
       "Bash(grep:*)",
-      "Bash(npx drizzle-kit push:*)"
+      "Bash(npx drizzle-kit push:*)",
+      "Bash(timeout 30s npm run storybook)"
     ],
     "deny": []
   },

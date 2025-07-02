@@ -24,6 +24,44 @@
 			type: "text",
 			name: "example",
 			placeholder: "Enter text here..."
+		},
+		parameters: {
+			docs: {
+				description: {
+					component: `
+# Input Component
+
+A flexible input component with built-in validation support, accessibility features, and consistent styling.
+
+## Features
+
+- **Validation Support**: Built-in validation system with 30+ validators
+- **Accessibility**: Proper ARIA attributes and labels
+- **Dark Mode**: Automatic dark mode support
+- **Types**: Support for all HTML input types
+- **Help Text**: Optional descriptive text
+- **Error Handling**: Real-time validation feedback
+
+## Validation
+
+For comprehensive validation examples, see the **Input/Validators** stories which showcase all available validators including:
+- Basic validation (required, length, etc.)
+- Pattern validation (email, phone, URL, etc.) 
+- Custom validation (regex, conditional, etc.)
+- Combined validation (multiple validators)
+
+## Basic Usage
+
+\`\`\`svelte
+<Input 
+  label="Username" 
+  placeholder="Enter your username"
+  helpText="Choose a unique username"
+/>
+\`\`\`
+					`
+				}
+			}
 		}
 	})
 </script>
