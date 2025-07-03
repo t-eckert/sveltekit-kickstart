@@ -1,6 +1,8 @@
 import { mdsvex } from "mdsvex"
 import adapter from "@sveltejs/adapter-node"
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte"
+import { readFileSync } from "fs"
+import { fileURLToPath } from "url"
 
 const file = fileURLToPath(new URL("package.json", import.meta.url))
 const json = readFileSync(file, "utf8")
