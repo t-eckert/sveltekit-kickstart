@@ -1,19 +1,26 @@
 <script lang="ts">
 	import { browser } from "$app/environment"
-	import { page } from "$app/stores"
+	import { page } from "$app/state"
 	import { onMount } from "svelte"
 	import * as Fathom from "fathom-client"
+	import config from "$lib/config"
 
-	interface Props {}
+	interface Props {
+		publicSiteCode: string
+	}
 
-	let {}: Props = $props()
+	let { publicSiteCode }: Props = $props()
 
 	onMount(async () => {
-		Fathom.load("SRGLORAK", {
+		Fathom.load(publicSiteCode, {
 			url: "https://cdn.usefathom.com/script.js",
-			includedDomains: ["devy.page"]
+			includedDomains: [config.url]
 		})
 	})
 
-	$: $page.url.pathname, browser && Fathom.trackPageview()
+	$effect(() => {
+		page.url.pathname
+		console.log("Tracking pageview")
+		Fathom.trackPageview()
+	})
 </script>

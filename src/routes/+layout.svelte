@@ -10,6 +10,7 @@
 	import Footer from "./footer.svelte"
 	import SkipToContent from "$lib/utils/components/skip-to-content.svelte"
 	import ThemeProvider from "$lib/theme/theme-provider.svelte"
+	import Analytics from "$lib/components/analytics/analytics.svelte"
 	import Json from "$lib/utils/components/json.svelte"
 
 	let { children, data }: LayoutProps = $props()
@@ -23,6 +24,8 @@
 	url={config.url}
 	favicon="/favicon.ico"
 />
+
+<Analytics publicSiteCode="ASDF" />
 
 <ThemeProvider {theme}>
 	<div class="min-h-screen">

@@ -1,12 +1,12 @@
 <script lang="ts">
 	import config from "$lib/config"
-	import pkg from "../../package.json"
+	import { version } from "$app/environment"
 	import { H3, P } from "$lib/typography"
-	import { 
-		GithubLogo, 
-		BookOpen, 
-		Code, 
-		Bug, 
+	import {
+		GithubLogo,
+		BookOpen,
+		Code,
+		Bug,
 		Heart,
 		Lightning,
 		Palette,
@@ -15,19 +15,29 @@
 	} from "phosphor-svelte"
 
 	const currentYear = new Date().getFullYear()
-	
+
 	const links = {
 		project: [
 			{ name: "About", href: "/about", icon: BookOpen },
 			{ name: "Documentation", href: "/demo/validators", icon: Code },
 			{ name: "Components", href: "/storybook", icon: Palette, external: true },
-			{ name: "GitHub", href: "https://github.com/t-eckert/sveltekit-kickstart", icon: GithubLogo, external: true }
+			{
+				name: "GitHub",
+				href: "https://github.com/t-eckert/sveltekit-kickstart",
+				icon: GithubLogo,
+				external: true
+			}
 		],
 		features: [
 			{ name: "Feedback System", href: "/feedback", icon: Heart },
 			{ name: "Admin Panel", href: "/admin", icon: Shield },
 			{ name: "Database Studio", href: "#", icon: Database, action: "npm run db:studio" },
-			{ name: "Report Bug", href: "https://github.com/t-eckert/sveltekit-kickstart/issues", icon: Bug, external: true }
+			{
+				name: "Report Bug",
+				href: "https://github.com/t-eckert/sveltekit-kickstart/issues",
+				icon: Bug,
+				external: true
+			}
 		],
 		developer: [
 			{ name: "SvelteKit", href: "https://kit.svelte.dev", external: true },
@@ -38,7 +48,7 @@
 	}
 </script>
 
-<footer class="bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+<footer class="border-t border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-900">
 	<div class="mx-auto max-w-7xl px-4 py-12">
 		<!-- Main Footer Content -->
 		<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
@@ -54,7 +64,7 @@
 					{/snippet}
 				</P>
 				<div class="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
-					<span>Version {pkg.version}</span>
+					<span>Version {version}</span>
 					<span>•</span>
 					<span>Built with SvelteKit</span>
 				</div>
@@ -70,7 +80,7 @@
 								href={link.href}
 								target={link.external ? "_blank" : undefined}
 								rel={link.external ? "noopener noreferrer" : undefined}
-								class="flex items-center space-x-2 text-sm text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-colors"
+								class="flex items-center space-x-2 text-sm text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"
 							>
 								<svelte:component this={link.icon} size={16} />
 								<span>{link.name}</span>
@@ -91,19 +101,19 @@
 						<li>
 							{#if link.action}
 								<button
-									class="flex items-center space-x-2 text-sm text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-colors"
+									class="flex items-center space-x-2 text-sm text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"
 									title="Run: {link.action}"
 								>
 									<svelte:component this={link.icon} size={16} />
 									<span>{link.name}</span>
-									<span class="text-xs text-gray-400 font-mono">{link.action}</span>
+									<span class="font-mono text-xs text-gray-400">{link.action}</span>
 								</button>
 							{:else}
 								<a
 									href={link.href}
 									target={link.external ? "_blank" : undefined}
 									rel={link.external ? "noopener noreferrer" : undefined}
-									class="flex items-center space-x-2 text-sm text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-colors"
+									class="flex items-center space-x-2 text-sm text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"
 								>
 									<svelte:component this={link.icon} size={16} />
 									<span>{link.name}</span>
@@ -127,7 +137,7 @@
 								href={link.href}
 								target="_blank"
 								rel="noopener noreferrer"
-								class="flex items-center justify-between text-sm text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-colors"
+								class="flex items-center justify-between text-sm text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"
 							>
 								<span>{link.name}</span>
 								<span class="text-xs text-gray-400">�</span>
@@ -139,7 +149,7 @@
 		</div>
 
 		<!-- Bottom Section -->
-		<div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+		<div class="mt-12 border-t border-gray-200 pt-8 dark:border-gray-700">
 			<div class="flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0">
 				<!-- Copyright -->
 				<div class="flex items-center space-x-4 text-sm text-gray-500 dark:text-gray-400">
@@ -151,8 +161,8 @@
 				<!-- Version & Build Info -->
 				<div class="flex items-center space-x-4 text-xs text-gray-400 dark:text-gray-500">
 					<div class="flex items-center space-x-2">
-						<div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-						<span>v{pkg.version}</span>
+						<div class="h-2 w-2 animate-pulse rounded-full bg-green-500"></div>
+						<span>v{version}</span>
 					</div>
 					<span>•</span>
 					<span>Built {new Date().toLocaleDateString()}</span>
@@ -160,14 +170,14 @@
 			</div>
 
 			<!-- Development Info -->
-			<div class="mt-6 p-4 bg-gray-100 dark:bg-gray-800 rounded-lg">
+			<div class="mt-6 rounded-lg bg-gray-100 p-4 dark:bg-gray-800">
 				<div class="flex items-start space-x-3">
-					<Code size={20} class="text-blue-600 dark:text-blue-400 mt-0.5" />
+					<Code size={20} class="mt-0.5 text-blue-600 dark:text-blue-400" />
 					<div class="flex-1">
-						<h4 class="text-sm font-medium text-gray-900 dark:text-gray-100 mb-2">
+						<h4 class="mb-2 text-sm font-medium text-gray-900 dark:text-gray-100">
 							Development Commands
 						</h4>
-						<div class="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-4 text-xs">
+						<div class="grid grid-cols-1 gap-2 text-xs md:grid-cols-2 lg:grid-cols-4">
 							<div class="flex flex-col space-y-1">
 								<code class="text-blue-600 dark:text-blue-400">npm run dev</code>
 								<span class="text-gray-600 dark:text-gray-400">Start development</span>
@@ -191,3 +201,4 @@
 		</div>
 	</div>
 </footer>
+
