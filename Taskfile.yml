@@ -90,26 +90,3 @@ tasks:
       - npm run build-storybook
     silent: true
 
-  tools:add-page:
-    desc: "Create a new page from templates"
-    cmds:
-      - uv run tools/add_page.py {{.CLI_ARGS}}
-    silent: false
-
-  tools:add-component:
-    desc: "Create a new component from templates"
-    cmds:
-      - uv run tools/add_component.py {{.CLI_ARGS}}
-    silent: false
-
-  tools:add-api-route:
-    desc: "Create a new API route from templates"
-    cmds:
-      - uv run tools/add_api_route.py {{.CLI_ARGS}}
-    silent: false
-
-  tools:add-store:
-    desc: "Create a new store from templates"
-    cmds:
-      - uv run tools/add_store.py {{.CLI_ARGS}}
-    silent: false

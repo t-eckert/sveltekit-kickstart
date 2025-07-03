@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { type Snippet } from "$lib/types"
+	import { type Snippet } from "svelte"
 	import { cva } from "cva"
 
 	interface Props {
