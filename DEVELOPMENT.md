@@ -19,3 +19,7 @@ Ideas I want to implement
 
 
 Can I remove the Python dependency and run the "tools" using Node?
+
+## Markdown Preprocessor
+
+I tried using MDSvex, which I've used successfully before. It has a bunch of edge cases that were a pain. So I'm going to implement my own preprocessor based on this [blog post](https://stevekinney.com/writing/svelte-markdown-preprocessor).
