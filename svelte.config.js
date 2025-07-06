@@ -1,4 +1,3 @@
-import { mdsvex } from "mdsvex"
 import adapter from "@sveltejs/adapter-node"
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte"
 import { readFileSync } from "fs"
@@ -10,7 +9,7 @@ const pkg = JSON.parse(json)
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	preprocess: [vitePreprocess(), mdsvex()],
+	preprocess: [vitePreprocess()],
 
 	kit: {
 		adapter: adapter(),
