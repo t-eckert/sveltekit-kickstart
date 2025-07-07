@@ -101,10 +101,10 @@
 		class={inputStyle()}
 	/>
 	{#if helpText}
-		<p class="mt-2 px-0.5 text-sm text-neutral-500" id={`${id}-help-text`}>{helpText}</p>
+		<p class="mt-1 px-0.5 text-xs text-neutral-500" id={`${id}-help-text`}>{helpText}</p>
 	{/if}
 	{#if !validity[0]}
-		<p class="mt-2 px-0.5 text-sm text-red-500" id={`${id}-error`}>
+		<p class="mt-1 px-0.5 text-xs text-red-500" id={`${id}-error`}>
 			{validity[1] || "Input is not valid"}
 		</p>
 	{/if}
