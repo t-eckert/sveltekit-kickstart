@@ -13,27 +13,32 @@
 		{
 			icon: Code,
 			title: "40+ Pre-built Components",
-			description: "Built on Bits UI with Tailwind CSS styling, covering everything from buttons to complex modals."
+			description:
+				"Built on Bits UI with Tailwind CSS styling, covering everything from buttons to complex modals."
 		},
 		{
 			icon: Lock,
 			title: "Complete Authentication",
-			description: "Secure user registration, login, session management with Argon2 password hashing."
+			description:
+				"Secure user registration, login, session management with Argon2 password hashing."
 		},
 		{
 			icon: Database,
 			title: "Edge-Ready Database",
-			description: "Drizzle ORM with LibSQL/SQLite, perfect for edge deployments and local development."
+			description:
+				"Drizzle ORM with LibSQL/SQLite, perfect for edge deployments and local development."
 		},
 		{
 			icon: Palette,
 			title: "Modern Styling",
-			description: "Tailwind CSS 4 with dark mode support and Class Variance Authority for component variants."
+			description:
+				"Tailwind CSS 4 with dark mode support and Class Variance Authority for component variants."
 		},
 		{
 			icon: TestTube,
 			title: "Testing Setup",
-			description: "Vitest for unit tests, Playwright for E2E testing, with comprehensive test utilities."
+			description:
+				"Vitest for unit tests, Playwright for E2E testing, with comprehensive test utilities."
 		},
 		{
 			icon: Gear,
@@ -43,17 +48,27 @@
 		{
 			icon: Globe,
 			title: "Production Ready",
-			description: "Containerization, audit logging, admin dashboard, and deployment configurations."
+			description:
+				"Containerization, audit logging, admin dashboard, and deployment configurations."
 		}
 	]
 
 	const componentCategories = [
 		{
 			name: "Form & Input",
-			components: ["Button", "Input", "Checkbox", "Radio Group", "Select", "Switch", "Slider", "Time Field"]
+			components: [
+				"Button",
+				"Input",
+				"Checkbox",
+				"Radio Group",
+				"Select",
+				"Switch",
+				"Slider",
+				"Time Field"
+			]
 		},
 		{
-			name: "Layout & Navigation", 
+			name: "Layout & Navigation",
 			components: ["Card", "Modal", "Sidebar", "Navigation Menu", "Breadcrumb", "Tabs", "Accordion"]
 		},
 		{
@@ -70,7 +85,14 @@
 		},
 		{
 			name: "Specialized",
-			components: ["Filedrop", "Analytics", "Theme Toggle", "Range Calculator", "Money", "Relative Date"]
+			components: [
+				"Filedrop",
+				"Analytics",
+				"Theme Toggle",
+				"Range Calculator",
+				"Money",
+				"Relative Date"
+			]
 		}
 	]
 
@@ -92,11 +114,12 @@
 		<H1 text={config.title} />
 		<P class="mt-4 text-lg text-gray-600 dark:text-gray-300">
 			{#snippet children()}
-				A comprehensive SvelteKit starter template designed for rapid development of modern web applications. 
-				Built with TypeScript, Tailwind CSS, and production-ready features out of the box.
+				A comprehensive SvelteKit starter template designed for rapid development of modern web
+				applications. Built with TypeScript, Tailwind CSS, and production-ready features out of the
+				box.
 			{/snippet}
 		</P>
-		
+
 		<div class="mt-8 flex flex-wrap justify-center gap-4">
 			<Button role="primary" href="/auth/register">
 				{#snippet children()}
@@ -122,7 +145,11 @@
 						<div class="flex items-start space-x-4">
 							<div class="flex-shrink-0">
 								<div class="rounded-lg bg-blue-100 p-3 dark:bg-blue-900">
-									<svelte:component this={feature.icon} size={24} class="text-blue-600 dark:text-blue-400" />
+									<svelte:component
+										this={feature.icon}
+										size={24}
+										class="text-blue-600 dark:text-blue-400"
+									/>
 								</div>
 							</div>
 							<div>
@@ -143,10 +170,11 @@
 		<H2 text="Component Library" />
 		<P class="mt-2 text-gray-600 dark:text-gray-300">
 			{#snippet children()}
-				Over 40 pre-built components organized into logical categories, all built with accessibility and customization in mind.
+				Over 40 pre-built components organized into logical categories, all built with accessibility
+				and customization in mind.
 			{/snippet}
 		</P>
-		
+
 		<div class="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2">
 			{#each componentCategories as category}
 				<Card class="p-6">
@@ -171,7 +199,7 @@
 				See some of our components in action with live examples.
 			{/snippet}
 		</P>
-		
+
 		<div class="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2">
 			<!-- Buttons Demo -->
 			<Card class="p-6">
@@ -235,7 +263,7 @@
 				Built with modern technologies and best practices for scalable web development.
 			{/snippet}
 		</P>
-		
+
 		<div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
 			{#each techStack as tech}
 				<Card class="p-4">
@@ -253,7 +281,9 @@
 	</section>
 
 	<!-- Getting Started -->
-	<section class="rounded-2xl bg-gradient-to-r from-blue-50 to-indigo-50 p-8 dark:from-blue-950 dark:to-indigo-950">
+	<section
+		class="rounded-2xl bg-gradient-to-r from-blue-50 to-indigo-50 p-8 dark:from-blue-950 dark:to-indigo-950"
+	>
 		<div class="text-center">
 			<H2 text="Ready to Get Started?" />
 			<P class="mt-4 text-gray-600 dark:text-gray-300">
@@ -261,18 +291,20 @@
 					Clone the repository and start building your next project with SvelteKit Kickstart.
 				{/snippet}
 			</P>
-			
+
 			<div class="mt-8">
 				<Card class="mx-auto max-w-2xl p-6">
 					{#snippet children()}
-						<pre class="text-left"><code class="text-sm">npx degit t-eckert/sveltekit-kickstart my-project
+						<pre class="text-left"><code class="text-sm"
+								>npx degit t-eckert/sveltekit-kickstart my-project
 cd my-project
 npm install
-npm run dev</code></pre>
+npm run dev</code
+							></pre>
 					{/snippet}
 				</Card>
 			</div>
-			
+
 			<div class="mt-6 flex flex-wrap justify-center gap-4">
 				<Button role="primary" href="/auth/register">
 					{#snippet children()}
@@ -292,8 +324,11 @@ npm run dev</code></pre>
 	<section class="border-t pt-8 text-center">
 		<P class="text-gray-600 dark:text-gray-300">
 			{#snippet children()}
-				Built with ❤️ using SvelteKit. 
-				<a href="https://github.com/t-eckert/sveltekit-kickstart" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+				Built with ❤️ using SvelteKit.
+				<a
+					href="https://github.com/t-eckert/sveltekit-kickstart"
+					class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
+				>
 					View source on GitHub
 				</a>
 			{/snippet}

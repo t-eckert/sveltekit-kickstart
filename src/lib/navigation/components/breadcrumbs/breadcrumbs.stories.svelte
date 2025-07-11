@@ -1,6 +1,6 @@
 <script module>
 	import { defineMeta } from "@storybook/addon-svelte-csf"
-	import Breadcrumb from "./breadcrumb.svelte"
+	import Breadcrumb from "./breadcrumbs.svelte"
 
 	const { Story } = defineMeta({
 		title: "Components/Breadcrumb",

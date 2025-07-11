@@ -2,19 +2,19 @@
 	import { H1, H2, P } from "$lib/typography"
 	import Card from "$lib/components/card/card.svelte"
 	import Input from "$lib/components/input/input.svelte"
-	import { 
-		isRequired, 
-		isEmail, 
-		minLength, 
-		maxLength, 
-		isNumeric, 
-		minValue, 
-		maxValue, 
-		isUrl, 
-		isPhoneNumber, 
-		isAlphanumeric, 
-		isUsername, 
-		isPassword, 
+	import {
+		isRequired,
+		isEmail,
+		minLength,
+		maxLength,
+		isNumeric,
+		minValue,
+		maxValue,
+		isUrl,
+		isPhoneNumber,
+		isAlphanumeric,
+		isUsername,
+		isPassword,
 		isStrongPassword,
 		isDate,
 		isFutureDate,
@@ -49,7 +49,7 @@
 		<Card class="p-6">
 			{#snippet children()}
 				<H2 text="Basic Validators" />
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+				<div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
 					<Input
 						id="required-field"
 						label="Required Field"
@@ -57,7 +57,7 @@
 						helpText="This field cannot be empty"
 						required
 					/>
-					
+
 					<Input
 						id="email-field"
 						label="Email Address"
@@ -66,14 +66,14 @@
 						helpText="Enter a valid email address"
 						required
 					/>
-					
+
 					<Input
 						id="min-length"
 						label="Minimum 5 Characters"
 						validator={minLength(5)}
 						helpText="Must be at least 5 characters long"
 					/>
-					
+
 					<Input
 						id="max-length"
 						label="Maximum 10 Characters"
@@ -88,14 +88,14 @@
 		<Card class="p-6">
 			{#snippet children()}
 				<H2 text="Numeric Validators" />
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+				<div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
 					<Input
 						id="numeric-field"
 						label="Numeric Only"
 						validator={isNumeric}
 						helpText="Only numbers allowed"
 					/>
-					
+
 					<Input
 						id="min-value"
 						label="Minimum Value (10)"
@@ -103,7 +103,7 @@
 						validator={minValue(10)}
 						helpText="Must be at least 10"
 					/>
-					
+
 					<Input
 						id="max-value"
 						label="Maximum Value (100)"
@@ -111,7 +111,7 @@
 						validator={maxValue(100)}
 						helpText="Must be no more than 100"
 					/>
-					
+
 					<Input
 						id="range-value"
 						label="Range (1-50)"
@@ -127,7 +127,7 @@
 		<Card class="p-6">
 			{#snippet children()}
 				<H2 text="Text Pattern Validators" />
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+				<div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
 					<Input
 						id="url-field"
 						label="Website URL"
@@ -135,7 +135,7 @@
 						helpText="Enter a valid URL (e.g., https://example.com)"
 						placeholder="https://example.com"
 					/>
-					
+
 					<Input
 						id="phone-field"
 						label="Phone Number"
@@ -143,14 +143,14 @@
 						helpText="Enter a valid phone number"
 						placeholder="+1234567890"
 					/>
-					
+
 					<Input
 						id="alphanumeric"
 						label="Alphanumeric Only"
 						validator={isAlphanumeric}
 						helpText="Only letters and numbers allowed"
 					/>
-					
+
 					<Input
 						id="username-field"
 						label="Username"
@@ -165,7 +165,7 @@
 		<Card class="p-6">
 			{#snippet children()}
 				<H2 text="Password Validators" />
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+				<div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
 					<Input
 						id="basic-password"
 						label="Basic Password"
@@ -173,7 +173,7 @@
 						validator={isPassword}
 						helpText="6-255 characters required"
 					/>
-					
+
 					<Input
 						id="strong-password"
 						label="Strong Password"
@@ -189,7 +189,7 @@
 		<Card class="p-6">
 			{#snippet children()}
 				<H2 text="Date Validators" />
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+				<div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
 					<Input
 						id="date-field"
 						label="Valid Date"
@@ -197,7 +197,7 @@
 						validator={isDate}
 						helpText="Enter any valid date"
 					/>
-					
+
 					<Input
 						id="future-date"
 						label="Future Date"
@@ -205,7 +205,7 @@
 						validator={isFutureDate}
 						helpText="Date must be in the future"
 					/>
-					
+
 					<Input
 						id="past-date"
 						label="Past Date (Birth Date)"
@@ -213,7 +213,7 @@
 						validator={isPastDate}
 						helpText="Date must be in the past"
 					/>
-					
+
 					<Input
 						id="age-field"
 						label="Birth Date (18+ years)"
@@ -229,7 +229,7 @@
 		<Card class="p-6">
 			{#snippet children()}
 				<H2 text="Specialized Patterns" />
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+				<div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
 					<Input
 						id="postal-code"
 						label="Postal Code"
@@ -237,7 +237,7 @@
 						helpText="US ZIP, Canadian, or UK postal code"
 						placeholder="12345 or A1A 1A1"
 					/>
-					
+
 					<Input
 						id="credit-card"
 						label="Credit Card Number"
@@ -245,7 +245,7 @@
 						helpText="Valid credit card number (Luhn algorithm)"
 						placeholder="4111111111111111"
 					/>
-					
+
 					<Input
 						id="ip-address"
 						label="IP Address"
@@ -253,7 +253,7 @@
 						helpText="IPv4 or IPv6 address"
 						placeholder="192.168.1.1"
 					/>
-					
+
 					<Input
 						id="hex-color"
 						label="Hex Color"
@@ -269,7 +269,7 @@
 		<Card class="p-6">
 			{#snippet children()}
 				<H2 text="Custom Patterns" />
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+				<div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
 					<Input
 						id="slug-field"
 						label="URL Slug"
@@ -277,21 +277,21 @@
 						helpText="Lowercase letters, numbers, and hyphens only"
 						placeholder="my-url-slug"
 					/>
-					
+
 					<Input
 						id="letters-only"
 						label="Letters Only"
 						validator={containsOnly("a-zA-Z", "Only letters allowed")}
 						helpText="No numbers or special characters"
 					/>
-					
+
 					<Input
 						id="no-spaces"
 						label="No Spaces Allowed"
 						validator={doesNotContain(" ", "Spaces are not allowed")}
 						helpText="Cannot contain any spaces"
 					/>
-					
+
 					<Input
 						id="custom-regex"
 						label="Product Code (ABC-123)"
@@ -307,7 +307,7 @@
 		<Card class="p-6">
 			{#snippet children()}
 				<H2 text="Combined Validators" />
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+				<div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
 					<Input
 						id="required-email"
 						label="Required Email"
@@ -316,45 +316,32 @@
 						helpText="Required and must be valid email"
 						required
 					/>
-					
+
 					<Input
 						id="strong-username"
 						label="Strong Username"
-						validator={combineValidators(
-							isRequired,
-							minLength(4),
-							maxLength(20),
-							isUsername
-						)}
+						validator={combineValidators(isRequired, minLength(4), maxLength(20), isUsername)}
 						helpText="Required, 4-20 chars, alphanumeric + underscores"
 						required
 					/>
-					
+
 					<Input
 						id="secure-password"
 						label="Secure Password"
 						type="password"
-						validator={combineValidators(
-							isRequired,
-							isStrongPassword,
-							minLength(12)
-						)}
+						validator={combineValidators(isRequired, isStrongPassword, minLength(12))}
 						helpText="Required, strong password, min 12 characters"
 						required
 					/>
-					
+
 					<Input
 						id="adult-age"
 						label="Adult Birth Date"
 						type="date"
-						validator={combineValidators(
-							isRequired,
-							isPastDate,
-							isAge(18, 120)
-						)}
+						validator={combineValidators(isRequired, isPastDate, isAge(18, 120))}
 						helpText="Required, past date, age 18-120"
 						required
-	/>
+					/>
 				</div>
 			{/snippet}
 		</Card>
@@ -364,18 +351,21 @@
 			{#snippet children()}
 				<H2 text="Usage Examples" />
 				<div class="mt-6 space-y-4">
-					<div class="rounded-md bg-gray-50 dark:bg-gray-900 p-4">
-						<h3 class="font-semibold mb-2">Basic Usage:</h3>
-						<pre class="text-sm overflow-x-auto"><code>{`<Input 
+					<div class="rounded-md bg-gray-50 p-4 dark:bg-gray-900">
+						<h3 class="mb-2 font-semibold">Basic Usage:</h3>
+						<pre class="overflow-x-auto text-sm"><code
+								>{`<Input 
   label="Email" 
   validator={isEmail} 
   helpText="Enter a valid email" 
-/>`}</code></pre>
+/>`}</code
+							></pre>
 					</div>
-					
-					<div class="rounded-md bg-gray-50 dark:bg-gray-900 p-4">
-						<h3 class="font-semibold mb-2">Combined Validators:</h3>
-						<pre class="text-sm overflow-x-auto"><code>{`<Input 
+
+					<div class="rounded-md bg-gray-50 p-4 dark:bg-gray-900">
+						<h3 class="mb-2 font-semibold">Combined Validators:</h3>
+						<pre class="overflow-x-auto text-sm"><code
+								>{`<Input 
   label="Username" 
   validator={combineValidators(
     isRequired,
@@ -383,18 +373,21 @@
     isUsername
   )}
   required 
-/>`}</code></pre>
+/>`}</code
+							></pre>
 					</div>
-					
-					<div class="rounded-md bg-gray-50 dark:bg-gray-900 p-4">
-						<h3 class="font-semibold mb-2">Custom Validator:</h3>
-						<pre class="text-sm overflow-x-auto"><code>{`<Input 
+
+					<div class="rounded-md bg-gray-50 p-4 dark:bg-gray-900">
+						<h3 class="mb-2 font-semibold">Custom Validator:</h3>
+						<pre class="overflow-x-auto text-sm"><code
+								>{`<Input 
   label="Product Code" 
   validator={matchesRegex(
     /^[A-Z]{3}-\\d{3}$/,
     "Format must be ABC-123"
   )}
-/>`}</code></pre>
+/>`}</code
+							></pre>
 					</div>
 				</div>
 			{/snippet}

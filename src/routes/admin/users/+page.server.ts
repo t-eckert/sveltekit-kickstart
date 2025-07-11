@@ -5,11 +5,13 @@ import { user } from "$lib/server/db/schema"
 
 export const load: PageServerLoad = async () => {
 	try {
-		const users = await db.select({
-			id: user.id,
-			username: user.username,
-			age: user.age
-		}).from(user)
+		const users = await db
+			.select({
+				id: user.id,
+				username: user.username,
+				age: user.age
+			})
+			.from(user)
 
 		return {
 			users

@@ -19,28 +19,28 @@ export const actions: Actions = {
 
 		// Validation
 		if (!subject || typeof subject !== "string" || subject.trim().length === 0) {
-			return fail(400, { 
+			return fail(400, {
 				error: "Subject is required",
 				values: { subject, message, name, email, rating }
 			})
 		}
 
 		if (!message || typeof message !== "string" || message.trim().length === 0) {
-			return fail(400, { 
+			return fail(400, {
 				error: "Message is required",
 				values: { subject, message, name, email, rating }
 			})
 		}
 
 		if (subject.length > 200) {
-			return fail(400, { 
+			return fail(400, {
 				error: "Subject must be less than 200 characters",
 				values: { subject, message, name, email, rating }
 			})
 		}
 
 		if (message.length > 2000) {
-			return fail(400, { 
+			return fail(400, {
 				error: "Message must be less than 2000 characters",
 				values: { subject, message, name, email, rating }
 			})
@@ -50,7 +50,7 @@ export const actions: Actions = {
 		if (email && typeof email === "string" && email.trim().length > 0) {
 			const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 			if (!emailRegex.test(email)) {
-				return fail(400, { 
+				return fail(400, {
 					error: "Please enter a valid email address",
 					values: { subject, message, name, email, rating }
 				})
@@ -62,7 +62,7 @@ export const actions: Actions = {
 		if (rating && typeof rating === "string" && rating.trim().length > 0) {
 			ratingValue = parseInt(rating)
 			if (isNaN(ratingValue) || ratingValue < 1 || ratingValue > 5) {
-				return fail(400, { 
+				return fail(400, {
 					error: "Rating must be between 1 and 5",
 					values: { subject, message, name, email, rating }
 				})
@@ -83,11 +83,12 @@ export const actions: Actions = {
 
 			return {
 				success: true,
-				message: "Thank you for your feedback! We appreciate you taking the time to help us improve."
+				message:
+					"Thank you for your feedback! We appreciate you taking the time to help us improve."
 			}
 		} catch (error) {
 			console.error("Feedback submission error:", error)
-			return fail(500, { 
+			return fail(500, {
 				error: "Failed to submit feedback. Please try again.",
 				values: { subject, message, name, email, rating }
 			})

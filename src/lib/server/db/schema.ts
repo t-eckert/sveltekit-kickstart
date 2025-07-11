@@ -36,7 +36,9 @@ export const auditLog = sqliteTable("audit_log", {
 	details: text("details"), // JSON string for additional data
 	ipAddress: text("ip_address"),
 	userAgent: text("user_agent"),
-	createdAt: integer("created_at", { mode: "timestamp" }).notNull().$defaultFn(() => new Date())
+	createdAt: integer("created_at", { mode: "timestamp" })
+		.notNull()
+		.$defaultFn(() => new Date())
 })
 
 export type AuditLog = typeof auditLog.$inferSelect
@@ -52,9 +54,10 @@ export const feedback = sqliteTable("feedback", {
 	status: text("status").notNull().$default("open"), // open, reviewing, closed
 	ipAddress: text("ip_address"),
 	userAgent: text("user_agent"),
-	createdAt: integer("created_at", { mode: "timestamp" }).notNull().$defaultFn(() => new Date()),
+	createdAt: integer("created_at", { mode: "timestamp" })
+		.notNull()
+		.$defaultFn(() => new Date()),
 	updatedAt: integer("updated_at", { mode: "timestamp" })
 })
 
 export type Feedback = typeof feedback.$inferSelect
-

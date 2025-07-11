@@ -29,7 +29,7 @@
 							one.
 						</p>
 						{#if form?.message}
-							<div class="rounded-md bg-red-50 p-3 text-sm text-red-800 border border-red-200">
+							<div class="rounded-md border border-red-200 bg-red-50 p-3 text-sm text-red-800">
 								{form.message}
 							</div>
 						{/if}
@@ -40,7 +40,7 @@
 							id="username"
 							name="username"
 							required
-							class="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+							class="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none"
 							placeholder="Enter your username"
 						/>
 						<input
@@ -48,7 +48,7 @@
 							id="password"
 							name="password"
 							required
-							class="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+							class="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none"
 							placeholder="Enter your password"
 						/>
 					</div>

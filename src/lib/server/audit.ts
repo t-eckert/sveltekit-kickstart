@@ -33,11 +33,7 @@ export async function logAuditEvent(entry: AuditLogEntry): Promise<void> {
 
 export async function getAuditLogs(limit: number = 100): Promise<AuditLog[]> {
 	try {
-		return await db
-			.select()
-			.from(auditLog)
-			.orderBy(auditLog.createdAt)
-			.limit(limit)
+		return await db.select().from(auditLog).orderBy(auditLog.createdAt).limit(limit)
 	} catch (error) {
 		console.error("Failed to fetch audit logs:", error)
 		return []
@@ -58,10 +54,14 @@ export async function getAuditLogsByUser(userId: string, limit: number = 50): Pr
 	}
 }
 
-export async function getAuditLogsByResource(resource: string, resourceId?: string, limit: number = 50): Promise<AuditLog[]> {
+export async function getAuditLogsByResource(
+	resource: string,
+	resourceId?: string,
+	limit: number = 50
+): Promise<AuditLog[]> {
 	try {
 		const conditions = [eq(auditLog.resource, resource)]
-		
+
 		if (resourceId) {
 			conditions.push(eq(auditLog.resourceId, resourceId))
 		}

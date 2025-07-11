@@ -1,6 +1,6 @@
 # Development
 
-Ideas I want to implement 
+Ideas I want to implement
 
 - File upload
 - More advanced Toast
@@ -16,7 +16,6 @@ Ideas I want to implement
 - Resizable panels
 - Carousel
 - Media player
-
 
 ## Markdown Preprocessor
 

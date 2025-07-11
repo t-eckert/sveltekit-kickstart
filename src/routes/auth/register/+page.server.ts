@@ -4,7 +4,6 @@ import { fail, redirect } from "@sveltejs/kit"
 import { error } from "@sveltejs/kit"
 import { encodeBase32LowerCase } from "@oslojs/encoding"
 
-
 import { eq } from "drizzle-orm"
 import * as auth from "$lib/server/auth"
 import { db } from "$lib/server/db"

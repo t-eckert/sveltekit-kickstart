@@ -36,7 +36,9 @@
 <Story name="Disabled Checkbox">
 	<div class="flex items-center space-x-3">
 		<input type="checkbox" id="disabled-checkbox" disabled class="size-[25px]" />
-		<label for="disabled-checkbox" class="text-sm font-medium text-gray-400">Disabled checkbox</label>
+		<label for="disabled-checkbox" class="text-sm font-medium text-gray-400"
+			>Disabled checkbox</label
+		>
 	</div>
 </Story>
 

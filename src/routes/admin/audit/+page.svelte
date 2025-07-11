@@ -69,7 +69,7 @@
 					{#each data.auditLogs as log}
 						<Tr>
 							<Td>
-								<span class="text-sm font-mono">{formatDate(log.createdAt)}</span>
+								<span class="font-mono text-sm">{formatDate(log.createdAt)}</span>
 							</Td>
 							<Td>
 								{#if log.userId}
@@ -102,7 +102,10 @@
 								{#if log.details}
 									<details class="cursor-pointer">
 										<summary class="text-blue-600 hover:text-blue-800">View</summary>
-										<pre class="mt-2 max-w-xs overflow-x-auto rounded bg-gray-100 p-2 text-xs">{formatDetails(log.details)}</pre>
+										<pre
+											class="mt-2 max-w-xs overflow-x-auto rounded bg-gray-100 p-2 text-xs">{formatDetails(
+												log.details
+											)}</pre>
 									</details>
 								{:else}
 									<span class="text-gray-400">-</span>
@@ -113,7 +116,7 @@
 				</Tbody>
 			</Table>
 		</Card>
-		
+
 		<div class="text-center">
 			<P class="text-sm text-gray-500">Showing last {data.auditLogs.length} audit entries</P>
 		</div>

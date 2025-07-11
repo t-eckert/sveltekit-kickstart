@@ -1,10 +1,7 @@
 import { getContext, setContext } from "svelte"
 
-
 class CommandMenuStore {
-	constructor() {
-
-	}
+	constructor() {}
 }
 
 const KEY = Symbol("COMMAND_MENU")

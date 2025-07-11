@@ -1,19 +1,19 @@
 <script module>
 	import { defineMeta } from "@storybook/addon-svelte-csf"
 	import Input from "./input.svelte"
-	import { 
-		isRequired, 
-		isEmail, 
-		minLength, 
-		maxLength, 
-		isNumeric, 
-		minValue, 
-		maxValue, 
-		isUrl, 
-		isPhoneNumber, 
-		isAlphanumeric, 
-		isUsername, 
-		isPassword, 
+	import {
+		isRequired,
+		isEmail,
+		minLength,
+		maxLength,
+		isNumeric,
+		minValue,
+		maxValue,
+		isUrl,
+		isPhoneNumber,
+		isAlphanumeric,
+		isUsername,
+		isPassword,
 		isStrongPassword,
 		isDate,
 		isFutureDate,
@@ -63,7 +63,7 @@ Try typing in the inputs below to see validation in action!
 
 <!-- BASIC VALIDATORS -->
 
-<Story 
+<Story
 	name="Required Field"
 	parameters={{
 		docs: {
@@ -82,12 +82,13 @@ Try typing in the inputs below to see validation in action!
 	}}
 />
 
-<Story 
+<Story
 	name="Email Validation"
 	parameters={{
 		docs: {
 			description: {
-				story: "Validates email format. Try entering invalid emails like 'test@' or 'invalid-email'."
+				story:
+					"Validates email format. Try entering invalid emails like 'test@' or 'invalid-email'."
 			}
 		}
 	}}
@@ -102,7 +103,7 @@ Try typing in the inputs below to see validation in action!
 	}}
 />
 
-<Story 
+<Story
 	name="Minimum Length"
 	args={{
 		id: "min-length",
@@ -113,7 +114,7 @@ Try typing in the inputs below to see validation in action!
 	}}
 />
 
-<Story 
+<Story
 	name="Maximum Length"
 	args={{
 		id: "max-length",
@@ -126,7 +127,7 @@ Try typing in the inputs below to see validation in action!
 
 <!-- NUMERIC VALIDATORS -->
 
-<Story 
+<Story
 	name="Numeric Only"
 	args={{
 		id: "numeric-field",
@@ -137,7 +138,7 @@ Try typing in the inputs below to see validation in action!
 	}}
 />
 
-<Story 
+<Story
 	name="Minimum Value"
 	args={{
 		id: "min-value",
@@ -149,7 +150,7 @@ Try typing in the inputs below to see validation in action!
 	}}
 />
 
-<Story 
+<Story
 	name="Maximum Value"
 	args={{
 		id: "max-value",
@@ -161,7 +162,7 @@ Try typing in the inputs below to see validation in action!
 	}}
 />
 
-<Story 
+<Story
 	name="Number Range"
 	args={{
 		id: "range-value",
@@ -175,7 +176,7 @@ Try typing in the inputs below to see validation in action!
 
 <!-- TEXT PATTERN VALIDATORS -->
 
-<Story 
+<Story
 	name="URL Validation"
 	args={{
 		id: "url-field",
@@ -186,7 +187,7 @@ Try typing in the inputs below to see validation in action!
 	}}
 />
 
-<Story 
+<Story
 	name="Phone Number"
 	args={{
 		id: "phone-field",
@@ -197,7 +198,7 @@ Try typing in the inputs below to see validation in action!
 	}}
 />
 
-<Story 
+<Story
 	name="Alphanumeric Only"
 	args={{
 		id: "alphanumeric",
@@ -208,7 +209,7 @@ Try typing in the inputs below to see validation in action!
 	}}
 />
 
-<Story 
+<Story
 	name="Username Validation"
 	args={{
 		id: "username-field",
@@ -219,7 +220,7 @@ Try typing in the inputs below to see validation in action!
 	}}
 />
 
-<Story 
+<Story
 	name="URL Slug"
 	args={{
 		id: "slug-field",
@@ -232,7 +233,7 @@ Try typing in the inputs below to see validation in action!
 
 <!-- PASSWORD VALIDATORS -->
 
-<Story 
+<Story
 	name="Basic Password"
 	args={{
 		id: "basic-password",
@@ -244,7 +245,7 @@ Try typing in the inputs below to see validation in action!
 	}}
 />
 
-<Story 
+<Story
 	name="Strong Password"
 	args={{
 		id: "strong-password",
@@ -258,7 +259,7 @@ Try typing in the inputs below to see validation in action!
 
 <!-- DATE VALIDATORS -->
 
-<Story 
+<Story
 	name="Date Validation"
 	args={{
 		id: "date-field",
@@ -269,7 +270,7 @@ Try typing in the inputs below to see validation in action!
 	}}
 />
 
-<Story 
+<Story
 	name="Future Date"
 	args={{
 		id: "future-date",
@@ -280,7 +281,7 @@ Try typing in the inputs below to see validation in action!
 	}}
 />
 
-<Story 
+<Story
 	name="Past Date"
 	args={{
 		id: "past-date",
@@ -291,7 +292,7 @@ Try typing in the inputs below to see validation in action!
 	}}
 />
 
-<Story 
+<Story
 	name="Age Validation"
 	args={{
 		id: "age-field",
@@ -304,7 +305,7 @@ Try typing in the inputs below to see validation in action!
 
 <!-- SPECIALIZED PATTERNS -->
 
-<Story 
+<Story
 	name="Postal Code"
 	args={{
 		id: "postal-code",
@@ -315,7 +316,7 @@ Try typing in the inputs below to see validation in action!
 	}}
 />
 
-<Story 
+<Story
 	name="Credit Card"
 	args={{
 		id: "credit-card",
@@ -326,7 +327,7 @@ Try typing in the inputs below to see validation in action!
 	}}
 />
 
-<Story 
+<Story
 	name="IP Address"
 	args={{
 		id: "ip-address",
@@ -337,7 +338,7 @@ Try typing in the inputs below to see validation in action!
 	}}
 />
 
-<Story 
+<Story
 	name="Hex Color"
 	args={{
 		id: "hex-color",
@@ -350,7 +351,7 @@ Try typing in the inputs below to see validation in action!
 
 <!-- CUSTOM PATTERN VALIDATORS -->
 
-<Story 
+<Story
 	name="Letters Only"
 	args={{
 		id: "letters-only",
@@ -361,7 +362,7 @@ Try typing in the inputs below to see validation in action!
 	}}
 />
 
-<Story 
+<Story
 	name="No Spaces"
 	args={{
 		id: "no-spaces",
@@ -372,7 +373,7 @@ Try typing in the inputs below to see validation in action!
 	}}
 />
 
-<Story 
+<Story
 	name="Product Code"
 	args={{
 		id: "custom-regex",
@@ -385,7 +386,7 @@ Try typing in the inputs below to see validation in action!
 
 <!-- COMBINED VALIDATORS -->
 
-<Story 
+<Story
 	name="Required Email"
 	args={{
 		id: "required-email",
@@ -398,51 +399,38 @@ Try typing in the inputs below to see validation in action!
 	}}
 />
 
-<Story 
+<Story
 	name="Strong Username"
 	args={{
 		id: "strong-username",
 		label: "Strong Username",
-		validator: combineValidators(
-			isRequired,
-			minLength(4),
-			maxLength(20),
-			isUsername
-		),
+		validator: combineValidators(isRequired, minLength(4), maxLength(20), isUsername),
 		helpText: "Required, 4-20 chars, alphanumeric + underscores",
 		placeholder: "strong_user123",
 		required: true
 	}}
 />
 
-<Story 
+<Story
 	name="Secure Password"
 	args={{
 		id: "secure-password",
 		label: "Secure Password",
 		type: "password",
-		validator: combineValidators(
-			isRequired,
-			isStrongPassword,
-			minLength(12)
-		),
+		validator: combineValidators(isRequired, isStrongPassword, minLength(12)),
 		helpText: "Required, strong password, min 12 characters",
 		placeholder: "VerySecure123!",
 		required: true
 	}}
 />
 
-<Story 
+<Story
 	name="Adult Birth Date"
 	args={{
 		id: "adult-age",
 		label: "Adult Birth Date",
 		type: "date",
-		validator: combineValidators(
-			isRequired,
-			isPastDate,
-			isAge(18, 120)
-		),
+		validator: combineValidators(isRequired, isPastDate, isAge(18, 120)),
 		helpText: "Required, past date, age 18-120",
 		required: true
 	}}

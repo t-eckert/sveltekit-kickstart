@@ -1,29 +1,29 @@
 {
-  "permissions": {
-    "allow": [
-      "Bash(npm run storybook:*)",
-      "Bash(timeout 10s npm run storybook)",
-      "Bash(true)",
-      "Bash(mv:*)",
-      "Bash(rm:*)",
-      "Bash(pkill:*)",
-      "Bash(mkdir:*)",
-      "Bash(find:*)",
-      "Bash(ls:*)",
-      "Bash(npm run test:unit:*)",
-      "Bash(git add:*)",
-      "Bash(git commit:*)",
-      "Bash(npm run check:*)",
-      "Bash(npm install:*)",
-      "Bash(npm run build:*)",
-      "Bash(timeout 30s npm run build)",
-      "Bash(/dev/null)",
-      "Bash(npm run:*)",
-      "Bash(grep:*)",
-      "Bash(npx drizzle-kit push:*)",
-      "Bash(timeout 30s npm run storybook)"
-    ],
-    "deny": []
-  },
-  "enableAllProjectMcpServers": false
+	"permissions": {
+		"allow": [
+			"Bash(npm run storybook:*)",
+			"Bash(timeout 10s npm run storybook)",
+			"Bash(true)",
+			"Bash(mv:*)",
+			"Bash(rm:*)",
+			"Bash(pkill:*)",
+			"Bash(mkdir:*)",
+			"Bash(find:*)",
+			"Bash(ls:*)",
+			"Bash(npm run test:unit:*)",
+			"Bash(git add:*)",
+			"Bash(git commit:*)",
+			"Bash(npm run check:*)",
+			"Bash(npm install:*)",
+			"Bash(npm run build:*)",
+			"Bash(timeout 30s npm run build)",
+			"Bash(/dev/null)",
+			"Bash(npm run:*)",
+			"Bash(grep:*)",
+			"Bash(npx drizzle-kit push:*)",
+			"Bash(timeout 30s npm run storybook)"
+		],
+		"deny": []
+	},
+	"enableAllProjectMcpServers": false
 }

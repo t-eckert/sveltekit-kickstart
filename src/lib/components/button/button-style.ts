@@ -1,12 +1,28 @@
 import { cva } from "cva"
 
 const buttonStyle = cva(
-	"select-none cursor-pointer group flex flex-row gap-1 items-center justify-center transition-all disabled:cursor-not-allowed",
+	[
+		"select-none",
+		"cursor-pointer",
+		"group",
+		"flex",
+		"flex-row",
+		"gap-1",
+		"items-center",
+		"justify-center",
+		"transition-all",
+		"disabled:cursor-not-allowed",
+		"focus:outline-blue-500",
+		"focus:ring-4",
+		"focus:ring-blue-500"
+	],
 	{
 		variants: {
 			role: {
 				primary: ["outline"],
-				secondary: "",
+				secondary: [
+					"backdrop-blur-2xl",
+				],
 				tertiary: [
 					"bg-none",
 					"disabled:text-stone-300",
@@ -38,9 +54,6 @@ const buttonStyle = cva(
 					"shadow-neutral-700",
 					"outline-neutral-800",
 					"active:outline-blue-500",
-					"focus:ring-4",
-					"focus:ring-blue-500",
-					"focus:outline-blue-500",
 					"disabled:text-neutral-200",
 					"disabled:bg-neutral-500",
 					"disabled:outline-neutral-500",
@@ -62,9 +75,6 @@ const buttonStyle = cva(
 					"hover:bg-sky-600",
 					"hover:shadow-sky-500/50",
 					"active:outline-blue-500",
-					"focus:ring-4",
-					"focus:ring-blue-500",
-					"focus:outline-blue-500",
 					"disabled:text-sky-200",
 					"disabled:bg-sky-500",
 					"disabled:outline-sky-500",
@@ -83,9 +93,6 @@ const buttonStyle = cva(
 					"shadow-inner",
 					"shadow-rose-500",
 					"active:outline-blue-500",
-					"focus:ring-4",
-					"focus:ring-blue-500",
-					"focus:outline-blue-500",
 					"disabled:text-red-200",
 					"disabled:bg-red-500",
 					"disabled:outline-red-500",
@@ -100,15 +107,13 @@ const buttonStyle = cva(
 				tone: "neutral",
 				class: [
 					"bg-neutral-300/40",
-					"backdrop-blur-2xl",
 					"text-neutral-800",
 					"hover:text-neutral-900",
 					"hover:bg-neutral-300/60",
 					"outline",
 					"outline-neutral-300/40",
-					"focus:outline-blue-500",
-					"focus:ring-4",
-					"focus:ring-blue-500",
+					"dark:bg-neutral-600/40",
+					"dark:text-neutral-300",
 					"disabled:text-neutral-400",
 					"disabled:bg-neutral-300/20",
 					"disabled:outline-neutral-300/20",

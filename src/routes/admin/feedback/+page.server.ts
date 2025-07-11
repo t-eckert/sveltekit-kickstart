@@ -10,10 +10,7 @@ export const load: PageServerLoad = async ({ url, locals }) => {
 	const status = url.searchParams.get("status") || undefined
 	const limit = parseInt(url.searchParams.get("limit") || "50")
 
-	const [feedback, stats] = await Promise.all([
-		getFeedback(limit, status),
-		getFeedbackStats()
-	])
+	const [feedback, stats] = await Promise.all([getFeedback(limit, status), getFeedbackStats()])
 
 	return {
 		feedback,
@@ -46,7 +43,7 @@ export const actions: Actions = {
 		}
 
 		const success = await updateFeedbackStatus(id, newStatus.toString(), locals.user.id)
-		
+
 		if (!success) {
 			return fail(500, { error: "Failed to update feedback status" })
 		}

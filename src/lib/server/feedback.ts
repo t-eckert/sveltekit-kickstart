@@ -17,19 +17,22 @@ export interface FeedbackEntry {
 
 export async function submitFeedback(entry: FeedbackEntry): Promise<Feedback> {
 	try {
-		const [newFeedback] = await db.insert(feedback).values({
-			userId: entry.userId,
-			name: entry.name,
-			email: entry.email,
-			subject: entry.subject,
-			message: entry.message,
-			rating: entry.rating,
-			status: "open",
-			ipAddress: entry.ipAddress,
-			userAgent: entry.userAgent,
-			createdAt: new Date(),
-			updatedAt: new Date()
-		}).returning()
+		const [newFeedback] = await db
+			.insert(feedback)
+			.values({
+				userId: entry.userId,
+				name: entry.name,
+				email: entry.email,
+				subject: entry.subject,
+				message: entry.message,
+				rating: entry.rating,
+				status: "open",
+				ipAddress: entry.ipAddress,
+				userAgent: entry.userAgent,
+				createdAt: new Date(),
+				updatedAt: new Date()
+			})
+			.returning()
 
 		// Log feedback submission
 		await logAuditEvent({
@@ -37,7 +40,7 @@ export async function submitFeedback(entry: FeedbackEntry): Promise<Feedback> {
 			action: "FEEDBACK_SUBMITTED",
 			resource: "feedback",
 			resourceId: newFeedback.id.toString(),
-			details: { 
+			details: {
 				subject: entry.subject,
 				rating: entry.rating,
 				hasEmail: !!entry.email
@@ -49,7 +52,7 @@ export async function submitFeedback(entry: FeedbackEntry): Promise<Feedback> {
 		return newFeedback
 	} catch (error) {
 		console.error("Failed to submit feedback:", error)
-		
+
 		// Log error
 		await logAuditEvent({
 			userId: entry.userId,
@@ -59,7 +62,7 @@ export async function submitFeedback(entry: FeedbackEntry): Promise<Feedback> {
 			ipAddress: entry.ipAddress,
 			userAgent: entry.userAgent
 		})
-		
+
 		throw new Error("Failed to submit feedback")
 	}
 }
@@ -75,11 +78,7 @@ export async function getFeedback(limit: number = 50, status?: string): Promise<
 				.limit(limit)
 		}
 
-		return await db
-			.select()
-			.from(feedback)
-			.orderBy(desc(feedback.createdAt))
-			.limit(limit)
+		return await db.select().from(feedback).orderBy(desc(feedback.createdAt)).limit(limit)
 	} catch (error) {
 		console.error("Failed to fetch feedback:", error)
 		return []
@@ -88,10 +87,7 @@ export async function getFeedback(limit: number = 50, status?: string): Promise<
 
 export async function getFeedbackById(id: number): Promise<Feedback | null> {
 	try {
-		const [result] = await db
-			.select()
-			.from(feedback)
-			.where(eq(feedback.id, id))
+		const [result] = await db.select().from(feedback).where(eq(feedback.id, id))
 
 		return result || null
 	} catch (error) {
@@ -100,13 +96,17 @@ export async function getFeedbackById(id: number): Promise<Feedback | null> {
 	}
 }
 
-export async function updateFeedbackStatus(id: number, status: string, userId?: string): Promise<boolean> {
+export async function updateFeedbackStatus(
+	id: number,
+	status: string,
+	userId?: string
+): Promise<boolean> {
 	try {
 		await db
 			.update(feedback)
-			.set({ 
-				status, 
-				updatedAt: new Date() 
+			.set({
+				status,
+				updatedAt: new Date()
 			})
 			.where(eq(feedback.id, id))
 
@@ -135,16 +135,16 @@ export async function getFeedbackStats(): Promise<{
 }> {
 	try {
 		const allFeedback = await db.select().from(feedback)
-		
+
 		const stats = {
 			total: allFeedback.length,
-			open: allFeedback.filter(f => f.status === "open").length,
-			reviewing: allFeedback.filter(f => f.status === "reviewing").length,
-			closed: allFeedback.filter(f => f.status === "closed").length,
+			open: allFeedback.filter((f) => f.status === "open").length,
+			reviewing: allFeedback.filter((f) => f.status === "reviewing").length,
+			closed: allFeedback.filter((f) => f.status === "closed").length,
 			averageRating: 0
 		}
 
-		const ratingsWithValues = allFeedback.filter(f => f.rating !== null)
+		const ratingsWithValues = allFeedback.filter((f) => f.rating !== null)
 		if (ratingsWithValues.length > 0) {
 			const totalRating = ratingsWithValues.reduce((sum, f) => sum + (f.rating || 0), 0)
 			stats.averageRating = Math.round((totalRating / ratingsWithValues.length) * 10) / 10

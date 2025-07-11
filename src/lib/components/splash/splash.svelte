@@ -15,7 +15,8 @@
 				<H1 text={config.title} />
 				<P class="mt-3 text-lg text-gray-600 dark:text-gray-300">
 					{#snippet children()}
-						A production-ready SvelteKit starter with 40+ components, authentication, and modern tooling
+						A production-ready SvelteKit starter with 40+ components, authentication, and modern
+						tooling
 					{/snippet}
 				</P>
 			</div>
@@ -65,8 +66,10 @@
 			<div class="mt-8 border-t pt-6">
 				<P class="text-xs text-gray-500 dark:text-gray-400">
 					{#snippet children()}
-						👋 <strong>For developers:</strong> This splash component is in 
-						<code class="rounded bg-gray-100 px-1 py-0.5 dark:bg-gray-800">src/lib/components/splash/splash.svelte</code>
+						👋 <strong>For developers:</strong> This splash component is in
+						<code class="rounded bg-gray-100 px-1 py-0.5 dark:bg-gray-800"
+							>src/lib/components/splash/splash.svelte</code
+						>
 						— remove it to build your own site!
 					{/snippet}
 				</P>

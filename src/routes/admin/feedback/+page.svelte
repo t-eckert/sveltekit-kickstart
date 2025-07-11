@@ -17,29 +17,33 @@
 
 	function getStatusColor(status: string): "neutral" | "blue" | "yellow" | "green" {
 		switch (status) {
-			case "open": return "blue"
-			case "reviewing": return "yellow" 
-			case "closed": return "green"
-			default: return "neutral"
+			case "open":
+				return "blue"
+			case "reviewing":
+				return "yellow"
+			case "closed":
+				return "green"
+			default:
+				return "neutral"
 		}
 	}
 
 	function formatDate(timestamp: Date): string {
-		return new Date(timestamp).toLocaleDateString('en-US', {
-			year: 'numeric',
-			month: 'short',
-			day: 'numeric',
-			hour: '2-digit',
-			minute: '2-digit'
+		return new Date(timestamp).toLocaleDateString("en-US", {
+			year: "numeric",
+			month: "short",
+			day: "numeric",
+			hour: "2-digit",
+			minute: "2-digit"
 		})
 	}
 
 	function filterByStatus(status?: string) {
 		const url = new URL(window.location.href)
 		if (status) {
-			url.searchParams.set('status', status)
+			url.searchParams.set("status", status)
 		} else {
-			url.searchParams.delete('status')
+			url.searchParams.delete("status")
 		}
 		goto(url.toString())
 	}
@@ -60,7 +64,7 @@
 	</div>
 
 	<!-- Stats Cards -->
-	<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+	<div class="grid grid-cols-1 gap-6 md:grid-cols-4">
 		<Card class="p-6">
 			{#snippet children()}
 				<div class="text-center">
@@ -80,7 +84,9 @@
 		<Card class="p-6">
 			{#snippet children()}
 				<div class="text-center">
-					<div class="text-2xl font-bold text-yellow-600 dark:text-yellow-400">{data.stats.reviewing}</div>
+					<div class="text-2xl font-bold text-yellow-600 dark:text-yellow-400">
+						{data.stats.reviewing}
+					</div>
 					<div class="text-sm text-gray-600 dark:text-gray-400">Reviewing</div>
 				</div>
 			{/snippet}
@@ -89,9 +95,9 @@
 			{#snippet children()}
 				<div class="text-center">
 					<div class="flex items-center justify-center space-x-1">
-						<Star size={20} class="text-yellow-400 fill-current" />
+						<Star size={20} class="fill-current text-yellow-400" />
 						<div class="text-2xl font-bold text-gray-900 dark:text-gray-100">
-							{data.stats.averageRating || 'N/A'}
+							{data.stats.averageRating || "N/A"}
 						</div>
 					</div>
 					<div class="text-sm text-gray-600 dark:text-gray-400">Average Rating</div>
@@ -103,26 +109,23 @@
 	<!-- Filter Buttons -->
 	<div class="flex items-center space-x-2">
 		<Funnel size={20} class="text-gray-600 dark:text-gray-400" />
-		<Button 
-			role={!data.currentFilter ? "primary" : "tertiary"} 
-			onclick={() => filterByStatus()}
-		>
+		<Button role={!data.currentFilter ? "primary" : "tertiary"} onclick={() => filterByStatus()}>
 			{#snippet children()}All{/snippet}
 		</Button>
-		<Button 
-			role={data.currentFilter === "open" ? "primary" : "tertiary"} 
+		<Button
+			role={data.currentFilter === "open" ? "primary" : "tertiary"}
 			onclick={() => filterByStatus("open")}
 		>
 			{#snippet children()}Open{/snippet}
 		</Button>
-		<Button 
-			role={data.currentFilter === "reviewing" ? "primary" : "tertiary"} 
+		<Button
+			role={data.currentFilter === "reviewing" ? "primary" : "tertiary"}
 			onclick={() => filterByStatus("reviewing")}
 		>
 			{#snippet children()}Reviewing{/snippet}
 		</Button>
-		<Button 
-			role={data.currentFilter === "closed" ? "primary" : "tertiary"} 
+		<Button
+			role={data.currentFilter === "closed" ? "primary" : "tertiary"}
 			onclick={() => filterByStatus("closed")}
 		>
 			{#snippet children()}Closed{/snippet}
@@ -133,10 +136,10 @@
 	{#if data.feedback.length === 0}
 		<Card class="p-6 text-center">
 			{#snippet children()}
-				<ChatCircle size={48} class="text-gray-400 mx-auto mb-4" />
+				<ChatCircle size={48} class="mx-auto mb-4 text-gray-400" />
 				<P class="text-gray-500">
 					{#snippet children()}
-						No feedback found{data.currentFilter ? ` with status "${data.currentFilter}"` : ''}.
+						No feedback found{data.currentFilter ? ` with status "${data.currentFilter}"` : ""}.
 					{/snippet}
 				</P>
 			{/snippet}
@@ -168,11 +171,15 @@
 											{#snippet children()}
 												<Td>
 													<div>
-														<div class="font-medium text-gray-900 dark:text-gray-100 truncate max-w-xs">
+														<div
+															class="max-w-xs truncate font-medium text-gray-900 dark:text-gray-100"
+														>
 															{feedback.subject}
 														</div>
-														<div class="text-sm text-gray-600 dark:text-gray-400 truncate max-w-xs">
-															{feedback.message.substring(0, 100)}{feedback.message.length > 100 ? '...' : ''}
+														<div class="max-w-xs truncate text-sm text-gray-600 dark:text-gray-400">
+															{feedback.message.substring(0, 100)}{feedback.message.length > 100
+																? "..."
+																: ""}
 														</div>
 													</div>
 												</Td>
@@ -181,7 +188,7 @@
 														<User size={16} class="text-gray-400" />
 														<div>
 															<div class="text-sm font-medium text-gray-900 dark:text-gray-100">
-																{feedback.name || 'Anonymous'}
+																{feedback.name || "Anonymous"}
 															</div>
 															{#if feedback.email}
 																<div class="text-xs text-gray-600 dark:text-gray-400">
@@ -195,7 +202,7 @@
 													{#if feedback.rating}
 														<div class="flex items-center space-x-1">
 															{#each Array(feedback.rating) as _}
-																<Star size={14} class="text-yellow-400 fill-current" />
+																<Star size={14} class="fill-current text-yellow-400" />
 															{/each}
 															<span class="text-sm text-gray-600 dark:text-gray-400">
 																{feedback.rating}
@@ -209,7 +216,9 @@
 													<Badge text={feedback.status} color={getStatusColor(feedback.status)} />
 												</Td>
 												<Td>
-													<div class="flex items-center space-x-1 text-sm text-gray-600 dark:text-gray-400">
+													<div
+														class="flex items-center space-x-1 text-sm text-gray-600 dark:text-gray-400"
+													>
 														<Calendar size={14} />
 														<span>{formatDate(feedback.createdAt)}</span>
 													</div>
@@ -217,17 +226,23 @@
 												<Td>
 													<form method="post" action="?/updateStatus" use:enhance>
 														<input type="hidden" name="feedbackId" value={feedback.id} />
-														<select 
-															name="status" 
-															class="text-xs rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-2 py-1"
+														<select
+															name="status"
+															class="rounded border border-gray-300 bg-white px-2 py-1 text-xs dark:border-gray-600 dark:bg-gray-800"
 															onchange={(e) => {
 																const target = e.target as HTMLSelectElement
 																target.form?.requestSubmit()
 															}}
 														>
-															<option value="open" selected={feedback.status === "open"}>Open</option>
-															<option value="reviewing" selected={feedback.status === "reviewing"}>Reviewing</option>
-															<option value="closed" selected={feedback.status === "closed"}>Closed</option>
+															<option value="open" selected={feedback.status === "open"}
+																>Open</option
+															>
+															<option value="reviewing" selected={feedback.status === "reviewing"}
+																>Reviewing</option
+															>
+															<option value="closed" selected={feedback.status === "closed"}
+																>Closed</option
+															>
 														</select>
 													</form>
 												</Td>

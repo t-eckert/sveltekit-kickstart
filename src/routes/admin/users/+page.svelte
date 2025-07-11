@@ -47,7 +47,7 @@
 				</Tbody>
 			</Table>
 		</Card>
-		
+
 		<div class="text-center">
 			<P class="text-sm text-gray-500">Total users: {data.users.length}</P>
 		</div>

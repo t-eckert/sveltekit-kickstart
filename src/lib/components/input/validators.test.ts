@@ -135,8 +135,14 @@ describe("Pattern Validators", () => {
 		expect(isUsername("user123")).toEqual([true])
 		expect(isUsername("test_user")).toEqual([true])
 		expect(isUsername("ab")).toEqual([false, "Username must be between 3 and 31 characters"])
-		expect(isUsername("a".repeat(32))).toEqual([false, "Username must be between 3 and 31 characters"])
-		expect(isUsername("user-name")).toEqual([false, "Username can only contain letters, numbers, and underscores"])
+		expect(isUsername("a".repeat(32))).toEqual([
+			false,
+			"Username must be between 3 and 31 characters"
+		])
+		expect(isUsername("user-name")).toEqual([
+			false,
+			"Username can only contain letters, numbers, and underscores"
+		])
 	})
 })
 
@@ -144,17 +150,38 @@ describe("Password Validators", () => {
 	it("isPassword should validate basic passwords", () => {
 		expect(isPassword("password")).toEqual([true])
 		expect(isPassword("12345")).toEqual([false, "Password must be between 6 and 255 characters"])
-		expect(isPassword("a".repeat(256))).toEqual([false, "Password must be between 6 and 255 characters"])
+		expect(isPassword("a".repeat(256))).toEqual([
+			false,
+			"Password must be between 6 and 255 characters"
+		])
 	})
 
 	it("isStrongPassword should validate strong passwords", () => {
 		expect(isStrongPassword("Password123!")).toEqual([true])
-		expect(isStrongPassword("short")).toEqual([false, "Password must be at least 8 characters long"])
-		expect(isStrongPassword("password")).toEqual([false, "Password must contain at least one uppercase letter"])
-		expect(isStrongPassword("PASSWORD123!")).toEqual([false, "Password must contain at least one lowercase letter"])
-		expect(isStrongPassword("password123!")).toEqual([false, "Password must contain at least one uppercase letter"])
-		expect(isStrongPassword("Password!")).toEqual([false, "Password must contain at least one number"])
-		expect(isStrongPassword("Password123")).toEqual([false, "Password must contain at least one special character"])
+		expect(isStrongPassword("short")).toEqual([
+			false,
+			"Password must be at least 8 characters long"
+		])
+		expect(isStrongPassword("password")).toEqual([
+			false,
+			"Password must contain at least one uppercase letter"
+		])
+		expect(isStrongPassword("PASSWORD123!")).toEqual([
+			false,
+			"Password must contain at least one lowercase letter"
+		])
+		expect(isStrongPassword("password123!")).toEqual([
+			false,
+			"Password must contain at least one uppercase letter"
+		])
+		expect(isStrongPassword("Password!")).toEqual([
+			false,
+			"Password must contain at least one number"
+		])
+		expect(isStrongPassword("Password123")).toEqual([
+			false,
+			"Password must contain at least one special character"
+		])
 	})
 })
 
@@ -168,10 +195,10 @@ describe("Date Validators", () => {
 	it("isFutureDate should validate future dates", () => {
 		const futureDate = new Date()
 		futureDate.setDate(futureDate.getDate() + 1)
-		
+
 		const pastDate = new Date()
 		pastDate.setDate(pastDate.getDate() - 1)
-		
+
 		expect(isFutureDate(futureDate.toISOString())).toEqual([true])
 		expect(isFutureDate(pastDate.toISOString())).toEqual([false, "Date must be in the future"])
 	})
@@ -179,10 +206,10 @@ describe("Date Validators", () => {
 	it("isPastDate should validate past dates", () => {
 		const futureDate = new Date()
 		futureDate.setDate(futureDate.getDate() + 1)
-		
+
 		const pastDate = new Date()
 		pastDate.setDate(pastDate.getDate() - 1)
-		
+
 		expect(isPastDate(pastDate.toISOString())).toEqual([true])
 		expect(isPastDate(futureDate.toISOString())).toEqual([false, "Date must be in the past"])
 	})
@@ -191,10 +218,10 @@ describe("Date Validators", () => {
 		const eighteenYearsAgo = new Date()
 		eighteenYearsAgo.setFullYear(eighteenYearsAgo.getFullYear() - 18)
 		eighteenYearsAgo.setDate(eighteenYearsAgo.getDate() - 1) // Make sure they're past their birthday
-		
+
 		const tenYearsAgo = new Date()
 		tenYearsAgo.setFullYear(tenYearsAgo.getFullYear() - 10)
-		
+
 		const validator = isAge(18)
 		expect(validator(eighteenYearsAgo.toISOString())).toEqual([true])
 		expect(validator(tenYearsAgo.toISOString())).toEqual([false, "Must be at least 18 years old"])
@@ -229,17 +256,32 @@ describe("Specialized Pattern Validators", () => {
 		expect(isHexColor("#FF0000")).toEqual([true])
 		expect(isHexColor("#f00")).toEqual([true])
 		expect(isHexColor("#123ABC")).toEqual([true])
-		expect(isHexColor("FF0000")).toEqual([false, "Must be a valid hex color (e.g., #FF0000 or #F00)"])
-		expect(isHexColor("#GG0000")).toEqual([false, "Must be a valid hex color (e.g., #FF0000 or #F00)"])
+		expect(isHexColor("FF0000")).toEqual([
+			false,
+			"Must be a valid hex color (e.g., #FF0000 or #F00)"
+		])
+		expect(isHexColor("#GG0000")).toEqual([
+			false,
+			"Must be a valid hex color (e.g., #FF0000 or #F00)"
+		])
 	})
 
 	it("isSlug should validate URL slugs", () => {
 		expect(isSlug("my-url-slug")).toEqual([true])
 		expect(isSlug("simple")).toEqual([true])
 		expect(isSlug("multi-word-slug")).toEqual([true])
-		expect(isSlug("MySlug")).toEqual([false, "Must be a valid slug (lowercase letters, numbers, and hyphens only)"])
-		expect(isSlug("my_slug")).toEqual([false, "Must be a valid slug (lowercase letters, numbers, and hyphens only)"])
-		expect(isSlug("my slug")).toEqual([false, "Must be a valid slug (lowercase letters, numbers, and hyphens only)"])
+		expect(isSlug("MySlug")).toEqual([
+			false,
+			"Must be a valid slug (lowercase letters, numbers, and hyphens only)"
+		])
+		expect(isSlug("my_slug")).toEqual([
+			false,
+			"Must be a valid slug (lowercase letters, numbers, and hyphens only)"
+		])
+		expect(isSlug("my slug")).toEqual([
+			false,
+			"Must be a valid slug (lowercase letters, numbers, and hyphens only)"
+		])
 	})
 })
 
@@ -287,12 +329,8 @@ describe("Conditional Validators", () => {
 
 describe("Combined Validators", () => {
 	it("combineValidators should run all validators in sequence", () => {
-		const validator = combineValidators(
-			isRequired,
-			minLength(5),
-			isEmail
-		)
-		
+		const validator = combineValidators(isRequired, minLength(5), isEmail)
+
 		expect(validator("test@example.com")).toEqual([true])
 		expect(validator("")).toEqual([false, "This field is required"])
 		expect(validator("test")).toEqual([false, "Must be at least 5 characters long"])
@@ -305,7 +343,7 @@ describe("Combined Validators", () => {
 			minLength(10), // This will fail first
 			isEmail // This won't be reached
 		)
-		
+
 		expect(validator("short")).toEqual([false, "Must be at least 10 characters long"])
 	})
 })

@@ -1,10 +1,7 @@
 import { getContext, setContext } from "svelte"
 
-
 class Store {
-	constructor() {
-
-	}
+	constructor() {}
 }
 
 const KEY = Symbol("key")

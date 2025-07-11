@@ -23,6 +23,7 @@ cp .env.example .env
 ```
 
 The only required environment variable is:
+
 - `DATABASE_URL`: Path to your SQLite database file (e.g., `file:local.db`)
 
 ### 2. Database Setup
@@ -59,6 +60,7 @@ npm run dev
 ### 5. Authentication Setup
 
 The application includes a complete authentication system with:
+
 - User registration at `/auth/register`
 - User login at `/auth/login`
 - Session management with secure cookies
@@ -70,6 +72,7 @@ Create your first user by visiting `/auth/register` and then log in at `/auth/lo
 ### 6. Admin Features
 
 Once logged in, you can access admin features at:
+
 - `/admin` - Admin dashboard
 - `/admin/users` - User management
 - `/admin/feedback` - Feedback management and analytics
@@ -79,6 +82,7 @@ Once logged in, you can access admin features at:
 ### 7. User Feedback System
 
 The starter includes a complete feedback system:
+
 - **User Submission**: `/feedback` - Users can submit feedback with ratings and contact info
 - **Admin Management**: `/admin/feedback` - View, filter, and manage feedback submissions
 - **Analytics**: Feedback statistics including average ratings and status tracking
@@ -105,7 +109,7 @@ I've also formatted this project for AI-based development with Claude. This incl
 
 ### Pre-built Components
 
-Using [Bits UI](https://www.bits-ui.com/) as a foundation, this project offers 
+Using [Bits UI](https://www.bits-ui.com/) as a foundation, this project offers
 
 - [Accordion](./src/lib/components/accordion/accordion.svelte)
 - [Article]
@@ -154,14 +158,13 @@ Using [Bits UI](https://www.bits-ui.com/) as a foundation, this project offers
 - Tooltip
 - Window
 
-
 ### Tailwind CSS 4 and Class Variance Authority
 
 Already configured for using Tailwind out of the box with `dark:` set up for dark theming. Includes the Prettier config to consistently order Tailwind classes. Uses Class Variance Authority to manage complex variants (e.g. different button styling)
 
 ### Taskfile
 
-Common actions 
+Common actions
 
 ### Phosphor Icons
 

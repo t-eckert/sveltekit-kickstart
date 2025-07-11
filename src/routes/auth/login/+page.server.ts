@@ -91,7 +91,7 @@ export const actions: Actions = {
 			return redirect(302, "/")
 		} catch (e) {
 			console.error("Login error:", e)
-			
+
 			// Log system error
 			await logAuditEvent({
 				action: "LOGIN_ERROR",
@@ -100,7 +100,7 @@ export const actions: Actions = {
 				ipAddress: event.getClientAddress(),
 				userAgent: event.request.headers.get("user-agent") || undefined
 			})
-			
+
 			return fail(500, { message: "An error occurred during login" })
 		}
 	}

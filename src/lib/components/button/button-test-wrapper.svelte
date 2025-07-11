@@ -1,22 +1,22 @@
 <script lang="ts">
 	import Button from "./button.svelte"
-	
-	let { 
-		text, 
-		role, 
-		tone, 
-		shape, 
-		href, 
-		onclick, 
-		disabled, 
-		name, 
-		value, 
-		formaction, 
-		type, 
-		ariaLabel, 
-		ariaDescribedBy, 
-		ariaExpanded, 
-		ariaPressed 
+
+	let {
+		text,
+		role,
+		tone,
+		shape,
+		href,
+		onclick,
+		disabled,
+		name,
+		value,
+		formaction,
+		type,
+		ariaLabel,
+		ariaDescribedBy,
+		ariaExpanded,
+		ariaPressed
 	}: {
 		text: string
 		role?: "primary" | "secondary" | "tertiary"
@@ -36,20 +36,20 @@
 	} = $props()
 </script>
 
-<Button 
-	{role} 
-	{tone} 
-	{shape} 
-	{href} 
-	{onclick} 
-	{disabled} 
-	{name} 
-	{value} 
-	{formaction} 
-	{type} 
-	{ariaLabel} 
-	{ariaDescribedBy} 
-	{ariaExpanded} 
+<Button
+	{role}
+	{tone}
+	{shape}
+	{href}
+	{onclick}
+	{disabled}
+	{name}
+	{value}
+	{formaction}
+	{type}
+	{ariaLabel}
+	{ariaDescribedBy}
+	{ariaExpanded}
 	{ariaPressed}
 >
 	{#snippet children()}{text}{/snippet}

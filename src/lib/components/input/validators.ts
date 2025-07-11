@@ -193,7 +193,10 @@ export const dateRange =
 			return [false, "Must be a valid date"]
 		}
 		if (date < minDate || date > maxDate) {
-			return [false, `Date must be between ${minDate.toLocaleDateString()} and ${maxDate.toLocaleDateString()}`]
+			return [
+				false,
+				`Date must be between ${minDate.toLocaleDateString()} and ${maxDate.toLocaleDateString()}`
+			]
 		}
 		return [true]
 	}
@@ -206,7 +209,7 @@ export const isPostalCode: Validator = (value) => {
 	const caPostalRegex = /^[A-Za-z]\d[A-Za-z] \d[A-Za-z]\d$/
 	// UK postal code
 	const ukPostalRegex = /^[A-Za-z]{1,2}\d[A-Za-z\d]? \d[A-Za-z]{2}$/
-	
+
 	const str = String(value).trim()
 	if (!usZipRegex.test(str) && !caPostalRegex.test(str) && !ukPostalRegex.test(str)) {
 		return [false, "Must be a valid postal code"]
@@ -216,28 +219,28 @@ export const isPostalCode: Validator = (value) => {
 
 export const isCreditCard: Validator = (value) => {
 	// Luhn algorithm for credit card validation
-	const cardNumber = String(value).replace(/\D/g, '')
+	const cardNumber = String(value).replace(/\D/g, "")
 	if (cardNumber.length < 13 || cardNumber.length > 19) {
 		return [false, "Credit card number must be 13-19 digits"]
 	}
-	
+
 	let sum = 0
 	let isEven = false
-	
+
 	for (let i = cardNumber.length - 1; i >= 0; i--) {
 		let digit = parseInt(cardNumber.charAt(i), 10)
-		
+
 		if (isEven) {
 			digit *= 2
 			if (digit > 9) {
 				digit -= 9
 			}
 		}
-		
+
 		sum += digit
 		isEven = !isEven
 	}
-	
+
 	if (sum % 10 !== 0) {
 		return [false, "Must be a valid credit card number"]
 	}
@@ -245,9 +248,10 @@ export const isCreditCard: Validator = (value) => {
 }
 
 export const isIPAddress: Validator = (value) => {
-	const ipv4Regex = /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/
+	const ipv4Regex =
+		/^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/
 	const ipv6Regex = /^(?:[0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}$/
-	
+
 	const str = String(value)
 	if (!ipv4Regex.test(str) && !ipv6Regex.test(str)) {
 		return [false, "Must be a valid IP address"]
@@ -305,7 +309,7 @@ export const isSlug: Validator = (value) => {
 export const isFileSize =
 	(maxSizeMB: number): Validator =>
 	(value) => {
-		if (typeof value === 'object' && value instanceof File) {
+		if (typeof value === "object" && value instanceof File) {
 			const sizeMB = value.size / (1024 * 1024)
 			if (sizeMB > maxSizeMB) {
 				return [false, `File size must be less than ${maxSizeMB}MB`]
@@ -317,9 +321,9 @@ export const isFileSize =
 export const isFileType =
 	(allowedTypes: string[]): Validator =>
 	(value) => {
-		if (typeof value === 'object' && value instanceof File) {
+		if (typeof value === "object" && value instanceof File) {
 			if (!allowedTypes.includes(value.type)) {
-				return [false, `File type must be one of: ${allowedTypes.join(', ')}`]
+				return [false, `File type must be one of: ${allowedTypes.join(", ")}`]
 			}
 		}
 		return [true]
@@ -333,22 +337,22 @@ export const isAge =
 		if (isNaN(birthDate.getTime())) {
 			return [false, "Must be a valid birth date"]
 		}
-		
+
 		const today = new Date()
 		const age = today.getFullYear() - birthDate.getFullYear()
 		const monthDiff = today.getMonth() - birthDate.getMonth()
 		const dayDiff = today.getDate() - birthDate.getDate()
-		
+
 		const actualAge = monthDiff < 0 || (monthDiff === 0 && dayDiff < 0) ? age - 1 : age
-		
+
 		if (actualAge < minAge) {
 			return [false, `Must be at least ${minAge} years old`]
 		}
-		
+
 		if (maxAge && actualAge > maxAge) {
 			return [false, `Must be no more than ${maxAge} years old`]
 		}
-		
+
 		return [true]
 	}
 

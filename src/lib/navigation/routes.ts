@@ -1,34 +1,33 @@
+/* Routes
+ *
+ * This file provides
+ */
+
 export type Route = {
 	name: string
 	path: string
-	level: number
 }
 
 const routes: Route[] = [
 	{
 		name: "Feedback",
-		path: "/feedback",
-		level: 1
+		path: "/feedback"
 	},
 	{
 		name: "About",
-		path: "/about",
-		level: 1
+		path: "/about"
 	},
 	{
 		name: "Validators",
-		path: "/demo/validators",
-		level: 1
+		path: "/demo/validators"
 	},
 	{
 		name: "Login",
-		path: "/auth/login",
-		level: 1
+		path: "/auth/login"
 	},
 	{
 		name: "Admin",
-		path: "/admin",
-		level: 1
+		path: "/admin"
 	}
 ]
 
