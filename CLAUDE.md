@@ -48,7 +48,7 @@ All npm commands can also be run using `task` (e.g., `task dev`, `task build`, `
 - **Tailwind CSS 4** with dark mode support
 - **Class Variance Authority (CVA)** for component variants (aliased as `cva`)
 - **Theme System**: Light/dark theming with Svelte stores in `src/lib/theme/`
-- **Fonts**: Inter Variable, JetBrains Mono Variable, and Libre Caslon Text
+- **Fonts**: Inter (via Google Fonts), JetBrains Mono Variable, and Libre Caslon Text
 
 ### Backend Architecture
 
@@ -63,9 +63,9 @@ All npm commands can also be run using `task` (e.g., `task dev`, `task build`, `
 - **TypeScript** throughout
 - **Bits UI** for accessible component primitives
 - **Phosphor Icons** for iconography
-- **Svelte Sonner** for toast notifications
+- **Custom Toast System** for notifications
 - **Vitest** for unit testing, **Playwright** for E2E
-- **MDSvex** for markdown processing
+- **Custom Markdown Processing** (replaced MDSvex)
 
 ### Environment Requirements
 

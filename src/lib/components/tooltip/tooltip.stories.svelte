@@ -1,9 +1,9 @@
 <script module>
 	import { defineMeta } from "@storybook/addon-svelte-csf"
-	import Component from "./switch.svelte"
+	import Component from "./tooltip.svelte"
 
 	const { Story } = defineMeta({
-		title: "Components/Switch",
+		title: "Components/Tooltip",
 		tags: ["autodocs"],
 		component: Component,
 		parameters: {
@@ -16,9 +16,4 @@
 	})
 </script>
 
-<Story
-	name="Switch"
-	args={{
-		label: "Switch"
-	}}
-/>
+<Story name="Component" />
