@@ -1,7 +1,8 @@
 <script module>
 	import { defineMeta } from "@storybook/addon-svelte-csf"
-	import ButtonStory from "./__story.svelte"
+	import ButtonStory from "./button-story-wrapper.svelte"
 	import { fn } from "storybook/test"
+	import Button from "./button.svelte"
 
 	const { Story } = defineMeta({
 		title: "Components/Button",
@@ -49,3 +50,12 @@
 	name="Disabled"
 	args={{ role: "primary", tone: "neutral", disabled: true, label: "Disabled" }}
 />
+
+<Story name="Collection">
+	<div class="grid grid-cols-4 gap-4">
+		<div class="content">
+			<Button>Primary Neutral</Button>
+			<Button>Primary Neutral</Button>
+		</div>
+	</div>
+</Story>

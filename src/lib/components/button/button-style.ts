@@ -13,15 +13,36 @@ const buttonStyle = cva(
 		"transition-all",
 		"disabled:cursor-not-allowed",
 		"focus:outline-blue-500",
-		"focus:ring-4",
-		"focus:ring-blue-500"
+		"focus:ring-2",
+		"focus:ring-offset-1",
+		"focus:ring-blue-500",
+		"active:outline-blue-500",
 	],
 	{
 		variants: {
 			role: {
-				primary: ["outline"],
+				primary: [
+					"border",
+					"shadow-inner",
+					"disabled:text-neutral-100",
+					"disabled:bg-neutral-200",
+					"disabled:outline-neutral-200",
+					"disabled:border-neutral-200",
+					"disabled:dark:text-neutral-700",
+					"disabled:dark:bg-neutral-800",
+					"disabled:dark:outline-neutral-800",
+					"disabled:dark:border-neutral-800",
+				],
 				secondary: [
 					"backdrop-blur-2xl",
+					"disabled:text-neutral-400",
+					"disabled:bg-neutral-300/20",
+					"disabled:outline-neutral-300/20",
+					"disabled:hover:bg-neutral-300/20",
+					"disabled:dark:text-neutral-400",
+					"disabled:dark:bg-neutral-300/20",
+					"disabled:dark:outline-neutral-300/20",
+					"disabled:hover:dark:bg-neutral-300/20"
 				],
 				tertiary: [
 					"bg-none",
@@ -47,40 +68,30 @@ const buttonStyle = cva(
 				role: "primary",
 				tone: "neutral",
 				class: [
-					"bg-neutral-800",
 					"text-neutral-50",
-					"border-neutral-700",
-					"shadow-inner",
-					"shadow-neutral-700",
-					"outline-neutral-800",
-					"active:outline-blue-500",
-					"disabled:text-neutral-200",
-					"disabled:bg-neutral-500",
-					"disabled:outline-neutral-500",
-					"disabled:border-neutral-500",
-					"dark:bg-neutral-800",
+					"bg-neutral-900",
+					"border-neutral-800",
+					"shadow-neutral-800",
+					"hover:bg-neutral-950",
 					"dark:text-neutral-300",
-					"hover:bg-neutral-950"
+					"dark:bg-neutral-950",
+					"dark:border-neutral-800",
+					"dark:shadow-neutral-800",
 				]
 			},
 			{
 				role: "primary",
 				tone: "positive",
 				class: [
+					"text-sky-100",
 					"bg-sky-600",
-					"text-sky-50",
-					"shadow-inner",
 					"shadow-sky-500",
-					"outline-sky-600",
-					"hover:bg-sky-600",
-					"hover:shadow-sky-500/50",
-					"active:outline-blue-500",
-					"disabled:text-sky-200",
-					"disabled:bg-sky-500",
-					"disabled:outline-sky-500",
-					"disabled:border-sky-500",
-					"dark:bg-blue-800",
-					"dark:text-blue-300"
+					"border-sky-500",
+					"hover:bg-sky-500",
+					"dark:text-sky-100",
+					"dark:bg-sky-800",
+					"dark:border-sky-700",
+					"dark:shadow-sky-700",
 				]
 			},
 			{
@@ -90,7 +101,6 @@ const buttonStyle = cva(
 					"bg-rose-600",
 					"text-rose-50",
 					"outline-rose-700",
-					"shadow-inner",
 					"shadow-rose-500",
 					"active:outline-blue-500",
 					"disabled:text-red-200",
@@ -106,24 +116,25 @@ const buttonStyle = cva(
 				role: "secondary",
 				tone: "neutral",
 				class: [
-					"bg-neutral-300/40",
 					"text-neutral-800",
+					"bg-neutral-300/40",
 					"hover:text-neutral-900",
 					"hover:bg-neutral-300/60",
-					"outline",
-					"outline-neutral-300/40",
-					"dark:bg-neutral-600/40",
 					"dark:text-neutral-300",
-					"disabled:text-neutral-400",
-					"disabled:bg-neutral-300/20",
-					"disabled:outline-neutral-300/20",
-					"disabled:hover:bg-neutral-300/20"
+					"dark:bg-neutral-700/40",
+					"dark:hover:text-neutral-200",
+					"dark:hover:bg-neutral-700/60",
 				]
 			},
 			{
 				role: "secondary",
 				tone: "positive",
-				class: ["bg-green-200", "text-green-800", "hover:text-green-900", "hover:bg-green-300"]
+				class: [
+					"bg-green-200",
+					"text-green-800",
+					"hover:text-green-900",
+					"hover:bg-green-300"
+				]
 			},
 			{
 				role: "secondary",
