@@ -1,6 +1,6 @@
 <script module>
 	import { defineMeta } from "@storybook/addon-svelte-csf"
-	import ProgressBar from "./__story.svelte"
+	import ProgressBar from "./progress-bar.svelte"
 
 	const { Story } = defineMeta({
 		title: "Components/Progress Bar",
@@ -17,4 +17,11 @@
 	})
 </script>
 
-<Story name="Progress Bar" />
+<Story
+	name="Progress Bar"
+	args={{
+		label: "Download Progress",
+		value: 25,
+		animated: true
+	}}
+/>

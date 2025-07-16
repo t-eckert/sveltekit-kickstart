@@ -7,6 +7,9 @@
 		title: "Components/Error",
 		component: ErrorComponent,
 		tags: ["autodocs"],
+		parameters: {
+			layout: "centered"
+		},
 		argTypes: {}
 	})
 </script>

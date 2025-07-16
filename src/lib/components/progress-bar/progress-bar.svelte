@@ -37,7 +37,7 @@
 		aria-labelledby={labelId}
 		{value}
 		{max}
-		class="bg-dark-10 shadow-mini-inset relative h-[15px] w-full overflow-hidden rounded-full"
+		class="shadow-mini-inset relative h-[15px] w-full overflow-hidden rounded-full bg-emerald-500"
 	>
 		<div
 			class="bg-foreground shadow-mini-inset h-full w-full flex-1 rounded-full {animated

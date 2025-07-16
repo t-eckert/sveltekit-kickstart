@@ -1,11 +1,23 @@
 <script lang="ts">
 	import { Meter, useId } from "bits-ui"
 
-	let value = $state(2000)
-	const labelId = useId()
+	type Props = {
+		value?: number
+		max?: number
+		min?: number
+		label?: string
+		showValue?: boolean
+	}
 
-	const max = 4000
-	const min = 0
+	const {
+		value = 2000,
+		max = 4000,
+		min = 0,
+		label = "Progress",
+		showValue = true
+	}: Props = $props()
+
+	const labelId = useId()
 
 	const usedPercentage = $derived((value / max) * 100)
 	const percentageRemaining = $derived(100 - usedPercentage)
@@ -20,8 +32,10 @@
 
 <div class="flex w-[60%] flex-col gap-2">
 	<div class="flex items-center justify-between text-sm font-medium">
-		<span id={labelId}> Tokens used </span>
-		<span>{value} / {max}</span>
+		<span id={labelId}>{label}</span>
+		{#if showValue}
+			<span>{value} / {max}</span>
+		{/if}
 	</div>
 	<Meter.Root
 		aria-labelledby={labelId}
