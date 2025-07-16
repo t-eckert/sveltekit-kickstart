@@ -111,7 +111,8 @@ The textarea provides visual feedback for character limits:
 	name="Readonly"
 	args={{
 		label: "Terms & Conditions",
-		initialValue: "By using this service, you agree to our terms and conditions. This text is read-only and cannot be modified.",
+		initialValue:
+			"By using this service, you agree to our terms and conditions. This text is read-only and cannot be modified.",
 		readonly: true,
 		initialRows: 4
 	}}
@@ -131,7 +132,8 @@ The textarea provides visual feedback for character limits:
 	name="Near Character Limit"
 	args={{
 		label: "Tweet",
-		initialValue: "This is a sample message that is approaching the character limit to demonstrate the visual feedback system in action.",
+		initialValue:
+			"This is a sample message that is approaching the character limit to demonstrate the visual feedback system in action.",
 		characterLimit: 140,
 		placeholder: "What's happening?"
 	}}
@@ -141,7 +143,8 @@ The textarea provides visual feedback for character limits:
 	name="Character Limit Exceeded"
 	args={{
 		label: "Short Note",
-		initialValue: "This message exceeds the character limit and shows the reached state with red background and white text to indicate the user needs to shorten their message.",
+		initialValue:
+			"This message exceeds the character limit and shows the reached state with red background and white text to indicate the user needs to shorten their message.",
 		characterLimit: 100,
 		helpText: "Please keep your note under 100 characters"
 	}}

@@ -8,7 +8,7 @@
 		tags: ["autodocs"],
 		argTypes: {
 			href: { control: "text" },
-			target: { 
+			target: {
 				control: { type: "select" },
 				options: ["_blank", "_self", "_parent", "_top"]
 			},
@@ -145,7 +145,8 @@ Hover over or focus on the avatar to see the preview popup with detailed informa
 	args={{
 		href: "https://example.com/writer",
 		username: "@writer",
-		description: "Author, blogger, and storyteller. I write about technology, life, and everything in between. Currently working on my first novel.",
+		description:
+			"Author, blogger, and storyteller. I write about technology, life, and everything in between. Currently working on my first novel.",
 		location: "Portland, OR",
 		joinDate: "Joined January 2020",
 		avatarSrc: "/avatar-1.png",

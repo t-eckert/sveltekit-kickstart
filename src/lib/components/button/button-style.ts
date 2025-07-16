@@ -16,7 +16,7 @@ const buttonStyle = cva(
 		"focus:ring-2",
 		"focus:ring-offset-1",
 		"focus:ring-blue-500",
-		"active:outline-blue-500",
+		"active:outline-blue-500"
 	],
 	{
 		variants: {
@@ -31,7 +31,7 @@ const buttonStyle = cva(
 					"disabled:dark:text-neutral-700",
 					"disabled:dark:bg-neutral-800",
 					"disabled:dark:outline-neutral-800",
-					"disabled:dark:border-neutral-800",
+					"disabled:dark:border-neutral-800"
 				],
 				secondary: [
 					"backdrop-blur-2xl",
@@ -76,7 +76,7 @@ const buttonStyle = cva(
 					"dark:text-neutral-300",
 					"dark:bg-neutral-950",
 					"dark:border-neutral-800",
-					"dark:shadow-neutral-800",
+					"dark:shadow-neutral-800"
 				]
 			},
 			{
@@ -91,7 +91,7 @@ const buttonStyle = cva(
 					"dark:text-sky-100",
 					"dark:bg-sky-800",
 					"dark:border-sky-700",
-					"dark:shadow-sky-700",
+					"dark:shadow-sky-700"
 				]
 			},
 			{
@@ -123,18 +123,13 @@ const buttonStyle = cva(
 					"dark:text-neutral-300",
 					"dark:bg-neutral-700/40",
 					"dark:hover:text-neutral-200",
-					"dark:hover:bg-neutral-700/60",
+					"dark:hover:bg-neutral-700/60"
 				]
 			},
 			{
 				role: "secondary",
 				tone: "positive",
-				class: [
-					"bg-green-200",
-					"text-green-800",
-					"hover:text-green-900",
-					"hover:bg-green-300"
-				]
+				class: ["bg-green-200", "text-green-800", "hover:text-green-900", "hover:bg-green-300"]
 			},
 			{
 				role: "secondary",

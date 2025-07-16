@@ -7,7 +7,6 @@ export interface Config {
 	url: string
 }
 
-
 const development: Config = {
 	title: "SvelteKit Kickstart",
 	description: "A starter template for building web applications with SvelteKit and TypeScript.",

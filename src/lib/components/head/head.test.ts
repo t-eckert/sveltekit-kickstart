@@ -7,24 +7,24 @@ describe("Head Component", () => {
 	it("should have correct TypeScript interface", () => {
 		// Test that the Props interface is correctly defined
 		type HeadProps = ConstructorParameters<typeof Head>[0]["props"]
-		
+
 		// Test required properties
 		const requiredProps: HeadProps = {
 			title: "Test Title",
-			description: "Test Description", 
+			description: "Test Description",
 			url: "https://example.com",
 			favicon: "/favicon.ico"
 		}
-		
+
 		// Test with optional ogImage
 		const propsWithOgImage: HeadProps = {
 			title: "Test Title",
 			description: "Test Description",
-			url: "https://example.com", 
+			url: "https://example.com",
 			favicon: "/favicon.ico",
 			ogImage: "https://example.com/og.jpg"
 		}
-		
+
 		// These should compile without errors
 		expect(requiredProps).toBeDefined()
 		expect(propsWithOgImage).toBeDefined()
@@ -41,7 +41,7 @@ describe("Head Component", () => {
 
 		// Test that all values are strings
 		expect(typeof props.title).toBe("string")
-		expect(typeof props.description).toBe("string") 
+		expect(typeof props.description).toBe("string")
 		expect(typeof props.url).toBe("string")
 		expect(typeof props.favicon).toBe("string")
 		expect(typeof props.ogImage).toBe("string")
@@ -57,7 +57,7 @@ describe("Head Component", () => {
 
 		const validFaviconPaths = [
 			"/favicon.ico",
-			"/assets/icon.png", 
+			"/assets/icon.png",
 			"/static/favicon.svg",
 			"https://cdn.example.com/favicon.ico"
 		]
@@ -69,21 +69,21 @@ describe("Head Component", () => {
 		]
 
 		// These should all be valid string inputs
-		validUrls.forEach(url => expect(typeof url).toBe("string"))
-		validFaviconPaths.forEach(path => expect(typeof path).toBe("string"))
-		validOgImages.forEach(image => expect(typeof image).toBe("string"))
+		validUrls.forEach((url) => expect(typeof url).toBe("string"))
+		validFaviconPaths.forEach((path) => expect(typeof path).toBe("string"))
+		validOgImages.forEach((image) => expect(typeof image).toBe("string"))
 	})
 
 	it("should handle content with special characters", () => {
 		const specialCharacters = {
 			title: "Title with & ampersand, < less than, > greater than",
-			description: 'Description with "double quotes" and \'single quotes\'',
+			description: "Description with \"double quotes\" and 'single quotes'",
 			htmlEntities: "Content with &amp; &lt; &gt; &quot; &#39;",
 			unicode: "Content with émojis 🚀 and unicode characters"
 		}
 
 		// All should be valid strings
-		Object.values(specialCharacters).forEach(value => {
+		Object.values(specialCharacters).forEach((value) => {
 			expect(typeof value).toBe("string")
 			expect(value.length).toBeGreaterThan(0)
 		})
@@ -105,7 +105,7 @@ describe("Head Component", () => {
 		// Test minimal required props
 		const minimal = {
 			title: "Title",
-			description: "Description", 
+			description: "Description",
 			url: "https://example.com",
 			favicon: "/favicon.ico"
 		}
