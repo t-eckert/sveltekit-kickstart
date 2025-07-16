@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Table, Thead, Tr, Tbody, Th, Td } from "$lib/table"
+	import { Table, Thead, Tr, Tbody, Th, Td } from "$lib/components/table"
 	import Email from "$lib/components/email/email.svelte"
 	import Button from "$lib/components/button/button.svelte"
 	import Money from "$lib/components/money/money.svelte"
