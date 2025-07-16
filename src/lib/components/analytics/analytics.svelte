@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { browser } from "$app/environment"
 	import { page } from "$app/state"
 	import { onMount } from "svelte"
 	import * as Fathom from "fathom-client"
