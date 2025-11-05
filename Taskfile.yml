@@ -80,6 +80,22 @@ tasks:
       - npm run db:studio
     silent: true
 
+  db:start:
+    desc: "Start local Postgres database in Podman container"
+    cmds:
+      - |
+        podman run -d \
+          --name sveltekit-postgres \
+          --replace \
+          -e POSTGRES_USER=postgres \
+          -e POSTGRES_PASSWORD=postgres \
+          -e POSTGRES_DB=app \
+          -p 5432:5432 \
+          -v sveltekit-postgres-data:/var/lib/postgresql/data \
+          postgres:17
+      - echo "Postgres is starting at postgresql://postgres:postgres@localhost:5432/app"
+    silent: false
+
   storybook:
     cmds:
       - npm run storybook

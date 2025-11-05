@@ -55,7 +55,7 @@
 	"dependencies": {
 		"@fontsource-variable/jetbrains-mono": "^5.2.5",
 		"@fontsource/libre-caslon-text": "^5.2.5",
-		"@libsql/client": "^0.9.0",
+		"postgres": "^3.4.5",
 		"@node-rs/argon2": "^1.1.0",
 		"@oslojs/crypto": "^1.0.1",
 		"@oslojs/encoding": "^1.1.0",

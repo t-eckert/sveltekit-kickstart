@@ -19,8 +19,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `npm run test:e2e` - Run Playwright end-to-end tests
 - `npm run test` - Run all tests
 
-### Database (Drizzle + LibSQL)
+### Database (Drizzle + Postgres)
 
+- `task db:start` - Start local Postgres database in Podman container (required for local development)
 - `npm run db:push` - Push schema changes to database
 - `npm run db:migrate` - Run database migrations
 - `npm run db:studio` - Open Drizzle Studio
@@ -52,7 +53,7 @@ All npm commands can also be run using `task` (e.g., `task dev`, `task build`, `
 
 ### Backend Architecture
 
-- **Database**: Drizzle ORM with LibSQL/SQLite for edge deployment
+- **Database**: Drizzle ORM with PostgreSQL
 - **Auth**: User/session management with password hashing (Argon2)
 - **Server Utils**: Audit logging, KV store, and S3-compatible uploader in `src/lib/server/`
 - **Database Schema**: User and session tables defined in `src/lib/server/db/schema.ts`
@@ -70,6 +71,7 @@ All npm commands can also be run using `task` (e.g., `task dev`, `task build`, `
 ### Environment Requirements
 
 - `DATABASE_URL` environment variable required for database operations
+- PostgreSQL server (use `task db:start` to run locally with Podman)
 
 ### File Structure Notes
 
